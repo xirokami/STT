@@ -1,0 +1,137 @@
+ *, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik";
+  box-sizing: border-box;
+  }
+
+
+
+:root {
+  --main-color: rgb(255, 250, 250);
+  --border: 10px;
+  --title-size: 3.5rem;
+  --main-size: 1.5rem;
+  
+  /* чекбоксы*/
+  --checkbox-border-color: rgb(222, 226, 230);
+  --checkbox-color: rgb(13, 110, 253);
+  /* украдено с https://itchief.ru/html-and-css/styling-checkbox-and-radio*/
+  --checkbox-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+body{
+  background-color: rgb(222,222,222);
+}
+
+header{
+  height: 50px;
+  background-color:white
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.block{
+  height: auto;
+  width: 1000px;
+  background-color: var(--main-color);
+  margin: 0 25px 0 25px;
+  margin-top: 25px;
+  border-radius: var(--border);
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden
+}
+.title-block{
+  margin-top: 50px;
+}
+.block-content{
+  height: 100%;
+  width: 100%;
+}
+.border{
+  background-color: red;
+  height: auto;
+  width: var(--border);
+}
+.title{
+  margin: 4vh 0 0 3vh;
+  font-size: var(--title-size);
+}
+.dscript{
+  margin: 3vh 3vh;
+  font-size: var(--main-size);
+}
+.question{
+  margin: 3vh 3vh;
+  font-size: var(--main-size);
+}
+.answers{
+  margin: 3vh 3vh;
+}
+.answers > *{
+  margin: 1vh 0;
+}
+
+
+
+.text-input{
+  appearance: none;
+  width: 50%;
+  height: 1.5rem;
+  border: 2px solid var(--checkbox-border-color);
+  border-radius: 0.25rem;
+  background-color: var(--main-color);
+  background-image: var(--checkbox-bg-image);
+  cursor: pointer;
+  transition: var(--checkbox-transition);
+}
+.input{
+  align-items: center;
+  display: flex;
+  padding-left:0.75rem;
+}
+
+
+
+button{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+
+
+.checkbox-input{
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--checkbox-border-color);
+  border-radius: 0.25rem;
+  background-color: var(--main-color);
+  background-image: var(--checkbox-bg-image);
+  cursor: pointer;
+  transition: var(--checkbox-transition);
+  margin: 0;
+}
+.checkbox-label{
+  padding-left: 1rem;
+  font-size: var(--main-size);
+}
+
+.checkbox-input:hover{
+  border-color: var(--checkbox-color);
+}
+
+.checkbox-input:checked{
+  background-color: var(--checkbox-color);
+  border-color: var(--checkbox-color);
+  background-image: var(--checkbox-bg-image);
+}
+
+.checkbox-input:checked{
+  --checkbox-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
