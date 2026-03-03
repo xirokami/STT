@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .delete {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Новая задача...">
+    <button onclick="addTask()">Добавить</button>
+    <ul id="tasklist"></ul>
+
+    <script>
+        function addTask() {
+            const taskText = document.getElementById("taskInput").value
+            if (taskText === "") {
+                alert("Введите задачу!")
+                return
+            }
+
+            const list = document.createElement("list")
+            list.className = "task"
+            list.textContent = taskText
+
+            const deleteButton = document.createElement("button")
+            deleteButton.className = "delete"
+            deleteButton.textContent = "Удалить"
+            deleteButton.onclick = function() {
+                list.remove()
+            }
+
+            list.appendChild(deleteButton)
+            document.getElementById("tasklist").appendChild(list)
+            taskInput.value = ""
+        }
+    </script>
+</body>
+</html>

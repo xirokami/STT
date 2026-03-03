@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<body>
+    <div class="game">
+        <div class="row">
+            <div class="field" id="0"></div>
+            <div class="field" id="1"></div>
+            <div class="field" id="2"></div>
+        </div>
+        <div class="row">
+            <div class="field" id="3"></div>
+            <div class="field" id="4"></div>
+            <div class="field" id="5"></div>
+        </div>
+        <div class="row">
+            <div class="field" id="6"></div>
+            <div class="field" id="7"></div>
+            <div class="field" id="8"></div>
+        </div>
+        <button id="reset">Сбросить игру</button>
+    </div>
+    <script>
+        let currentPlayer = 'X';
+        
+        const fields = document.getElementsByClassName('field');
+
+        function updateGameState() {
+            fetch('/state')
+                .then(response => response.json())
+                .then(gameState => {
+                    for (let i = 0; i < gameState.length; i++) {
+                        fields[i].textContent = gameState[i] === '' ? '' : gameState[i];
+                    }
+                });
+        }
+
+        for (let field of fields) {
+            field.addEventListener('click', () => {
+                const index = field.id;
+                fetch(`/move/${index}?player=${currentPlayer}`)
+                    .then(updateGameState);
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            });
+        }
+
+        document.getElementById('reset').addEventListener('click', () => {
+            fetch('/reset')
+                .then(updateGameState);
+        });
+
+        updateGameState();
+    </script>
+    <style>
+        *{
+            margin: 0;
+        }
+        .field {
+            width: 50px;
+            height: 50px;
+            background-color: aliceblue;
+            border: 1px black solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .row {
+            display: flex;
+        }
+    </style>
+</body>
+</html>
