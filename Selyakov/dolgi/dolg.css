@@ -36,9 +36,36 @@
 .two_text {
     margin: 15px;
 }
+
 .two_img {
     margin: 15px;
     height: 150px;
 }
 
+.three {
+    background-color: bisque;
+}
 
+.text_3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+.ppp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.da {
+    display: flex;           
+    align-items: flex-start; 
+    gap: 15px;            
+    flex: 1 1 45%;
+}
+
+.threemg {
+    max-width: 150px;
+    margin-bottom: 15px;      
+}
