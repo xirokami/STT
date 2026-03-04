@@ -6,13 +6,20 @@
 }
 
 :root{
-	--bg-color0: rgb(70,70,175);
-	--bg-color1: rgb(100,100,200)
+	--bg-color0: rgb(100,120,255);
+	--bg-color1: rgb(160,180,255);
+}
+
+body{
+	background-color:white;
+}
+body>*{
+	margin-bottom: 25px
 }
 
 .first {
     display: flex;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color0);
     justify-content: space-between;
 }
 
@@ -48,7 +55,8 @@
 }
 
 .three {
-    background-color: rgb(
+	padding:0 50px;
+    background-color: var(--bg-color1)
 }
 
 .text_3 {
@@ -73,4 +81,37 @@
 .threemg {
     max-width: 150px;
     margin-bottom: 15px;      
+}
+
+.columns{
+}
+
+.align1{
+	display: flex;
+	flex-direction: column;
+	height:600px;
+	width:500px;
+	border: 5px solid var(--bg-color0);
+	background-color: var(--bg-color0);
+}
+.title-align{
+	background-color: var(--bg-color0);
+	text-align: center;
+	font-size:3rem;
+}
+.sec-title-align{
+	background-color:white;
+	text-align: center;
+	font-size:3rem;
+}
+.text-container{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.text-align{
+}
+footer{
+	position: fixed;
 }
