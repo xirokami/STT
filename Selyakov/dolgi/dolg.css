@@ -90,7 +90,7 @@ body>*{
 }
 
 .columns{
-	padding: 0 200px;
+	padding: 0 150px;
 	display: flex;
 	justify-content:space-between;
 }
