@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap4_1</title>
+        <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+        <style type="text/css">
+            .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+            .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12,
+            .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12
+        {
+            background-color: #FF8000;
+            border: 1px solid white;
+            font-weight: bold;
+            color: white;
+            height: auto;
+        }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <from>
+            <div class="from-group">
+                <label for="Email1">Адрес электронной почты</label>
+                <input type="email" class="from-control" id="Email1" placeholder="Введите E-mail"></input>
+            </div>
+            <div class="from-group">
+                <label for="Password1">Введите Пароль</label>
+                <input type="password" class="from-control" id="Password1" placeholder="Пароль"></input>
+            </div>
+        </from>
+        <from class="from-inline">
+            <div class="from-group">
+                <label class="sr-only" for="FirstName">Фамилия</label>
+                <input type="text" class="from-control" id="FirstName" placeholder="Введите фамилию"></input>
+            </div>
+            <div class="from-group">
+                <lable class="sr-only" for="LastName">Имя</lable>
+                <input type="text" class="from-control" id="LastName" placeholder="Введите имя"></input>
+            </div>
+            <div class="checkbox">
+            <lable>
+                <input type="checkbox">Запомни меня
+            </lable>
+            </div>
+            <button type="submit" class="btn btn-default">Отправить</button>
+        </from>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+    </body>
+</html>
+
