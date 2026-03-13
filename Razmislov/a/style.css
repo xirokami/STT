@@ -81,8 +81,9 @@ header{
 
 .text-input{
   appearance: none;
+  font-size: 1.25rem;
   width: 50%;
-  height: 1.5rem;
+  height: 2rem;
   border: 2px solid var(--checkbox-border-color);
   border-radius: 0.25rem;
   background-color: var(--main-color);
@@ -95,8 +96,13 @@ header{
   display: flex;
   padding-left:0.75rem;
 }
-
-
+.button-input{
+}
+.text-input:focus{
+  outline: none;
+  border-color: var(--checkbox-color);
+  background-image: var(--checkbox-bg-image);
+}
 
 button{
   width: 1.5rem;
@@ -130,8 +136,5 @@ button{
   background-color: var(--checkbox-color);
   border-color: var(--checkbox-color);
   background-image: var(--checkbox-bg-image);
-}
-
-.checkbox-input:checked{
   --checkbox-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
 }
