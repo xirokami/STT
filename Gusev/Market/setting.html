@@ -12,21 +12,10 @@
         
         <div class="slider-container">
             <div class="slider-title">Здоровье Ивана Викторовича</div>
-            <input type="range" min="0" max="100" value="100" class="volume-slider" step="1">
+            <input type="range" min="0" max="100" value="100" step="1" id="slider-container">
             <div class="slider-value">100%</div>
         </div>
-        
-        <div class="slider-container">
-            <div class="slider-title">Процент хорошей оценки</div>
-            <input type="range" min="0" max="100" value="10" class="brightness-slider" step="1">
-            <div class="slider-value">10%</div>
-        </div>
-        
-        <div class="slider-container">
-            <div class="slider-title">Надежда на бога</div>
-            <input type="range" min="0" max="100" value="70" class="animation-slider" step="1">
-            <div class="slider-value">70%</div>
-        </div>
+
         
         <div class="button-container">
             <button onclick="saveSettings()">Сохранить изменения</button>
@@ -36,4 +25,13 @@
         </div>
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let slider = document.getElementById("slider-container")
+        slider.oninput = function(){
+            console.log("riblox")
+            console.log(this.value)
+        }
+    })
+</script>
 </html>

@@ -86,17 +86,16 @@ footer a {
     transition: color 0.3s ease;
 }
 
-
 .return-button {
-    display: inline-block;
-    padding: 12px 24px;
-    margin: 20px auto;
-    background-color: #4CAF50;
+    display: flex;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #049c0b;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    left: 20px;
+    justify-content: flex-start;
 }

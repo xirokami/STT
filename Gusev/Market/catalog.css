@@ -160,5 +160,7 @@ footer p {
     border-radius: 10px;
     border: none;
     outline: none;
+    color: white;
+    font-size: 20px;
 }
 
