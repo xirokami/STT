@@ -52,3 +52,23 @@ h1 {
     text-align: center;
     color: black;
 }
+
+.altpers {
+    border: none;
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    border-radius: 20px;
+    color: red;
+    transition: transform 0.3s;
+}
+
+button.altpers:hover {
+    transform: scale(1.02);
+}
+
+.alala {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}

@@ -132,6 +132,7 @@ footer {
     margin-top: 40px;
     font-family: 'Arial', sans-serif;
 }
+
 footer p {
     margin: 0;
     line-height: 1.4;
@@ -146,4 +147,15 @@ footer a {
 
 .nav-item {
     margin-top: 15px;
+}
+
+.img-footer {
+    width: 75px;
+    height: 75px;
+}
+
+.sex {
+    display: flex;
+    justify-content: space-between;
+    
 }
