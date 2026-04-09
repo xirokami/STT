@@ -1,15 +1,16 @@
-* {
-    font-family: 'eggs';
-    text-decoration: none;
-}
+
 
 @font-face {
     font-family: 'eggs';
-    src: url("ttf/TrixieRoughOT-Heavy.ttf") format('ttf');
+    src: url("../ttf/font.ttf");
     font-weight: normal;
     font-style: normal;
 }
 
+* {
+    font-family: 'eggs', arial;
+    text-decoration: none;
+}
 body {
     margin: 0;
     padding: 0;
