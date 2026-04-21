@@ -99,3 +99,13 @@ footer a {
     left: 20px;
     justify-content: flex-start;
 }
+
+.img-footer {
+    width: 75px;
+    height: 75px;
+}
+
+.sex {   
+    display: flex;
+    justify-content: space-between;
+}

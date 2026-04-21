@@ -181,3 +181,12 @@ footer a {
     transition: color 0.3s ease;
 }
 
+.img-footer {
+    width: 75px;
+    height: 75px;
+}
+
+.sex {   
+    display: flex;
+    justify-content: space-between;
+}

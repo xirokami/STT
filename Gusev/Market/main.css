@@ -154,8 +154,7 @@ footer a {
     height: 75px;
 }
 
-.sex {
+.sex {   
     display: flex;
     justify-content: space-between;
-    
 }

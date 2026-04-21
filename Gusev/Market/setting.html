@@ -12,11 +12,10 @@
         
         <div class="slider-container">
             <div class="slider-title">Здоровье Ивана Викторовича</div>
-            <input type="range" min="0" max="100" value="100" step="1" id="slider-container">
-            <div class="slider-value">100%</div>
+            <input type="range" min="0" max="100" value="100" step="1" id="slider">
+            <div id="slider-value" class="slider-value">100%</div>
         </div>
 
-        
         <div class="button-container">
             <button class="colora" onclick="saveSettings()">Сохранить изменения</button>
             <a href="profil.html" class="back-button">
@@ -24,15 +23,24 @@
             </a>
         </div>
     </div>
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let slider = document.getElementById("slider-container")
-        let rarara = getElementById("slider-value")
-        slider.oninput = function(){
-           rarara.value = this.value
-          console.log(this.value)
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById("slider"); // Получаем сам слайдер
+            const sliderValueDisplay = document.getElementById("slider-value"); // Элемент для отображения значения
+
+            slider.addEventListener('input', function() {
+                // Обновляем отображаемое значение
+                sliderValueDisplay.textContent = this.value + '%';
+                // Выводим в консоль для отладки
+                console.log('Текущее значение слайдера:', this.value);
+            });
+        });
+
+        function saveSettings() {
+            // Заглушка для функции сохранения
+            alert('Настройки сохранены!');
         }
-    })
-</script>
+    </script>
+</body>
 </html>

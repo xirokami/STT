@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    width: 600px;
+    height: 600px;
+    border: 2px solid aqua;
+    background-color: black;
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: purple;
+    border-radius: 50%;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    background: orange
+}
