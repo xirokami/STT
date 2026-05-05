@@ -125,36 +125,30 @@ li {
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  color: white;
+  padding: 30px 5%;
+  flex-wrap: wrap;
+  gap: 30px;
+  font-family: 'Arial', sans-serif;
 }
 
-footer p {
-    margin: 0;
-    line-height: 1.4;
-    font-size: 14px;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav-item {
-    margin-top: 15px;
+.social-links {
+  display: flex;
+  gap: 20px;
 }
 
 .img-footer {
-    width: 75px;
-    height: 75px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
-.sex {   
-    display: flex;
-    justify-content: space-between;
+.footer-info p {
+  margin: 8px 0;
+  font-size: 14px;
 }

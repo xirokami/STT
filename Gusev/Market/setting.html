@@ -26,19 +26,16 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.getElementById("slider"); // Получаем сам слайдер
-            const sliderValueDisplay = document.getElementById("slider-value"); // Элемент для отображения значения
+            const slider = document.getElementById("slider"); 
+            const sliderValueDisplay = document.getElementById("slider-value"); 
 
             slider.addEventListener('input', function() {
-                // Обновляем отображаемое значение
                 sliderValueDisplay.textContent = this.value + '%';
-                // Выводим в консоль для отладки
                 console.log('Текущее значение слайдера:', this.value);
             });
         });
 
         function saveSettings() {
-            // Заглушка для функции сохранения
             alert('Настройки сохранены!');
         }
     </script>
