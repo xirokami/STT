@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div class="row">
+            <div class="a 1">
+            </div>
+            <div class="a 2">
+            </div>
+            <div class="a 3">
+            </div>
+            <div class="a 4">
+            </div>
+            <div class="a 5">
+            </div>
+            <div class="a 6">
+            </div>
+            <div class="a 7">
+            </div>
+            <div class="a 8">
+            </div>
+        </div>
+        <div class="row-w">
+            <div class="b 1">
+            </div>
+            <div class="b 2">
+            </div>
+            <div class="b 3">
+            </div>
+            <div class="b 4">
+            </div>
+            <div class="b 5">
+            </div>
+            <div class="b 6">
+            </div>
+            <div class="b 7">
+            </div>
+            <div class="b 8">
+            </div>
+        </div>
+        <div class="row">
+            <div class="c 1">
+            </div>
+            <div class="c 2">
+            </div>
+            <div class="c 3">
+            </div>
+            <div class="c 4">
+            </div>
+            <div class="c 5">
+            </div>
+            <div class="c 6">
+            </div>
+            <div class="c 7">
+            </div>
+            <div class="c 8">
+            </div>
+        </div>
+        <div class="row-w">
+            <div class="d 1">
+            </div>
+            <div class="d 2">
+            </div>
+            <div class="d 3">
+            </div>
+            <div class="d 4">
+            </div>
+            <div class="d 5">
+            </div>
+            <div class="d 6">
+            </div>
+            <div class="d 7">
+            </div>
+            <div class="d 8">
+            </div>
+        </div>
+        <div class="row">
+            <div class="e 1">
+            </div>
+            <div class="e 2">
+            </div>
+            <div class="e 3">
+            </div>
+            <div class="e 4">
+            </div>
+            <div class="e 5">
+            </div>
+            <div class="e 6">
+            </div>
+            <div class="e 7">
+            </div>
+            <div class="e 8">
+            </div>
+        </div>
+        <div class="row-w">
+            <div class="f 1">
+            </div>
+            <div class="f 2">
+            </div>
+            <div class="f 3">
+            </div>
+            <div class="f 4">
+            </div>
+            <div class="f 5">
+            </div>
+            <div class="f 6">
+            </div>
+            <div class="f 7">
+            </div>
+            <div class="f 8">
+            </div>
+        </div>
+        <div class="row">
+            <div class="g 1">
+            </div>
+            <div class="g 2">
+            </div>
+            <div class="g 3">
+            </div>
+            <div class="g 4">
+            </div>
+            <div class="g 5">
+            </div>
+            <div class="g 6">
+            </div>
+            <div class="g 7">
+            </div>
+            <div class="g 8">
+            </div>
+        </div>
+        <div class="row-w">
+            <div class="h 1">
+            </div>
+            <div class="h 2">
+            </div>
+            <div class="h 3">
+            </div>
+            <div class="h 4">
+            </div>
+            <div class="h 5">
+            </div>
+            <div class="h 6">
+            </div>
+            <div class="h 7">
+            </div>
+            <div class="h 8">
+            </div>
+        </div>
+    </div>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 70px;
+    }
+    .row-w > * {
+        height: 85px;
+        width: 85px;
+        background-color: rgb(255, 246, 217);
+    }
+    .row-w > *:nth-child(even) {
+        background-color: rgb(78, 54, 18);
+    }
+    .row > * {
+        height: 85px;
+        width: 85px;
+        background-color: rgb(78, 54, 18);
+    }
+    .row > *:nth-child(even) {
+        background-color: rgb(255, 246, 217);
+    }
+    #box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+    }
+</style>
+<script>
+    let i = 0;
+    document.getElementById('box').addEventListener('click', function() {
+        console.log(i)
+        const whitePieces = ['♖', '♘', '♗', '♕', '♔', '♗', '♘', '♖'];
+        const blackPieces = ['♜', '♞', '♝', '♛', '♚', '♝', '♞', '♜'];
+        const whitePawns = Array(8).fill('♙');
+        const blackPawns = Array(8).fill('♟');
+
+        const rows = document.querySelectorAll('#box > div');
+        if (i == 0) {
+
+            Array.from(rows[0].children).forEach((cell, index) => {
+            cell.textContent = whitePieces[index];
+            });
+
+            Array.from(rows[1].children).forEach((cell, index) => {
+            cell.textContent = whitePawns[index];
+            });
+
+            Array.from(rows[6].children).forEach((cell, index) => {
+            cell.textContent = blackPawns[index];
+            });
+
+            Array.from(rows[7].children).forEach((cell, index) => {
+            cell.textContent = blackPieces[index];
+            });
+            i ++
+        } else if (i == 1) {
+            rows[1].children[5].textContent = ""
+            rows[3].children[5].textContent = "♙"
+            i ++
+        } else if (i == 2) {
+            rows[6].children[4].textContent = ""
+            rows[5].children[4].textContent = "♟"
+            i ++
+        } else if (i == 3) {
+            rows[1].children[6].textContent = ""
+            rows[3].children[6].textContent = "♙"
+            i ++
+        } else if (i == 4) {
+            rows[7].children[3].textContent = ""
+            rows[3].children[7].textContent = "♛"
+            i ++
+        } else if (i > 4) {
+            alert('Мат белым(не расисты)')
+        }
+
+    });
+</script>
+
+</body>
+</html>
