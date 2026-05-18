@@ -1,12 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="ru">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1>artem lox</h1>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link href= "main.css" rel= "stylesheet">
+    <title>Регистрация | Простой и надёжный сервис</title>
+</head>
+<body>
+<div class="register-card" id="app">
+    <div class="card-header">
+        <h1>📝 Регистрация</h1>
+        <p>Создайте учётную запись за 1 минуту</p>
+    </div>
+    <div class="card-body">
+        <form id="registerForm" novalidate>
+            <!-- ЛОГИН (латиница + цифры, минимум 6 символов) -->
+            <div class="form-group">
+                <label>Логин <span class="required">*</span></label>
+                <input type="text" id="login" placeholder="например: john1984" autocomplete="off">
+                <div class="hint">только латиница и цифры, не менее 6 символов</div>
+                <div id="loginError" class="error-message" style="display: none;"></div>
+                <div id="loginValid" class="valid-feedback" style="display: none;">Логин корректный</div>
+            </div>
+
+            <!-- ПАРОЛЬ (минимум 8 символов) -->
+            <div class="form-group">
+                <label>Пароль <span class="required">*</span></label>
+                <input type="password" id="password" placeholder="минимум 8 символов">
+                <div class="hint">не менее 8 любых символов</div>
+                <div id="passwordError" class="error-message" style="display: none;"></div>
+                <div id="passwordValid" class="valid-feedback" style="display: none;">Надёжный пароль</div>
+            </div>
+
+            <!-- ФИО (кириллица + пробелы) -->
+            <div class="form-group">
+                <label>ФИО <span class="required">*</span></label>
+                <input type="text" id="fullname" placeholder="Иванов Иван Иванович">
+                <div class="hint">только русские буквы и пробелы</div>
+                <div id="fullnameError" class="error-message" style="display: none;"></div>
+                <div id="fullnameValid" class="valid-feedback" style="display: none;">ФИО корректно</div>
+            </div>
+
+            <!-- ТЕЛЕФОН: 8(XXX)XXX-XX-XX -->
+            <div class="form-group">
+                <label>Телефон <span class="required">*</span></label>
+                <input type="tel" id="phone" placeholder="89123456789" maxlength="16">
+                <div class="hint">формат: 8XXXXXXXXXX </div>
+                <div id="phoneError" class="error-message" style="display: none;"></div>
+                <div id="phoneValid" class="valid-feedback" style="display: none;">Номер корректный</div>
+            </div>
+
+            <!-- EMAIL (стандартный формат) -->
+            <div class="form-group">
+                <label>Электронная почта <span class="required">*</span></label>
+                <input type="email" id="email" placeholder="ivan@example.com">
+                <div class="hint">example@domain.com</div>
+                <div id="emailError" class="error-message" style="display: none;"></div>
+                <div id="emailValid" class="valid-feedback" style="display: none;">Email верный</div>
+            </div>
+
+            <button type="submit" id="submitBtn">Зарегистрироваться</button>
+        </form>
+
+        <div id="globalMessage" class="global-msg" style="display: none;"></div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
 </html>
