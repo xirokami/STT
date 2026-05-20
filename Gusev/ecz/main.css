@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 179, 80);
+}
+
+.nava {
+    display: flex;
+    font-size: 20px;
+    gap: 15px;
+}
