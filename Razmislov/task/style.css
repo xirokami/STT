@@ -1,11 +1,12 @@
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: 'Arial';
 }
-:root{
-  --back-color: rgb(245,245,245);
-  --main-color: rgb(255,255,255);
+
+:root {
+  --back-color: rgb(245, 245, 245);
+  --main-color: rgb(255, 255, 255);
   --border: 10px;
   --title-size: 2rem;
   --main-size: 1.2rem;
@@ -15,46 +16,52 @@
   --checkbox-color: rgb(13, 110, 253);
   /* украдено с https://itchief.ru/html-and-css/styling-checkbox-and-radio*/
   --checkbox-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-} 
-body{
+}
+
+body {
   background-color: var(--back-color);
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
 }
-.block{
+
+.block {
   height: auto;
   width: 1000px;
   background-color: var(--main-color);
   margin: 0 25px 0 25px;
   margin-top: 25px;
   border-radius: var(--border);
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden
 }
-.title{
+
+.title {
   margin: 4vh 0 0 3vh;
   font-size: var(--title-size);
 }
-.description{
+
+.description {
   margin: var(--marg);
   font-size: var(--main-size);
 }
-.question{
+
+.question {
   margin: var(--marg);
   font-size: var(--main-size);
 }
-.answers{
-}
-.answers > *{
+
+.answers {}
+
+.answers>* {
   margin: var(--marg);
 }
 
 
-.text-input{
+.text-input {
   appearance: none;
   font-size: 1.25rem;
   width: 50%;
@@ -66,29 +73,33 @@ body{
   cursor: pointer;
   transition: var(--checkbox-transition);
 }
-.input{
+
+.input {
   align-items: center;
   display: flex;
-  padding-left:0.75rem;
+  padding-left: 0.75rem;
 }
-.button-input{
-}
-.text-input:focus{
+
+.button-input {}
+
+.text-input:focus {
   outline: none;
   border-color: var(--checkbox-color);
   background-image: var(--checkbox-bg-image);
 }
 
-button{
+button {
   margin: 1rem;
   width: 2.5rem;
   height: 2.5rem;
 }
-.but-container{
+
+.but-container {
   display: flex;
   flex-direction: row-reverse;
 }
-.checkbox-input{
+
+.checkbox-input {
   appearance: none;
   width: 1.5rem;
   height: 1.5rem;
@@ -100,16 +111,17 @@ button{
   transition: var(--checkbox-transition);
   margin: 0;
 }
-.checkbox-label{
+
+.checkbox-label {
   padding-left: 1rem;
   font-size: var(--main-size);
 }
 
-.checkbox-input:hover{
+.checkbox-input:hover {
   border-color: var(--checkbox-color);
 }
 
-.checkbox-input:checked{
+.checkbox-input:checked {
   background-color: var(--checkbox-color);
   border-color: var(--checkbox-color);
   background-image: var(--checkbox-bg-image);
