@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анимация появления при скроллинге</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(145deg, #f5f7fc 0%, #e9eef5 100%);
+            overflow-x: hidden;
+        }
+
+        /* Контейнер для контента */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero-секция (не анимируется, просто шапка) */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #1e2a3e, #0f172a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #334155;
+        }
+
+        /* ---- АНИМИРУЕМЫЕ ЭЛЕМЕНТЫ ---- */
+        /* Базовый класс: элемент полностью прозрачен и смещён вниз */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            will-change: opacity, transform;
+        }
+
+        /* Класс, который добавляется, когда элемент появляется в области видимости */
+        .scroll-animate.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Можно добавить разные задержки и эффекты через дополнительные классы */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.35s; }
+
+        /* Другой вариант анимации — слева направо */
+        .scroll-animate-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .scroll-animate-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Стили для карточек */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 0.75rem;
+            color: #0f172a;
+        }
+
+        .card p {
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin: 3rem 0 1.5rem;
+            text-align: center;
+            color: #0f172a;
+        }
+
+        .large-block {
+            background: #fff;
+            border-radius: 2rem;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            color: #5b6e8c;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="hero">
+        <h1>✨ Плавное появление при скролле</h1>
+        <p>Листайте вниз, чтобы увидеть магию</p>
+    </div>
+
+    <!-- ЗАГОЛОВОК СЕКЦИИ — тоже с анимацией -->
+    <div class="scroll-animate">
+        <h2 class="section-title">Наши преимущества</h2>
+    </div>
+
+    <div class="grid">
+        <!-- Каждая карточка анимируется индивидуально, с небольшой задержкой -->
+        <div class="card scroll-animate delay-1">
+            <h3>🚀 Быстрота</h3>
+            <p>Элементы появляются плавно, как только вы до них доскроллили.</p>
+        </div>
+        <div class="card scroll-animate delay-2">
+            <h3>🎨 Гибкость</h3>
+            <p>Меняйте стили, задержки и направления анимации под свой дизайн.</p>
+        </div>
+        <div class="card scroll-animate delay-3">
+            <h3>⚡ Легкость</h3>
+            <p>Работает на чистом JS без библиотек, быстро и отзывчиво.</p>
+        </div>
+    </div>
+
+    <!-- Блок с анимацией "слева направо" -->
+    <div class="scroll-animate-left">
+        <div class="large-block">
+            <h3>🔄 Анимация из левого края</h3>
+            <p>Этот блок выезжает слева, когда попадает в область видимости. Вы можете комбинировать разные типы анимации: снизу вверх, слева направо, масштабирование и т.д.</p>
+        </div>
+    </div>
+
+    <!-- Ещё один ряд с контентом -->
+    <div class="scroll-animate">
+        <h2 class="section-title">Ключевые особенности технологии</h2>
+    </div>
+
+    <div class="grid">
+        <div class="card scroll-animate delay-1">
+            <h3>📐 Intersection Observer</h3>
+            <p>Используется современный API браузера — производительность отличная, события скролла не тормозят страницу.</p>
+        </div>
+        <div class="card scroll-animate delay-2">
+            <h3>🎯 Точный порог срабатывания</h3>
+            <p>Можно настроить, при какой видимости элемента (20%, 50% и т.д.) запускать анимацию.</p>
+        </div>
+        <div class="card scroll-animate delay-3">
+            <h3>♻️ Повторная анимация</h3>
+            <p>По умолчанию анимация срабатывает один раз. Но при желании легко сделать так, чтобы эффект повторялся при каждом появлении.</p>
+        </div>
+    </div>
+
+    <div class="scroll-animate-left">
+        <div class="large-block" style="background: #fef9e3;">
+            <h3>💡 Как это работает?</h3>
+            <p>1. Все элементы, которые должны анимироваться, получают класс .scroll-animate (или .scroll-animate-left).<br>
+            2. При загрузке страницы создаётся Intersection Observer, который следит за этими элементами.<br>
+            3. Когда элемент хотя бы на 20% показывается во вьюпорте, ему добавляется класс .revealed — и CSS уже делает его видимым.<br>
+            4. Вы можете настроить порог, направление и тип анимации в CSS.</p>
+        </div>
+    </div>
+
+    <footer class="scroll-animate delay-2">
+        <p>Анимация появляется только один раз для каждого элемента. Листайте вверх/вниз — новые элементы будут раскрываться по очереди.</p>
+    </footer>
+</div>
+
+<script>
+    (function() {
+        // Выбираем все элементы, которые хотим анимировать при скролле
+        const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left');
+        
+        // Настройки наблюдателя
+        // threshold: 0.2 означает, что анимация сработает, когда 20% элемента станут видны
+        // rootMargin: "0px 0px -50px 0px" - можно отрегулировать, чтобы срабатывало чуть раньше/позже
+        const observerOptions = {
+            threshold: 1,        // Порог видимости: 0 = при любом касании, 0.5 = когда половина элемента в кадре, 1 = полностью
+            rootMargin: "0px 0px -30px 0px" // Небольшое смещение (снизу -30px) — чуть раньше добавление класса
+        };
+        
+        // Создаём наблюдатель
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // Если элемент пересекся с областью видимости (стал виден)
+                if (entry.isIntersecting) {
+                    // Добавляем класс .revealed, который запускает анимацию появления
+                    entry.target.classList.add('revealed');
+                    // После того как анимация запущена — прекращаем следить за этим элементом (опционально)
+                    // Это экономит ресурсы, так как элемент больше не наблюдается
+                    //observer.unobserve(entry.target);
+                }
+                // Если нужна анимация каждый раз при появлении/исчезновении — не вызывайте unobserve,
+                // но для большинства случаев "появление один раз" подходит идеально.
+            });
+        }, observerOptions);
+        
+        // Начинаем следить за каждым анимируемым элементом
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Дополнительно: если некоторые элементы уже видны при загрузке до запуска наблюдения,
+        // они все равно сработают после небольшой паузы, потому что observer проверит их состояние.
+        // Также можно инициировать принудительную проверку через setTimeout, но обычно не требуется.
+    })();
+</script>
+</body>
+</html>

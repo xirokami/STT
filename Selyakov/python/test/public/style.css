@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f7fc;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+/* карточка регистрации */
+.register-card {
+  max-width: 520px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+  padding: 2rem 1.75rem;
+  transition: all 0.2s ease;
+}
+
+/* заголовок */
+.register-header {
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+.register-header h1 {
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: #111827;
+  margin-bottom: 0.3rem;
+}
+
+.register-header p {
+  color: #5b6e8c;
+  font-size: 0.9rem;
+  font-weight: 400;
+  border-left: 3px solid #3b82f6;
+  padding-left: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+/* группа полей */
+.input-group {
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+label span {
+  color: #e53e3e;
+  margin-left: 2px;
+}
+
+input {
+  font-size: 0.95rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background-color: #ffffff;
+  transition: 0.2s;
+  font-family: inherit;
+  color: #0f172a;
+  outline: none;
+  width: 100%;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+/* подсказки и мелкий текст */
+.field-hint {
+  font-size: 0.7rem;
+  color: #6c757d;
+  margin-top: 0.4rem;
+  margin-left: 0.2rem;
+}
+
+.error-message {
+  font-size: 0.7rem;
+  color: #dc2626;
+  margin-top: 0.3rem;
+  display: none;
+}
+
+/* кнопка */
+.btn-create {
+  background-color: #111827;
+  color: white;
+  font-weight: 600;
+  padding: 0.85rem 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.05s;
+  margin-top: 0.5rem;
+  letter-spacing: 0.2px;
+}
+
+.btn-create:hover {
+  background-color: #2d3a4e;
+}
+
+.btn-create:active {
+  transform: scale(0.98);
+}
+
+/* сообщение успеха/ошибки после отправки */
+.form-feedback {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.65rem;
+  border-radius: 40px;
+  background: #f1f5f9;
+  color: #1e293b;
+  display: none;
+  font-weight: 500;
+}
+
+.form-feedback.success {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-left: 3px solid #0ea5e9;
+  display: block;
+}
+
+.form-feedback.error {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-left: 3px solid #ef4444;
+  display: block;
+}
+
+hr {
+  margin: 1rem 0 0.5rem;
+  border: none;
+  border-top: 1px solid #eef2f6;
+}
+
+/* минималистичный акцент */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 1.5rem;
+  }
+  input {
+    padding: 0.7rem 0.8rem;
+  }
+}
