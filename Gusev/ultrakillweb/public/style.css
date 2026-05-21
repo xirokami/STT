@@ -45,7 +45,7 @@ body {
 
 .hero-img {
   position: absolute;
-  filter: brightness(0.2) contrast(0.9) blur(2px);
+  filter: brightness(0.2) contrast(0.9) blur(8px);
   z-index: 0;
 }
 
@@ -70,7 +70,7 @@ body {
 
 .card-gradient {
   margin-top: auto;
-  margin-bottom: -5px;
+  margin-bottom: -10px;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   height: 50vh;
   width: 100vw;
