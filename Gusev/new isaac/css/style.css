@@ -1,0 +1,41 @@
+/* Базовые стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Стили для контентных блоков */
+.content-block {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.6s ease-out;
+}
+
+/* Начальное состояние - скрытый элемент */
+.content-block.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Видимое состояние */
+.content-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
