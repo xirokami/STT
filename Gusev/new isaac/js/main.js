@@ -1,37 +1,30 @@
-// Ждем полной загрузки DOM
 document.addEventListener('DOMContentLoaded', function() {
+    const blocks = document.querySelectorAll('.block.hidden');
     
-    // Получаем все элементы с классом 'content-block'
-    const blocks = document.querySelectorAll('.content-block');
-    
-    // Функция проверки видимости элемента
+    // Функция для проверки видимости элементов
     function checkVisibility() {
-        blocks.forEach(block => {
-            // Получаем позицию элемента относительно окна браузера
-            const rect = block.getBoundingClientRect();
+        const triggerPoint = window.innerHeight * 0.8; // 80% высоты окна
+        
+        blocks.forEach((block, index) => {
+            const blockPosition = block.getBoundingClientRect().top;
             
-            // Проверяем, виден ли элемент (находится в области просмотра)
-            const isVisible = (
-                rect.top <= window.innerHeight - 100 && // Верх элемента не ниже нижней границы окна с отступом
-                rect.bottom >= 100                       // Низ элемента не выше верхней границы окна с отступом
-            );
+            // Добавляем задержку для последовательного появления
+            const delay = index % 3 * 150; // Задержка для каждого блока в ряду
             
-            // Добавляем или убираем класс в зависимости от видимости
-            if (isVisible) {
-                block.classList.add('visible');
-            } else {
-                // Опционально: можно убирать класс, когда элемент выходит из зоны видимости
-                // block.classList.remove('visible');
+            if (blockPosition < triggerPoint) {
+                setTimeout(() => {
+                    block.classList.add('visible');
+                }, delay);
             }
         });
     }
     
-    // Проверяем при загрузке страницы
+    // Проверяем видимость при загрузке страницы
     checkVisibility();
     
-    // Проверяем при скролле
+    // Проверяем видимость при скролле
     window.addEventListener('scroll', checkVisibility);
     
-    // Проверяем при изменении размера окна (на случай респонсив-дизайна)
+    // Дополнительно проверяем при изменении размера окна
     window.addEventListener('resize', checkVisibility);
 });
