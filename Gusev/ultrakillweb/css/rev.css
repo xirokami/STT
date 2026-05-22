@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../content/7-3-some-wallpapers-screenshots-v0-j0dwdw5t9j8c1.jpg");
+    background-size: cover;      /* Изображение заполняет весь контейнер */
+    background-position: center; /* Центрирует картинку */
+    background-repeat: no-repeat; /* Убирает повторение фона */
+    position: relative;        /* Важно для корректного позиционирования дочерних элементов */
+    min-height: 100vh;     /* Высота контейнера — минимум на весь экран */
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    border: 10px solid red;
+    background-color: black;
+    color:white;
+}
+
+
+.text {
+    margin: 10px;
+    margin-left: 50px;
+}
+
+.text p {
+    font-size: larger;
+}
+
+.imag img {
+    width: 250px;
+    height: 125px;
+}
+
+.imag {
+    border: 5px solid green;
+    padding: 15px;
+    padding-bottom: 75px;
+}
+
+.hero-imag {
+  position: absolute;
+  filter: brightness(0.2) contrast(0.8) blur(2px);
+}
+
+.hero-imag img {
+  width: 100vw;
+  height: 100%;
+}
