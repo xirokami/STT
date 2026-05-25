@@ -9,18 +9,29 @@
   margin: 0;
   padding: 0;
   font-family: 'VCR';
-  font-size: 18px;
+  font-size: 22px;
   color: white;
   word-break: normal;
 }
 
 :root {
-  --backwiki: #202020;
+
+  --backwiki: #1C1C1C;
   --outline: #303030;
 }
 
 body {
-  background-color: black;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(55, 0, 0, 1));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation img {
+  height: 45px;
+  padding-bottom: 25px;
 }
 
 a {
@@ -28,13 +39,29 @@ a {
   font-size: 22px;
 }
 
+h1 {
+  font-size: 2rem;
+  padding: 0 0 8px 8px;
+}
+
+h2 {
+  font-size: 2rem;
+  padding: 15px 8px;
+  padding-top: 32px;
+}
+
+p {
+  padding-top: 1rem;
+}
+
 .main-container {
+  box-shadow: 5px 10px 15px black;
   border-radius: 16px;
+  height: 45vw;
   display: flex;
-  justify-content: space-between;
   margin: 5% 10%;
   padding: 15px;
-  background-color: var(--backwiki);
+  background: var(--backwiki);
 }
 
 .navigation {
@@ -54,15 +81,19 @@ a {
 }
 
 .content {
-  display: flex;
-  justify-content: space-between;
   padding: 15px;
-  height: 150px;
   width: 100%;
+  overflow-y: auto;
+  height: auto;
 }
 
 .img-content img {
   border-left: 2px solid var(--outline);
   padding: 15px;
   width: 200px;
+}
+
+.block {
+  margin-top: 100px;
+  display: flex;
 }

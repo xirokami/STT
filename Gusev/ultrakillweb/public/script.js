@@ -1,12 +1,12 @@
 (function() {
-  const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left');
+  const animatedElements = document.querySelectorAll('.scroll-animate-up, .scroll-animate-down, .scroll-animate-left, .scroll-animate-right');
 
   // Настройки наблюдателя
   // threshold: 0.2 означает, что анимация сработает, когда 20% элемента станут видны
   // rootMargin: "0px 0px -50px 0px" - можно отрегулировать, чтобы срабатывало чуть раньше/позже
   const observerOptions = {
     threshold: 1,        // Порог видимости: 0 = при любом касании, 0.5 = когда половина элемента в кадре, 1 = полностью
-    rootMargin: "0px 0px -30px 0px" // Небольшое смещение (снизу -30px) — чуть раньше добавление класса
+    rootMargin: "0px 0px 0px 0px" // Небольшое смещение (снизу -30px) — чуть раньше добавление класса
   };
 
   // Создаём наблюдатель

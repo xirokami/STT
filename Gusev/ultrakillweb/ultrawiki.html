@@ -5,12 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ultrawiki</title>
-  <link href="public/stylearbuz.css" rel="stylesheet">
+  <link href="public/stylewiki.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="main-container">
     <div class="navigation">
+      <a href="home.html">
+        <img src="public/content/768px-ULTRAWIKI.webp" alt="">
+      </a>
       <div class="item">
         Revolver
       </div>
@@ -19,22 +22,139 @@
       </div>
     </div>
     <div class="content">
-      <div class="text-content">
+      <div class="block" style="margin-top: 0;">
 
-        The <a style="color: aqua">Piercer Revolver</a> is the first gun found in ULTRAKILL and is the blue variant of
-        the <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig"
-          title="Revolver (disambiguation)">Revolver</a>,
-        obtained in <b>[ <a href="" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>. It
-        can deal moderate amounts of damage with its primary fire and can pierce through multiple weak targets or
-        inflict
-        concentrated damage on single targets with its secondary fire.
-      </div>
-      <div class="img-content">
-        <img src="./public/content/Piercer.webp" alt="">
-      </div>
+        <div class="text-content">
+          <h1 id="Piercer">Piercer Revolver</h1>
+          <p>
+            The <a style="color: aqua">Piercer Revolver</a> is the first gun found in ULTRAKILL and is the blue variant
+            of
+            the <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig"
+              title="Revolver (disambiguation)">Revolver</a>,
+            obtained in <b>[ <a href="" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>. It
+            can deal moderate amounts of damage with its primary fire and can pierce through multiple weak targets or
+            inflict
+            concentrated damage on single targets with its secondary fire.
+          </p>
+          <h2>Mechanics</h2>
 
+          <p>
+            The primary fire shoots a standard hitscan shot at a reasonably high rate of fire, dealing 1 damage. Holding
+            down primary fire will cause the gun to fire automatically. Hitscan shots have infinite distance and no
+            damage
+            falloff. All stock revolver attacks benefit from locational damage multipliers, dealing 1.5x damage on
+            limbshots and 2x damage on headshots.
+          </p>
+          <p>
+            Upon holding down, the alternate fire will begin charging. It takes approximately half a second for it to
+            fully charge, and after firing it takes around 2.5 seconds to recharge. Upon releasing, the Revolver will
+            fire
+            a powerful 3-hit hitscan, dealing 1 damage per hit. This means it can either pierce through and kill 3 weak
+            enemies or hit a single enemy for 3 damage, or 5,25/7,5 damage on a limbshot/headshot.
+          </p>
+          <p>
+            A charged shot can be ricocheted off of a <a>coin</a>, allowing it to gain
+            additional damage. However, instead of a straight +1 damage bonus for each coin, the charge shot will gain
+            +0.5 damage to each of its three hitscans for the first coin, and +0.25 damage for each coin after, for
+            +1.5/2.25/3 total base/limbshot/headshot damage for the first coin and +0.75/1.125/1.5 damage for subsequent
+            coins.
+          </p>
+          <p>
+            The Piercer Revolver's primary fire can still be used during the charged shot's cooldown.
+          </p>
+        </div>
+        <div class="img-content">
+          <img src="./public/content/Piercer.webp" alt="">
+        </div>
+      </div>
+      <div class="block">
+        <div class="text-content">
+          <h1>Sharpshooter Revolver</h1>
+          <p>The primary fire shoots a standard hitscan projectile at a reasonably high rate of fire, dealing 1 damage.
+            Holding down primary fire will cause the gun to fire automatically. All stock revolver attacks benefit from
+            locational damage multipliers, dealing 1.5x damage on limbshots and 2x damage on headshots.
+          </p>
+          <p>It fires at the same rate as the <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">Piercer</a> and
+            <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">Marksman</a> variants.
+          </p>
+          <h2>Mechanics</h2>
+          <p>Holding down alt-fire will spin the revolver at increasing speeds. After spinning for roughly 0.3 seconds,
+            releasing alt-fire will fire a piercing projectile with red aura that deals 1 damage with each hit (with
+            locational damage bonuses). The projectile pierces through infinite enemies, destroys projectiles, and
+            ricochets
+            off of surfaces. The number of ricochets starts at 1 and increases depending on how fast the revolver is
+            spinning. Maximum speed is reached after about 2.5 full seconds of spinning, which allows the beam to
+            ricochet
+            up to 4 times. (Note: Time values are estimates and need verification)
+          </p>
+          <p>The alt-fire has 3 charges total and each shot will always consume one charge regardless of how fast the
+            revolver was spun. Each charge regenerates at a rate of 6.40 seconds per charge. Primary fire still works
+            even
+            when the weapon has no charges left.
+          </p>
+          <p>If the projectile hits another, it will destroy the projectile and cause a red explosion. This explosion
+            deals
+            23 or 35 self damage (depending on distance from the explosion) if the player is too close to the blast. The
+            blast from taking self damage in this way blasts the player back similar to the <a
+              href="/wiki/Pump_Charge_Shotgun" title="Pump Charge Shotgun">Overcharged Pump Shotgun</a>, although to a
+            significantly lesser degree. The sole exception to this self-damage velocity is if the player is extremely
+            close
+            to the projectile when it is destroyed, which will send the player high into the air. Multiple projectiles
+            can
+            be destroyed with a single projectile, but only the first projectile destroyed will explode. Projectiles
+            that
+            can be destroyed vary, from normal Hell Energy projectiles to Cerberus orbs, shotgun pellets, and even V2's
+            charged Piercer shots. The enemies killed with the explosions will grant the +FRIENDLY FIRE style bonus.
+            +INTERRUPTION style bonuses performed with the Sharpshooter's alternate fire cause red explosions as well.
+            However, weapons thrown by enemies (such as the ones by <a href="/wiki/Swordsmachine"
+              title="Swordsmachine">Swordsmachine</a>) cannot be destroyed by the Sharpshooter's ricochet shots.
+          </p>
+          <p>Each time the shot ricochets off of a surface, it gains an extra hitscan that applies to all future targets
+            it
+            hits, up to a maximum of three hits on a single target per ricochet; for instance, an enemy hit by a beam
+            that
+            has ricocheted twice or more will be hit 3 times by the beam, equating to a total of 3 damage, or 6 damage
+            on
+            headshot). Ricoshots off of <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">coins</a> will
+            increase
+            the number of hits on a single target by the coin's power as though it had ricocheted off a surface, rather
+            than
+            scaling damage like with other hitscan attacks. As coins start with a power of 2, only a single coin is
+            needed
+            to max out each subsequent ricochet's single-target damage.
+          </p>
+          <p>Whenever the projectile ricochets, if the bounce angle ends up being close enough to a target then the beam
+            will auto-aim towards it, making ricochet trickshots easier to hit.
+          </p>
+          <p>The Slab Sharpshooter Revolver, like all other Slab variants, deals increased base damage with no
+            locational
+            bonuses, has a roughly halved fire rate, and takes longer to ready before firing. Unlike the normal
+            Sharpshooter
+            Revolver, the Slab Sharpshooter has only one charge indicated by a red crosshair symbol. The recovery time
+            for
+            this charge is roughly 8.5 seconds. The alternate fire spins up to full power almost instantly, deals more
+            damage, starting at 2 hits of 1.25 damage per target and increasing to a maximum of 4 hits with coin and
+            environment ricochets.
+          </p>
+          <p>Charging the alternate fire while <a href="/wiki/Dual_Wield" title="Dual Wield">dual wielding</a> this
+            revolver
+            variant causes it to propel V1 upward like a helicopter, and the effect scales exponentially with more Dual
+            Wield powerups. Four dual-wield powerups (5 revolvers) are needed to achieve true flight - otherwise, V1
+            will
+            just jump higher and fall slower. The angle of propulsion depends on the view angle: looking straight ahead
+            will
+            maximize vertical speed, while looking at downward and upward angles will convert a portion of lift into
+            forward
+            and backward momentum, respectively. A small amount of upward force is always applied regardless of view
+            angle,
+            which also scales with the number of Dual Wield powerups.
+          </p>
+        </div>
+        <div class="img-content">
+          <img src="./public/content/Piercer.webp" alt="">
+        </div>
+      </div>
     </div>
-  </div>
 </body>
 
 </html>
