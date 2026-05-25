@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="row">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row-w">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row-w">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row-w">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row-w">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row-w">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row-w">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row-w">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="row-w">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div id="box">
+    <div class="row">
+      <div class="govno">
+      </div>
+      <div class="govno">
+      </div>
+      <div class="govno">
+      </div>
+      <div class="govno">
+      </div>
+      <div class="govno">
+      </div>
+      <div class="govno">
+      </div>
+      <div class="govno">
+      </div>
+      <div class="govno">
+      </div>
+    </div>
+      <div class="row-w">
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+      </div>
+      <div class="row">
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+      </div>
+      <div class="row-w">
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+      </div>
+      <div class="row">
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+      </div>
+      <div class="row-w">
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+      </div>
+      <div class="row">
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+      </div>
+      <div class="row-w">
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+        <div class="govno">
+        </div>
+      </div>
+  </div>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-size: 70px;
+  }
+  body {
+    display: flex;
+  }
+  .govno {
+    text-align: center;
+  }
+  .row-w > * {
+    height: 120px;
+    width: 120px;
+    background-color: rgb(255, 246, 217);
+  }
+  .row-w > *:nth-child(even) {
+    background-color: rgb(78, 54, 18);
+  }
+  .row > * {
+    height: 120px;
+    width: 120px;
+    background-color: rgb(78, 54, 18);
+  }
+  .row > *:nth-child(even) {
+    background-color: rgb(255, 246, 217);
+  }
+  #box {
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    left: 480px;
+    display: flex;
+  }
+  .border{
+    outline: 5px solid black;
+  }
+</style>
+<script>
+  let i = 0;
+  const whitePieces = ['♖', '♘', '♗', '♕', '♔', '♗', '♘', '♖'];
+  const blackPieces = ['♜', '♞', '♝', '♛', '♚', '♝', '♞', '♜'];
+  const whitePawns = Array(8).fill('♙');
+  const blackPawns = Array(8).fill('♟');
+  const box = document.getElementById('box')
+  const rows = document.querySelectorAll('#box > div');
+  box.addEventListener('click', function() {
+    box.classList.add('border')
+    if (i == 0) {
+      Array.from(rows[0].children).forEach((cell, index) => {
+      cell.textContent = whitePieces[index];
+      });
+
+      Array.from(rows[1].children).forEach((cell, index) => {
+      cell.textContent = whitePawns[index];
+      });
+
+      Array.from(rows[6].children).forEach((cell, index) => {
+      cell.textContent = blackPawns[index];
+      });
+
+      Array.from(rows[7].children).forEach((cell, index) => {
+      cell.textContent = blackPieces[index];
+      });
+      i ++
+    } else if (i == 1) {
+        rows[1].children[5].textContent = ""
+        rows[3].children[5].textContent = "♙"
+        i ++
+    } else if (i == 2) {
+        rows[6].children[4].textContent = ""
+        rows[5].children[4].textContent = "♟"
+        i ++
+    } else if (i == 3) {
+        rows[1].children[6].textContent = ""
+        rows[3].children[6].textContent = "♙"
+        i ++
+    } else if (i == 4) {
+        rows[7].children[3].textContent = ""
+        rows[3].children[7].textContent = "♛"
+        i ++
+    } else if (i > 4) {
+        alert('Мат белым(не расисты)')
+    }
+  });
+</script>
+
+</body>
+</html>
