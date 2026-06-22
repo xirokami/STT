@@ -1,0 +1,361 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корочки.есть — Портал дополнительного образования</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <span class="logo">🎓</span>
+            <span class="brand-text">Корочки.есть</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#" data-page="home" class="nav-link active">Главная</a>
+            <a href="#" data-page="courses" class="nav-link">Курсы</a>
+            <a href="#" data-page="applications" class="nav-link" id="navApplications" style="display:none">Мои заявки</a>
+            <a href="#" data-page="admin" class="nav-link" id="navAdmin" style="display:none">Панель администратора</a>
+        </div>
+        <div class="nav-auth" id="navAuth">
+            <button class="btn btn-outline" data-page="login">Войти</button>
+            <button class="btn btn-primary" data-page="register">Регистрация</button>
+        </div>
+        <div class="nav-user" id="navUser" style="display:none">
+            <span class="user-name" id="userName"></span>
+            <button class="btn btn-outline" id="logoutBtn">Выйти</button>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </nav>
+
+    <!-- Уведомления -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ГЛАВНАЯ СТРАНИЦА -->
+    <section class="page" id="page-home">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Дополнительное профессиональное образование</h1>
+                <p>Запишитесь на курсы и получите востребованные навыки для карьерного роста</p>
+                <button class="btn btn-primary btn-lg" data-page="register">Начать обучение</button>
+            </div>
+            <!-- Слайдер -->
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="slide active">
+                        <div class="slide-content">
+                            <div class="slide-icon">💻</div>
+                            <h3>Программирование</h3>
+                            <p>Освойте современные языки программирования</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-icon">🎨</div>
+                            <h3>Веб-дизайн</h3>
+                            <p>Создавайте красивые и функциональные интерфейсы</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-icon">🗄️</div>
+                            <h3>Базы данных</h3>
+                            <p>Научитесь проектировать и управлять БД</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-content">
+                            <div class="slide-icon">📜</div>
+                            <h3>Сертификаты</h3>
+                            <p>Получите официальный документ об обучении</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-btn slider-prev" id="sliderPrev">‹</button>
+                <button class="slider-btn slider-next" id="sliderNext">›</button>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Актуальные курсы</h3>
+                <p>Программы, разработанные с учетом требований рынка труда</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🏫</div>
+                <h3>Опытные преподаватели</h3>
+                <p>Обучение ведут практикующие специалисты</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3>Трудоустройство</h3>
+                <p>Помощь в подготовке резюме и поиске работы</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА КУРСОВ -->
+    <section class="page hidden" id="page-courses">
+        <div class="container">
+            <h2 class="page-title">Доступные курсы</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                        <span class="course-badge">Популярный</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Основы алгоритмизации и программирования</h3>
+                        <p>Изучите базовые концепции программирования, алгоритмы и структуры данных</p>
+                        <div class="course-meta">
+                            <span>⏱️ 72 часа</span>
+                            <span>📅 3 месяца</span>
+                        </div>
+                        <button class="btn btn-primary" data-page="apply">Подать заявку</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)">
+                        <span class="course-badge">Новый</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Основы веб-дизайна</h3>
+                        <p>Освойте принципы дизайна, типографику, цветоведение и работу в Figma</p>
+                        <div class="course-meta">
+                            <span>⏱️ 60 часов</span>
+                            <span>📅 2.5 месяца</span>
+                        </div>
+                        <button class="btn btn-primary" data-page="apply">Подать заявку</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)">
+                    </div>
+                    <div class="course-body">
+                        <h3>Основы проектирования баз данных</h3>
+                        <p>Научитесь проектировать реляционные базы данных и писать SQL-запросы</p>
+                        <div class="course-meta">
+                            <span>⏱️ 48 часов</span>
+                            <span>📅 2 месяца</span>
+                        </div>
+                        <button class="btn btn-primary" data-page="apply">Подать заявку</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА РЕГИСТРАЦИИ -->
+    <section class="page hidden" id="page-register">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Регистрация</h2>
+                <p class="auth-subtitle">Создайте аккаунт для доступа к курсам</p>
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="regLogin">Логин *</label>
+                        <input type="text" id="regLogin" placeholder="минимум 6 символов, латиница и цифры">
+                        <span class="error-msg" id="error-regLogin"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Пароль *</label>
+                        <input type="password" id="regPassword" placeholder="минимум 8 символов">
+                        <span class="error-msg" id="error-regPassword"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="regFullName">ФИО *</label>
+                        <input type="text" id="regFullName" placeholder="Иванов Иван Иванович">
+                        <span class="error-msg" id="error-regFullName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPhone">Телефон *</label>
+                        <input type="text" id="regPhone" placeholder="8(XXX)XXX-XX-XX">
+                        <span class="error-msg" id="error-regPhone"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email *</label>
+                        <input type="email" id="regEmail" placeholder="example@mail.ru">
+                        <span class="error-msg" id="error-regEmail"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+                </form>
+                <p class="auth-footer">Уже есть аккаунт? <a href="#" data-page="login">Войти</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА АВТОРИЗАЦИИ -->
+    <section class="page hidden" id="page-login">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Вход в систему</h2>
+                <p class="auth-subtitle">Введите свои данные для входа</p>
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="loginLogin">Логин</label>
+                        <input type="text" id="loginLogin" placeholder="Введите логин">
+                        <span class="error-msg" id="error-loginLogin"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="Введите пароль">
+                        <span class="error-msg" id="error-loginPassword"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                </form>
+                <p class="auth-footer">Ещё не зарегистрированы? <a href="#" data-page="register">Регистрация</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА ЗАЯВОК -->
+    <section class="page hidden" id="page-applications">
+        <div class="container">
+            <h2 class="page-title">Мои заявки</h2>
+            <div class="actions-bar">
+                <button class="btn btn-primary" data-page="apply">+ Новая заявка</button>
+            </div>
+            <div class="applications-list" id="applicationsList">
+                <div class="empty-state">
+                    <div class="empty-icon">📋</div>
+                    <p>У вас пока нет заявок</p>
+                    <button class="btn btn-primary" data-page="apply">Подать заявку</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА ФОРМИРОВАНИЯ ЗАЯВКИ -->
+    <section class="page hidden" id="page-apply">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Подача заявки</h2>
+                <p class="auth-subtitle">Заполните форму для записи на курс</p>
+                <form id="applyForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="applyCourse">Курс *</label>
+                        <select id="applyCourse">
+                            <option value="">Выберите курс</option>
+                        </select>
+                        <span class="error-msg" id="error-applyCourse"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="applyDate">Желаемая дата начала *</label>
+                        <input type="text" id="applyDate" placeholder="ДД.ММ.ГГГГ">
+                        <span class="error-msg" id="error-applyDate"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Способ оплаты *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="Наличными">
+                                <span class="radio-custom"></span>
+                                Наличными
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="Перевод по номеру телефона">
+                                <span class="radio-custom"></span>
+                                Перевод по номеру телефона
+                            </label>
+                        </div>
+                        <span class="error-msg" id="error-applyPayment"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПАНЕЛЬ АДМИНИСТРАТОРА -->
+    <section class="page hidden" id="page-admin">
+        <div class="container">
+            <h2 class="page-title">Панель администратора</h2>
+            
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="statTotal">0</div>
+                    <div class="stat-label">Всего заявок</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="statNew">0</div>
+                    <div class="stat-label">Новые</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="statActive">0</div>
+                    <div class="stat-label">В обучении</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="statCompleted">0</div>
+                    <div class="stat-label">Завершено</div>
+                </div>
+            </div>
+
+            <div class="admin-filters">
+                <input type="text" id="adminSearch" placeholder="🔍 Поиск по заявкам...">
+                <select id="adminFilterStatus">
+                    <option value="">Все статусы</option>
+                    <option value="Новая">Новая</option>
+                    <option value="Идет обучение">Идет обучение</option>
+                    <option value="Обучение завершено">Обучение завершено</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table" id="adminTable">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Пользователь</th>
+                            <th>Курс</th>
+                            <th>Дата начала</th>
+                            <th>Оплата</th>
+                            <th>Статус</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination" id="pagination"></div>
+        </div>
+    </section>
+
+    <!-- МОДАЛЬНОЕ ОКНО ОТЗЫВА -->
+    <div class="modal hidden" id="reviewModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Оставить отзыв</h3>
+                <button class="modal-close" id="reviewModalClose">&times;</button>
+            </div>
+            <form id="reviewForm">
+                <input type="hidden" id="reviewAppId">
+                <div class="form-group">
+                    <label>Оценка</label>
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <span class="error-msg" id="error-reviewRating"></span>
+                </div>
+                <div class="form-group">
+                    <label for="reviewText">Ваш отзыв</label>
+                    <textarea id="reviewText" rows="4" placeholder="Расскажите о вашем опыте обучения..."></textarea>
+                    <span class="error-msg" id="error-reviewText"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Отправить отзыв</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
