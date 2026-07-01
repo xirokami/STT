@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/fzaya.css" rel="stylesheet">
+    <title>Формирование заявки</title>
+</head>
+<body>
+    <div class="request-card">
+        <div class="card-header">
+            <h1>📝 Формирование заявки</h1>
+            <p>Заполните данные для подачи заявки на обучение</p>
+        </div>
+        <div class="card-body">
+            <form id="requestForm" onsubmit="return showSuccess(event)">
+                <div class="form-group">
+                    <label for="courseName">
+                        Наименование курса
+                        <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="courseName" 
+                        name="courseName" 
+                        placeholder="Введите название курса"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="startDate">
+                        Желаемая дата начала обучения
+                        <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="date" 
+                        id="startDate" 
+                        name="startDate"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Способ оплаты
+                        <span class="required">*</span>
+                    </label>
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="cash" name="payment" value="cash" required>
+                            <label for="cash">
+                                <span class="payment-icon">💵</span>
+                                <span>Наличными</span>
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="transfer" name="payment" value="transfer" required>
+                            <label for="transfer">
+                                <span class="payment-icon">📱</span>
+                                <span>Перевод по номеру телефона</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <button type="submit">Отправить заявку</button>
+                <button type="submit" onclick="location.href='/zaya'">Посмотреть заявки</button>
+
+                <div class="success-banner" id="successBanner" style="display: none;">
+                    ✅ Заявка успешно отправлена на рассмотрение администратору!
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="public/fzaya.js"></script>
+</body>
+</html>

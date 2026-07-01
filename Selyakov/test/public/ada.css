@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(145deg, #e9f0fc 0%, #d9e3f0 100%);
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.admin-wrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Шапка */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.admin-header h1 {
+  font-weight: 600;
+  font-size: 1.85rem;
+  color: #1a2c3e;
+  letter-spacing: -0.2px;
+}
+
+.admin-header .subtitle {
+  color: #5f7f9c;
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+/* Кнопка назад */
+.btn-back {
+  background: #1a2c3e;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.btn-back:hover {
+  background: #2c4a66;
+  transform: translateY(-2px);
+}
+
+.btn-back:active {
+  transform: translateY(1px);
+}
+
+/* Карточка */
+.card {
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.card-header {
+  background: #1a2c3e;
+  padding: 1.5rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h2 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: -0.2px;
+}
+
+.badge-count {
+  background: rgba(255,255,255,0.15);
+  padding: 0.35rem 0.9rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 0;
+}
+
+/* Таблица */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background: #f1f5f9;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #2c3e4e;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tbody td {
+  padding: 1.2rem 1.5rem;
+  font-size: 0.9rem;
+  color: #2c3e4e;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+tbody tr {
+  transition: background 0.15s;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Статусы */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.4rem 0.9rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.status-new {
+  background: #fff3cd;
+  color: #8a6d1f;
+}
+
+.status-new::before {
+  content: "●";
+  font-size: 0.6rem;
+}
+
+.status-learning {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.status-learning::before {
+  content: "●";
+  font-size: 0.6rem;
+}
+
+.status-done {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-done::before {
+  content: "✓";
+  font-size: 0.7rem;
+}
+
+/* Селект статуса */
+select {
+  padding: 0.5rem 0.8rem;
+  font-size: 0.85rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.8rem;
+  font-family: inherit;
+  background: #fefefe;
+  outline: none;
+  cursor: pointer;
+  color: #2c3e4e;
+  min-width: 170px;
+  transition: all 0.2s;
+}
+
+select:focus {
+  border-color: #2c7da0;
+  box-shadow: 0 0 0 3px rgba(44,125,160,0.2);
+}
+
+/* Пустое состояние */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #5f7f9c;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.empty-state h3 {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #2c3e4e;
+}
+
+.btn {
+    background: #1f5e3a;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 0.8rem;
+    letter-spacing: 0.3px;
+}
+
+.btn:hover {
+    background: #154e2f;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}

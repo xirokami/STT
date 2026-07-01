@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href= "public/zaya.css" rel= "stylesheet">
+    <title>Мои заявки</title>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>📋 Мои заявки</h1>
+            <p>Просмотр заявок и отзывы об образовательных услугах</p>
+            <div class="header-buttons">
+                <button class="btn btn-primary" onclick="location.href='/fzaya'">Формирование заявок</button>
+                <button class="btn btn-secondary" onclick="location.href='/ada'">Админ</button>
+            </div>
+        </div>
+
+        <!-- Заявка 1: с отзывом -->
+        <div class="app-card">
+            <div class="card-header">
+                <h2>Цифровая педагогика</h2>
+                <span class="status status-approved">Одобрено</span>
+            </div>
+            <div class="card-body">
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">Дата подачи</span>
+                        <span class="info-value">15.03.2026</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Учреждение</span>
+                        <span class="info-value">ИПКиППО</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Форма</span>
+                        <span class="info-value">Очно-заочная</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Стоимость</span>
+                        <span class="info-value">15 000 ₽</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="existing-review">
+                    <div class="review-header">
+                        <span class="review-rating">★★★★★</span>
+                        <span class="review-date">20.03.2026</span>
+                    </div>
+                    <div class="review-text">
+                        Отличная программа! Преподаватели высококвалифицированные, материал актуальный.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Заявка 2: без отзыва -->
+        <div class="app-card">
+            <div class="card-header">
+                <h2>Управление образовательной организацией</h2>
+                <span class="status status-approved">Одобрено</span>
+            </div>
+            <div class="card-body">
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">Дата подачи</span>
+                        <span class="info-value">10.06.2026</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Учреждение</span>
+                        <span class="info-value">Академия Минпросвещения</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Форма</span>
+                        <span class="info-value">Дистанционная</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Стоимость</span>
+                        <span class="info-value">25 000 ₽</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="review-section">
+                    <h3>Оставить отзыв</h3>
+                    <div class="stars" onclick="setRating(event)">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <textarea placeholder="Расскажите о вашем опыте обучения..."></textarea>
+                    <button class="btn">Отправить отзыв</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Заявка 3: в обработке -->
+        <div class="app-card">
+            <div class="card-header">
+                <h2>Современные технологии в начальном образовании</h2>
+                <span class="status status-pending">В обработке</span>
+            </div>
+            <div class="card-body">
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">Дата подачи</span>
+                        <span class="info-value">18.06.2026</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Учреждение</span>
+                        <span class="info-value">РАНХиГС</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Форма</span>
+                        <span class="info-value">Очная</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Стоимость</span>
+                        <span class="info-value">8 500 ₽</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="public/zaya.js"></script>
+</body>
+</html>

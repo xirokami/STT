@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель администратора</title>
+  <link href= "public/ada.css" rel= "stylesheet">
+</head>
+<body>
+  <div class="admin-wrapper">
+    <!-- Шапка -->
+    <div class="admin-header">
+      <div>
+        <h1>Панель администратора</h1>
+        <div class="subtitle">Управление заявками пользователей</div>
+      </div>
+      <button class="btn btn-primary" onclick="location.href='/zaya'">← Вернуться</button>
+    </div>
+
+    <!-- Карточка -->
+    <div class="card">
+      <div class="card-header">
+        <h2>Список заявок</h2>
+        <span class="badge-count" id="countBadge">0 заявок</span>
+      </div>
+      <div class="card-body">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Имя</th>
+              <th>Фамилия</th>
+              <th>Email</th>
+              <th>Дата подачи</th>
+              <th>Статус</th>
+              <th>Действие</th>
+            </tr>
+          </thead>
+          <tbody id="requestsTable">
+            <!-- Заявки подгружаются JS -->
+          </tbody>
+        </table>
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <div class="empty-icon">📋</div>
+          <h3>Заявок пока нет</h3>
+          <p>Новые заявки появятся здесь автоматически</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="public/ada.js"></script>
+</body>
+</html>

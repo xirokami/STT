@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #e9f0fc 0%, #d9e3f0 100%);
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.request-card {
+    max-width: 620px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 2rem;
+    box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.card-header {
+    background: #1a2c3e;
+    padding: 1.8rem 2rem;
+    color: white;
+}
+
+.card-header h1 {
+    font-weight: 600;
+    font-size: 1.85rem;
+    letter-spacing: -0.2px;
+    margin-bottom: 0.3rem;
+}
+
+.card-header p {
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+.card-body {
+    padding: 2rem 2rem 2.2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #2c3e4e;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+label span.required {
+    color: #e03a3a;
+    font-size: 1rem;
+    margin-left: 4px;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    font-family: inherit;
+    background: #fefefe;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: #2c7da0;
+    box-shadow: 0 0 0 3px rgba(44,125,160,0.2);
+    background: #fff;
+}
+
+.payment-options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.payment-option {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+}
+
+.payment-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.payment-option label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 1.2rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #fefefe;
+    text-transform: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1a2c3e;
+}
+
+.payment-option input[type="radio"]:checked + label {
+    border-color: #2c7da0;
+    background: #f0f7ff;
+    box-shadow: 0 0 0 3px rgba(44,125,160,0.2);
+}
+
+.payment-option label:hover {
+    border-color: #2c7da0;
+}
+
+.payment-icon {
+    font-size: 1.5rem;
+}
+
+button[type="submit"] {
+    background: #1f5e3a;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+    margin-top: 0.8rem;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+button[type="submit"]:hover {
+    background: #154e2f;
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+.success-banner {
+    margin-top: 1.4rem;
+    background: #dff0e4;
+    padding: 0.9rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #1a2c3e;
+    display: none;
+}
+
+.success-banner.visible {
+    display: block;
+}
+
+hr {
+    margin: 1rem 0;
+    border: none;
+    height: 1px;
+    background: #e9edf2;
+}
+
+.hint {
+    font-size: 0.7rem;
+    color: #5f7f9c;
+    margin-top: 5px;
+    margin-left: 6px;
+}
