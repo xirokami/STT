@@ -1,0 +1,75 @@
+:root{
+  --background: rgb(30,40,40);
+  --background-grad: linear-gradient( rgb(30,40,40), rgb(40, 30, 30));
+  --main: rgb(35,50,50);
+  --grad: linear-gradient( rgb(35,50,50), rgb(40, 60, 60));
+  --font-color: rgb(170,220,170)
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: var(--font-color);
+}
+
+body {
+  background-color: var(--main);
+  height:100vh;
+}
+header {
+  height: 50px;
+}
+.main {
+  display:flex;
+  height:100%;
+}
+.content {
+  height:100%;
+  width:100%;
+  background: var(--background-grad);
+  border-radius:15px;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.card {
+  background: var(--grad);
+  height: 35vh;
+  max-block-size: 350px;
+  min-block-size: 250px;
+  border-radius: 15px;
+}
+img{
+  border-radius: 15px;
+  margin: 5%;
+  width: 90%;
+  height: 70%;
+}
+svg{
+  stroke: var(--background);
+}
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 7%;
+  margin-top: 0;
+}
+button {
+  border: 0;
+  border-radius: 1vh;
+  background-color: var(--font-color);
+  width: 20%;
+  height: 15%;
+  aspect-ratio: 1 / 1;
+}
+.price{
+  font-size: 2rem;
+}
+.description-container {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
