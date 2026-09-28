@@ -1,8 +1,8 @@
 :root{
   --background: rgb(30,40,40);
-  --background-grad: linear-gradient( rgb(30,40,40), rgb(40, 30, 30)); 
+  --background-grad: linear-gradient( rgb(30,40,40), rgb(40, 30, 30));
   --main: rgb(35,50,50);
-  --grad: linear-gradient( rgb(35,50,50), rgb(40, 60, 60)); 
+  --grad: linear-gradient( rgb(35,50,50), rgb(40, 60, 60));
   --font-color: rgb(170,220,170)
 }
 
@@ -61,6 +61,7 @@ img{
 }
 svg{
   stroke: var(--background);
+  cursor: pointer;
 }
 .main-content {
   display: flex;
@@ -72,8 +73,9 @@ button {
   border: 0;
   border-radius: 15px;
   background-color: var(--font-color);
-  width: 20%;
-  aspect-ratio: 1 / 1;
+  width: 55px;
+  height: 55px;
+  margin-top: 5px;
 }
 .price{
   font-size: 2rem;
@@ -82,4 +84,26 @@ button {
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+}
+h1 {
+  margin-top: -10px;
+  padding: 5px;
+}
+.inputs {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  background-color: var(--main);
+  border-radius: 7px;
+  border: var(--font-color) solid 2px;
+  padding-left: 5px;
+  margin-left: 10px;
+  outline: none;
+}
+
+.tema {
+  display: flex;
+  justify-content: end;
 }

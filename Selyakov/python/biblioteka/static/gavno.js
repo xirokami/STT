@@ -1,5 +1,7 @@
 const container = document.querySelector('.content')
-const but = document.querySelector('.roblox')
+const but = document.querySelector('.check')
+const but1 = document.querySelector('.delete')
+
 but.addEventListener('click', function() {
   fetch('/get', {
     method: 'GET',
@@ -10,8 +12,8 @@ but.addEventListener('click', function() {
   .then(response => response.json())
   .then(data => {
     if (container.innerHTML.trim() !== '') {
-      container.innerHTML = '';
     } else {
+      container.innerHTML = '';
       for (const [id, info] of Object.entries(data)) {
         container.insertAdjacentHTML('beforeend', `
           <div class="card">
@@ -25,7 +27,7 @@ but.addEventListener('click', function() {
                   ${info.price}
                 </div>
               </div>
-              <button type=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart"><path d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18"/><path d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25"/><circle cx="18" cy="20" r="2"/><circle cx="8" cy="20" r="2"/></svg></button>
+              <button onclick="editCard(${id})" type=""><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-pen preview-icon"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></svg></button>
             </div>
           </div>
         `)
@@ -33,3 +35,21 @@ but.addEventListener('click', function() {
     }
   })
 })
+but1.addEventListener('click', function() {
+  container.innerHTML = '';
+})
+function editCard(id) {
+  let data = {
+    id: id,
+    img:"i.webp",
+    title:'solo',
+    price:'152$',
+  }
+  fetch(`/edit/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+}
