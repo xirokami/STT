@@ -16,7 +16,9 @@
     transform: translateY(0);
   }
 }
-
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --back-color: black;
   --outline: #303030;

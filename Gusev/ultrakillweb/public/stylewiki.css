@@ -33,7 +33,18 @@ body {
   height: 45px;
   padding-bottom: 25px;
 }
-
+ol {
+  list-style-type: none;
+}
+.blue {
+  color: rgb(64,232,255);
+}
+.green{
+  color: rgb(69,255,69);
+}
+.red{
+  color: rgb(255,61,61);
+}
 a {
   color: red;
   font-size: 22px;
