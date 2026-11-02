@@ -108,3 +108,38 @@ p {
   margin-top: 100px;
   display: flex;
 }
+
+.sub-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sub-item a:hover {
+  text-decoration: underline;
+}
+
+.mechanics summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.mechanics summary::-webkit-details-marker {
+  display: none;
+}
+
+.mechanics summary::after {
+  content: "▶";
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+.mechanics[open] summary::after {
+  transform: rotate(90deg);
+}
+
+a {
+  text-decoration: none;
+}
