@@ -14,6 +14,10 @@ products = {
 def index():
   return render_template("index.html")
 
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
 @app.route("/get")
 def get():
   return jsonify(products)

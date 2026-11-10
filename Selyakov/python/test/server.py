@@ -3,51 +3,128 @@ from flask_cors import CORS
 from datetime import datetime
 import re
 import uuid
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
+
+
+import pymysql
+from pymysql.cursors import DictCursor
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 app.secret_key = "korochki-secret-key-2026"
 CORS(app, supports_credentials=True)
 
-# === БАЗА ДАННЫХ В ПАМЯТИ ===
-users_db = {}
-applications_db = {}
-reviews_db = {}
-
-# Администратор по умолчанию
-users_db["Admin"] = {
-    "id": "admin-001",
-    "login": "Admin",
-    "password": "KorokNET",
-    "full_name": "Администратор",
-    "phone": "8(999)999-99-99",
-    "email": "admin@korochki.ru",
-    "role": "admin",
+# === ПОДКЛЮЧЕНИЕ К MARIADB ===
+DB_CONFIG = {
+    "host": os.environ.get("DB_HOST", "localhost"),
+    "port": int(os.environ.get("DB_PORT", "3306")),
+    "user": os.environ.get("DB_USER", "root"),
+    "password": os.environ.get("DB_PASSWORD", ""),
+    "database": os.environ.get("DB_NAME", "korochki"),
+    "charset": "utf8mb4",
+    "autocommit": True,
 }
 
-# Тестовый пользователь
-users_db["student1"] = {
-    "id": "user-001",
-    "login": "student1",
-    "password": "password123",
-    "full_name": "Иванов Иван Иванович",
-    "phone": "8(900)123-45-67",
-    "email": "ivanov@mail.ru",
-    "role": "user",
-}
 
-# Тестовая заявка
-applications_db["app-001"] = {
-    "id": "app-001",
-    "user_id": "user-001",
-    "user_login": "student1",
-    "user_name": "Иванов Иван Иванович",
-    "course": "Основы алгоритмизации и программирования",
-    "start_date": "15.09.2026",
-    "payment_method": "Перевод по номеру телефона",
-    "status": "Обучение завершено",
-    "created_at": "2026-06-01T10:00:00",
-    "admin_comment": "",
-}
+def get_db():
+    return pymysql.connect(cursorclass=DictCursor, **DB_CONFIG)
+
+
+def init_db():
+    """Создание таблиц и начальных данных."""
+    conn = pymysql.connect(
+        host=DB_CONFIG["host"],
+        port=DB_CONFIG["port"],
+        user=DB_CONFIG["user"],
+        password=DB_CONFIG["password"],
+        charset="utf8mb4",
+        autocommit=True,
+    )
+    with conn.cursor() as cur:
+        cur.execute(f"CREATE DATABASE IF NOT EXISTS `{DB_CONFIG['database']}` CHARACTER SET utf8mb4")
+        cur.execute(f"USE `{DB_CONFIG['database']}`")
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS users (
+                id VARCHAR(50) PRIMARY KEY,
+                login VARCHAR(50) UNIQUE NOT NULL,
+                password VARCHAR(255) NOT NULL,
+                full_name VARCHAR(255) NOT NULL,
+                phone VARCHAR(50) NOT NULL,
+                email VARCHAR(255) NOT NULL,
+                role ENUM('user', 'admin') NOT NULL DEFAULT 'user'
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+        """)
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS applications (
+                id VARCHAR(50) PRIMARY KEY,
+                user_id VARCHAR(50) NOT NULL,
+                user_login VARCHAR(50) NOT NULL,
+                user_name VARCHAR(255) NOT NULL,
+                course VARCHAR(255) NOT NULL,
+                start_date VARCHAR(10) NOT NULL,
+                payment_method VARCHAR(100) NOT NULL,
+                status ENUM('Новая', 'Идет обучение', 'Обучение завершено') NOT NULL DEFAULT 'Новая',
+                created_at DATETIME NOT NULL,
+                admin_comment TEXT,
+                INDEX idx_user (user_id),
+                FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+        """)
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS reviews (
+                id VARCHAR(50) PRIMARY KEY,
+                application_id VARCHAR(50) NOT NULL,
+                user_id VARCHAR(50) NOT NULL,
+                user_name VARCHAR(255) NOT NULL,
+                course VARCHAR(255) NOT NULL,
+                rating TINYINT NOT NULL,
+                text TEXT NOT NULL,
+                created_at DATETIME NOT NULL,
+                INDEX idx_app (application_id),
+                INDEX idx_user (user_id),
+                FOREIGN KEY (application_id) REFERENCES applications(id) ON DELETE CASCADE,
+                FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+        """)
+
+        # Администратор по умолчанию
+        cur.execute("SELECT id FROM users WHERE login = 'Admin'")
+        if not cur.fetchone():
+            cur.execute(
+                "INSERT INTO users (id, login, password, full_name, phone, email, role) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                ("admin-001", "Admin", "KorokNET", "Администратор",
+                 "8(999)999-99-99", "admin@korochki.ru", "admin"),
+            )
+
+        # Тестовый пользователь
+        cur.execute("SELECT id FROM users WHERE login = 'student1'")
+        if not cur.fetchone():
+            cur.execute(
+                "INSERT INTO users (id, login, password, full_name, phone, email, role) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                ("user-001", "student1", "password123", "Иванов Иван Иванович",
+                 "8(900)123-45-67", "ivanov@mail.ru", "user"),
+            )
+
+        # Тестовая заявка
+        cur.execute("SELECT id FROM applications WHERE id = 'app-001'")
+        if not cur.fetchone():
+            cur.execute(
+                "INSERT INTO applications (id, user_id, user_login, user_name, course, "
+                "start_date, payment_method, status, created_at, admin_comment) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                ("app-001", "user-001", "student1", "Иванов Иван Иванович",
+                 "Основы алгоритмизации и программирования", "15.09.2026",
+                 "Перевод по номеру телефона", "Обучение завершено",
+                 datetime(2026, 6, 1, 10, 0, 0), ""),
+            )
+    conn.close()
+
+
+init_db()
 
 COURSES = [
     "Основы алгоритмизации и программирования",
@@ -150,24 +227,26 @@ def register():
     if errors:
         return jsonify({"success": False, "errors": errors}), 400
 
-    if login in users_db:
-        return jsonify(
-            {
-                "success": False,
-                "errors": {"login": "Пользователь с таким логином уже существует"},
-            }
-        ), 400
+    db = get_db()
+    try:
+        with db.cursor() as cur:
+            cur.execute("SELECT id FROM users WHERE login = %s", (login,))
+            if cur.fetchone():
+                return jsonify(
+                    {
+                        "success": False,
+                        "errors": {"login": "Пользователь с таким логином уже существует"},
+                    }
+                ), 400
 
-    user_id = f"user-{uuid.uuid4().hex[:8]}"
-    users_db[login] = {
-        "id": user_id,
-        "login": login,
-        "password": password,
-        "full_name": full_name,
-        "phone": phone,
-        "email": email,
-        "role": "user",
-    }
+            user_id = f"user-{uuid.uuid4().hex[:8]}"
+            cur.execute(
+                "INSERT INTO users (id, login, password, full_name, phone, email, role) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                (user_id, login, password, full_name, phone, email, "user"),
+            )
+    finally:
+        db.close()
 
     return jsonify({"success": True, "message": "Регистрация успешна"})
 
@@ -182,7 +261,17 @@ def login():
     if not login or not password:
         return jsonify({"success": False, "error": "Введите логин и пароль"}), 400
 
-    user = users_db.get(login)
+    db = get_db()
+    try:
+        with db.cursor() as cur:
+            cur.execute(
+                "SELECT id, login, password, full_name, role FROM users WHERE login = %s",
+                (login,),
+            )
+            user = cur.fetchone()
+    finally:
+        db.close()
+
     if not user or user["password"] != password:
         return jsonify({"success": False, "error": "Неверный логин или пароль"}), 401
 
@@ -207,7 +296,17 @@ def login():
 @app.route("/api/session")
 def check_session():
     if "user_id" in session:
-        user = users_db.get(session["login"])
+        db = get_db()
+        try:
+            with db.cursor() as cur:
+                cur.execute(
+                    "SELECT id, login, full_name, role FROM users WHERE login = %s",
+                    (session["login"],),
+                )
+                user = cur.fetchone()
+        finally:
+            db.close()
+
         if user:
             return jsonify(
                 {
@@ -260,22 +359,41 @@ def create_application():
         return jsonify({"success": False, "errors": errors}), 400
 
     app_id = f"app-{uuid.uuid4().hex[:8]}"
-    user = users_db[session["login"]]
+    created_at = datetime.now()
 
-    applications_db[app_id] = {
-        "id": app_id,
-        "user_id": user["id"],
-        "user_login": user["login"],
-        "user_name": user["full_name"],
-        "course": course,
-        "start_date": start_date,
-        "payment_method": payment_method,
-        "status": "Новая",
-        "created_at": datetime.now().isoformat(),
-        "admin_comment": "",
-    }
+    db = get_db()
+    try:
+        with db.cursor() as cur:
+            cur.execute(
+                "SELECT id, login, full_name FROM users WHERE login = %s",
+                (session["login"],),
+            )
+            user = cur.fetchone()
 
-    return jsonify({"success": True, "application": applications_db[app_id]})
+            cur.execute(
+                "INSERT INTO applications (id, user_id, user_login, user_name, course, "
+                "start_date, payment_method, status, created_at, admin_comment) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                (app_id, user["id"], user["login"], user["full_name"], course,
+                 start_date, payment_method, "Новая", created_at, ""),
+            )
+
+            application = {
+                "id": app_id,
+                "user_id": user["id"],
+                "user_login": user["login"],
+                "user_name": user["full_name"],
+                "course": course,
+                "start_date": start_date,
+                "payment_method": payment_method,
+                "status": "Новая",
+                "created_at": created_at.isoformat(),
+                "admin_comment": "",
+            }
+    finally:
+        db.close()
+
+    return jsonify({"success": True, "application": application})
 
 
 # Получение заявок
@@ -284,14 +402,28 @@ def get_applications():
     if "user_id" not in session:
         return jsonify({"success": False, "error": "Требуется авторизация"}), 401
 
-    if session.get("role") == "admin":
-        apps = list(applications_db.values())
-    else:
-        apps = [
-            a for a in applications_db.values() if a["user_id"] == session["user_id"]
-        ]
+    db = get_db()
+    try:
+        with db.cursor() as cur:
+            if session.get("role") == "admin":
+                cur.execute(
+                    "SELECT id, user_id, user_login, user_name, course, start_date, "
+                    "payment_method, status, created_at, admin_comment "
+                    "FROM applications ORDER BY created_at DESC"
+                )
+            else:
+                cur.execute(
+                    "SELECT id, user_id, user_login, user_name, course, start_date, "
+                    "payment_method, status, created_at, admin_comment "
+                    "FROM applications WHERE user_id = %s ORDER BY created_at DESC",
+                    (session["user_id"],),
+                )
+            apps = cur.fetchall()
+    finally:
+        db.close()
 
-    apps = sorted(apps, key=lambda x: x["created_at"], reverse=True)
+    for a in apps:
+        a["created_at"] = a["created_at"].isoformat()
 
     return jsonify({"success": True, "applications": apps})
 
@@ -308,11 +440,33 @@ def update_status(app_id):
     if new_status not in ["Новая", "Идет обучение", "Обучение завершено"]:
         return jsonify({"success": False, "error": "Некорректный статус"}), 400
 
-    if app_id not in applications_db:
-        return jsonify({"success": False, "error": "Заявка не найдена"}), 404
+    db = get_db()
+    try:
+        with db.cursor() as cur:
+            cur.execute(
+                "SELECT id FROM applications WHERE id = %s", (app_id,)
+            )
+            if not cur.fetchone():
+                return jsonify({"success": False, "error": "Заявка не найдена"}), 404
 
-    applications_db[app_id]["status"] = new_status
-    return jsonify({"success": True, "application": applications_db[app_id]})
+            cur.execute(
+                "UPDATE applications SET status = %s WHERE id = %s",
+                (new_status, app_id),
+            )
+
+            cur.execute(
+                "SELECT id, user_id, user_login, user_name, course, start_date, "
+                "payment_method, status, created_at, admin_comment "
+                "FROM applications WHERE id = %s",
+                (app_id,),
+            )
+            application = cur.fetchone()
+    finally:
+        db.close()
+
+    application["created_at"] = application["created_at"].isoformat()
+
+    return jsonify({"success": True, "application": application})
 
 
 # Добавление отзыва
@@ -326,42 +480,69 @@ def add_review():
     rating = data.get("rating")
     text = data.get("text", "").strip()
 
-    if not app_id or app_id not in applications_db:
-        return jsonify({"success": False, "error": "Заявка не найдена"}), 404
+    db = get_db()
+    try:
+        with db.cursor() as cur:
+            cur.execute(
+                "SELECT id, user_id, course, status FROM applications WHERE id = %s",
+                (app_id,),
+            )
+            app = cur.fetchone()
 
-    app = applications_db[app_id]
-    if app["user_id"] != session["user_id"]:
-        return jsonify({"success": False, "error": "Доступ запрещен"}), 403
+            if not app:
+                return jsonify({"success": False, "error": "Заявка не найдена"}), 404
 
-    if app["status"] != "Обучение завершено":
-        return jsonify(
-            {
-                "success": False,
-                "error": "Отзыв доступен только после завершения обучения",
+            if app["user_id"] != session["user_id"]:
+                return jsonify({"success": False, "error": "Доступ запрещен"}), 403
+
+            if app["status"] != "Обучение завершено":
+                return jsonify(
+                    {
+                        "success": False,
+                        "error": "Отзыв доступен только после завершения обучения",
+                    }
+                ), 400
+
+            if not rating or not isinstance(rating, int) or rating < 1 or rating > 5:
+                return jsonify({"success": False, "error": "Укажите рейтинг от 1 до 5"}), 400
+
+            if not text or len(text) < 10:
+                return jsonify(
+                    {"success": False, "error": "Отзыв должен содержать минимум 10 символов"}
+                ), 400
+
+            cur.execute(
+                "SELECT full_name FROM users WHERE login = %s",
+                (session["login"],),
+            )
+            user_row = cur.fetchone()
+            user_name = user_row["full_name"] if user_row else ""
+
+            review_id = f"rev-{uuid.uuid4().hex[:8]}"
+            created_at = datetime.now()
+
+            cur.execute(
+                "INSERT INTO reviews (id, application_id, user_id, user_name, course, "
+                "rating, text, created_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                (review_id, app_id, session["user_id"],
+                 user_name, app["course"],
+                 rating, text, created_at),
+            )
+
+            review = {
+                "id": review_id,
+                "application_id": app_id,
+                "user_id": session["user_id"],
+                "user_name": user_name,
+                "course": app["course"],
+                "rating": rating,
+                "text": text,
+                "created_at": created_at.isoformat(),
             }
-        ), 400
+    finally:
+        db.close()
 
-    if not rating or not isinstance(rating, int) or rating < 1 or rating > 5:
-        return jsonify({"success": False, "error": "Укажите рейтинг от 1 до 5"}), 400
-
-    if not text or len(text) < 10:
-        return jsonify(
-            {"success": False, "error": "Отзыв должен содержать минимум 10 символов"}
-        ), 400
-
-    review_id = f"rev-{uuid.uuid4().hex[:8]}"
-    reviews_db[review_id] = {
-        "id": review_id,
-        "application_id": app_id,
-        "user_id": session["user_id"],
-        "user_name": users_db[session["login"]]["full_name"],
-        "course": app["course"],
-        "rating": rating,
-        "text": text,
-        "created_at": datetime.now().isoformat(),
-    }
-
-    return jsonify({"success": True, "review": reviews_db[review_id]})
+    return jsonify({"success": True, "review": review})
 
 
 # Получение отзывов
@@ -370,10 +551,27 @@ def get_reviews():
     if "user_id" not in session:
         return jsonify({"success": False, "error": "Требуется авторизация"}), 401
 
-    if session.get("role") == "admin":
-        revs = list(reviews_db.values())
-    else:
-        revs = [r for r in reviews_db.values() if r["user_id"] == session["user_id"]]
+    db = get_db()
+    try:
+        with db.cursor() as cur:
+            if session.get("role") == "admin":
+                cur.execute(
+                    "SELECT id, application_id, user_id, user_name, course, rating, "
+                    "text, created_at FROM reviews ORDER BY created_at DESC"
+                )
+            else:
+                cur.execute(
+                    "SELECT id, application_id, user_id, user_name, course, rating, "
+                    "text, created_at FROM reviews WHERE user_id = %s "
+                    "ORDER BY created_at DESC",
+                    (session["user_id"],),
+                )
+            revs = cur.fetchall()
+    finally:
+        db.close()
+
+    for r in revs:
+        r["created_at"] = r["created_at"].isoformat()
 
     return jsonify({"success": True, "reviews": revs})
 

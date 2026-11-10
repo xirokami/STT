@@ -1,8 +1,7 @@
 const container = document.querySelector('.content')
-const but = document.querySelector('.check')
-const but1 = document.querySelector('.delete')
 
-but.addEventListener('click', function() {
+
+function get_cards() {
   fetch('/get', {
     method: 'GET',
     headers: {
@@ -11,6 +10,7 @@ but.addEventListener('click', function() {
   })
   .then(response => response.json())
   .then(data => {
+    container.innerHTML = '';
     if (container.innerHTML.trim() !== '') {
     } else {
       container.innerHTML = '';
@@ -34,22 +34,32 @@ but.addEventListener('click', function() {
       }
     }
   })
-})
-but1.addEventListener('click', function() {
-  container.innerHTML = '';
-})
-function editCard(id) {
-  let data = {
-    id: id,
-    img:"i.webp",
-    title:'solo',
-    price:'152$',
-  }
-  fetch(`/edit/${id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
 }
+function clear_cards() {
+  container.innerHTML = '';
+}
+
+function editCard(id) {
+  let img = document.getElementById('img').value
+  let title = document.getElementById('title').value
+  let price = document.getElementById('price').value
+  if (!img || !title || !price){
+    console.log("empty")
+  } else {
+    let data = {
+      id: id,
+      img: img,
+      title: title,
+      price: price,
+    }
+    fetch(`/edit/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    get_cards()
+  }
+}
+get_cards()

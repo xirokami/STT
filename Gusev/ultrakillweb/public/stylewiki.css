@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'VCR';
-  src: url('./font/VCR-OSD-Mono.ttf');
+  src: url('./font/vcrosdmonorus_vhsicons.ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,11 +15,12 @@
 }
 
 :root {
-
   --backwiki: #1C1C1C;
   --outline: #303030;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 1), rgba(55, 0, 0, 1));
@@ -143,3 +144,38 @@ p {
 a {
   text-decoration: none;
 }
+.lang-toggle {
+  margin-top: 16px;
+  padding: 6px 12px;
+  font: inherit;
+  font-weight: bold;
+  color: #fff;
+  background: #222;
+  border: 2px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.lang-toggle:hover {
+  background: #333;
+  border-color: #888;
+}
+
+.lang-toggle:focus-visible {
+  outline: 2px solid #40e8ff;
+  outline-offset: 2px;
+}
+/* Скрываем ненужный язык */
+body.lang-en .ru { display: none; }
+body.lang-ru .en { display: none; }
+
+/* Заголовки внутри .en/.ru остаются блочными */
+.text-content .en,
+.text-content .ru { display: block; }
+
+/* Для inline-элементов в навигации — чтобы не ломать строку */
+.navigation .en,
+.navigation .ru { display: inline; }
+.navigation .item p.en,
+.navigation .item p.ru { display: block; }
