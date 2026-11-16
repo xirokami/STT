@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,9 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ultrawiki</title>
   <link href="public/stylewiki.css" rel="stylesheet">
+  <style>
+    /* Переключение языка через класс на body:
+       body.lang-en -> показан .en, скрыт .ru
+       body.lang-ru -> показан .ru, скрыт .en
+       По умолчанию (без класса) — английский */
+    .ru { display: none; }
+    body.lang-en .ru { display: none; }
+    body.lang-ru .en { display: none; }
+    body.lang-ru .ru { display: revert; }
+  </style>
 </head>
 
-<body>
+<body class="lang-en">
   <div class="main-container">
     <div class="navigation">
       <a href="home.html">
@@ -59,10 +69,13 @@
       <div class="block" style="margin-top: 0;">
 
         <div class="text-content">
-          <h1 id="Attractor">Attractor Nailgun</h1>
+
+          <!-- ===== Attractor Nailgun ===== -->
+          <div class="en">
+            <h1 id="Attractor">Attractor Nailgun</h1>
             <p>The <a style="color: rgb(64,232,255);">Attractor Nailgun</a> is the blue variant of the <a href="/wiki/Nailgun_(disambiguation)" class="mw-disambig" title="Nailgun (disambiguation)">Nailgun</a>, obtained in the level <b>[ <a href="/wiki/1-1:_HEART_OF_THE_SUNRISE" title="1-1: HEART OF THE SUNRISE">1-1: HEART OF THE SUNRISE</a> ]</b>. Holding primary fire will cause the Attractor Nailgun to start firing nails at a rapid rate, and pressing alt-fire will launch a nail magnet that attracts the fired nails.
             </p>
-                <h2>Mechanics</h2>
+            <h2>Mechanics</h2>
             <p>The Attractor Nailgun fires a barrage of silver nails on the primary fire, continuously spraying as the button is held down. This depletes its ammo count of 100, which takes around 4 seconds to fully exhaust. After this, it takes approximately 20 seconds for ammo reserves to regenerate back to 100.
             </p>
             <p>Silver nails deal 0.205 damage and can deal 5.125 damage per second if all nails land on their target. While all nails deal 50% more damage against <a href="/wiki/Malicious_Face" title="Malicious Face">Malicious Faces</a> and 25% more damage against <a href="/wiki/Virtue" title="Virtue">Virtues</a> and <a href="/wiki/Gabriel" title="Gabriel">Gabriel</a>, silver nails also deal double damage against <a href="/wiki/Filth" title="Filth">Filth</a> and <a href="/wiki/Stray" title="Stray">Strays</a> and 50% more damage against <a href="/wiki/Schism" title="Schism">Schisms</a>, <a href="/wiki/Soldier" title="Soldier">Soldiers</a>, and <a href="/wiki/Stalker" title="Stalker">Stalkers</a>. Nails are affected by gravity and will be attracted to nail magnets, orbiting around nails stuck into surfaces and veering toward enemies that have nail magnets stuck into them. Nails can also stick into enemies, which allows lighter enemies to be pulled toward nail magnets.
@@ -88,17 +101,57 @@
             <p>Magnets can destroy shotgun cores and rockets, though the explosion created by this is of default size and damage.
             </p>
             <p>Magnets can only be airborne for a certain amount of time before it destroys itself (If curious about this, you can test it by shooting a magnet straight down at a bounce pad).
-            </p>        </div>
+            </p>
+          </div>
+
+          <div class="ru">
+            <h1>Attractor Nailgun</h1>
+            <p><a style="color: rgb(64,232,255);">Attractor Nailgun</a> (гвоздемёт-притягиватель) — синий вариант <a href="/wiki/Nailgun_(disambiguation)" class="mw-disambig" title="Nailgun (disambiguation)">гвоздемёта</a>, получаемый на уровне <b>[ <a href="/wiki/1-1:_HEART_OF_THE_SUNRISE" title="1-1: HEART OF THE SUNRISE">1-1: HEART OF THE SUNRISE</a> ]</b>. Удержание основной кнопки огня заставляет Attractor Nailgun быстро стрелять гвоздями, а нажатие альтернативного огня запускает гвоздевой магнит, притягивающий выпущенные гвозди.
+            </p>
+            <h2>Механика</h2>
+            <p>Attractor Nailgun выпускает шквал серебряных гвоздей при нажатии основной кнопки огня, непрерывно стреляя, пока кнопка удерживается. Это расходует его запас боеприпасов в 100 единиц, который полностью истощается примерно за 4 секунды. После этого требуется около 20 секунд, чтобы запас боеприпасов восстановился до 100.
+            </p>
+            <p>Серебряные гвозди наносят 0,205 урона и могут наносить 5,125 урона в секунду, если все гвозди попадают в цель. Все гвозди наносят на 50% больше урона по <a href="/wiki/Malicious_Face" title="Malicious Face">Malicious Face</a> и на 25% больше урона по <a href="/wiki/Virtue" title="Virtue">Virtue</a> и <a href="/wiki/Gabriel" title="Gabriel">Gabriel</a>; кроме того, серебряные гвозди наносят двойной урон по <a href="/wiki/Filth" title="Filth">Filth</a> и <a href="/wiki/Stray" title="Stray">Stray</a> и на 50% больше урона по <a href="/wiki/Schism" title="Schism">Schism</a>, <a href="/wiki/Soldier" title="Soldier">Soldier</a> и <a href="/wiki/Stalker" title="Stalker">Stalker</a>. Гвозди подвержены гравитации и притягиваются к гвоздевым магнитам, вращаясь вокруг гвоздей, застрявших в поверхностях, и отклоняясь к врагам, в которых воткнут гвоздевой магнит. Гвозди также могут застревать во врагах, что позволяет более лёгких врагов притягивать к гвоздевым магнитам.
+            </p>
+            <p>Гвозди внутри врага могут взорваться дополнительным уроном, если по врагу попадёт <a href="/wiki/Electric_Railcannon" title="Electric Railcannon">Electric Railcannon</a>, молния из окружения или от <a href="/wiki/Ferryman" title="Ferryman">Ferryman</a>, либо <a href="/wiki/JumpStart_Nailgun" title="JumpStart Nailgun">JumpStart Nailgun</a>, что даёт бонус стиля <b>+<span style="color: aqua">CONDUCTOR</span></b> (<a href="/wiki/Style_Index" title="Style Index">бонус стиля</a>), наносит 0,0666 урона за каждый гвоздь и уничтожает все гвозди во враге. Этот урон после разряда суммируется до максимума в 6 урона, для чего требуется 90 гвоздей суммарно. Если рядом есть другие враги при электроударе, они тоже получат урон после разряда (минимум 2 урона). Любой удар по врагу после первого в течение одной секунды имеет минимальный урон 0,5 вместо 2 и не может вызвать урон после разряда. Магниты, <a href="/wiki/Coin#Ricoshots" title="Coin">монеты</a>, <a href="/wiki/Rocket_Launcher_(disambiguation)" class="mw-disambig" title="Rocket Launcher (disambiguation)">ракеты</a> и враги с гвоздями/магнитами при ударе электричеством вызывают ещё один электрический взрыв. В воде минимальный урон ослабленного удара равен 1 вместо 0,5, враги получают урон после разряда без гвоздей, а V1 и все враги в том же источнике воды получают удар от электрического взрыва врага независимо от расстояния. V1 получает 50 урона и 50 твёрдого урона, но может получать электрический урон только раз в секунду.
+            </p>
+            <p>Когда основная кнопка огня удерживается сколько угодно, шкала перегрева <a href="/wiki/Overheat_Nailgun" title="Overheat Nailgun">Overheat Nailgun</a> мгновенно заполняется до максимума. Это делает Attractor Nailgun полезным инструментом для комбо, позволяя короткой очередью гвоздей из Attractor Nailgun сразу же перейти к шквалу перегрева из Overheat Nailgun.
+            </p>
+            <p>Нажатие вторичной кнопки огня выпускает гвоздевой магнит, подверженный гравитации и прилипающий как к врагам, так и к поверхностям. Одновременно можно разместить максимум 3 гвоздевых магнита, и их количество боеприпасов восстанавливается при их уничтожении. Гвоздевые магниты притягивают гвозди, уводя их с курса к себе и заставляя гвозди вращаться, когда те оказываются совсем близко. Это позволяет создавать «гвоздевые ловушки» на поверхностях, которые наносят урон врагам, проходящим по ним, и создают взрыв поражающих осколков при уничтожении магнита. Если размещено несколько гвоздевых магнитов одновременно, гвозди будут пытаться слипнуться в шар точно посередине между всеми гвоздевыми магнитами.
+            </p>
+            <p>Магнит остаётся на поверхностях или врагах 12 секунд, после чего самоуничтожается. Скорость писка магнита указывает, сколько времени у него осталось. Каждый магнит может притянуть до 75 гвоздей одновременно, прежде чем будет уничтожен. Цвет мигающего индикатора меняется с зелёного на красный, а тон писка повышается, указывая, насколько близко к лимиту гвоздей. С помощью нескольких магнитов срок жизни гвоздя можно продлить примерно до 30 секунд, прежде чем он исчезнет.
+            </p>
+            <p>Гвоздевые магниты, прикреплённые к врагу, притягивают к нему гвозди, что облегчает прицеливание из гвоздемёта. Чем больше магнитов прилипло, тем сильнее притяжение. Это относится к обоим типам гвоздей, что позволяет использовать их вместе с Overheat Nailgun, который обычно гораздо менее точен, чем Attractor Nailgun. Кроме того, гвоздевые магниты, прикреплённые к <a href="/wiki/Stalker" title="Stalker">Stalker</a>, уменьшают радиус его взрыва песчанизации: на 25% с 1 магнитом, на 37,5% с 2 и на 50% с 3.
+            </p>
+            <p>Лёгкие враги по <a href="/wiki/Weight" title="Weight">весу</a>, а также <a href="/wiki/Sentry" title="Sentry">Sentry</a> и <a href="/wiki/Stalker" title="Stalker">Stalker</a>, покрытые гвоздями, притягиваются к магниту. Помимо использования против <a href="/wiki/Sentry" title="Sentry">Sentry</a>, это бесполезно, так как единственные другие враги, на которых это действует, очень быстро умирают от гвоздей, но выглядит довольно забавно. Однако при желании можно установить магнит так, чтобы врага притянуло к нему в воздух и швырнуло в землю, убив уроном от падения и получив бонус стиля <b>[+CATAPULTED]</b>. Это также можно сделать, подбросив обвешанного гвоздями врага в воздух и разместив гвоздевой магнит на земле под ним.
+            </p>
+            <p>Магниты проводят электричество. Когда враг, в котором есть хотя бы один гвоздь или магнит, получает удар электричеством от <a href="/wiki/Electric_Railcannon" title="Electric Railcannon">Electric Railcannon</a>, <a href="/wiki/Ferryman" title="Ferryman">Ferryman</a> или <a href="/wiki/JumpStart_Nailgun" title="JumpStart Nailgun">JumpStart Nailgun</a>, любой находящийся поблизости/прикреплённый магнит(ы) вызывает электрический взрыв. Магниты, прикреплённые к врагу, наносят 1 урон после разряда за каждый прикреплённый магнит вдобавок к урону после разряда от гвоздей, даже если достигнут предел урона после разряда от гвоздей. С 3 магнитами можно достичь максимум 9 урона после разряда. Магниты можно ударить электричеством 3 раза, прежде чем они будут уничтожены, включая магниты во врагах (которые делят свой «урон» с ракетами). Под водой магниты могут только бить электричеством и получать удары от объектов в радиусе. Магниты получают урон только при прямом ударе электричеством, поэтому если два врага с магнитами находятся достаточно далеко друг от друга, они будут бить друг друга электричеством, пока магнит не будет уничтожен со временем или один из них не умрёт (но это также нанесёт урон V1).
+            </p>
+            <p>Гвоздевые магниты можно уничтожить мгновенными (hitscan) атаками, например, из револьверов или Electric и Malicious Railcannon, либо ударами о землю. Это можно использовать в свою пользу: гвоздевые магниты с большим количеством вращающихся вокруг них гвоздей можно превратить в детонирующие «гвоздевые бомбы», выпускающие сноп осколков при выстреле.
+            </p>
+            <p>Если магнит застрял во враге, он также притягивает ракеты, выпущенные из <a href="/wiki/Rocket_Launcher_(disambiguation)" class="mw-disambig" title="Rocket Launcher (disambiguation)">Rocket Launcher</a>. Встроенный магнит будет уничтожен, если по врагу попасть ракетами три раза, причём красные взрывы считаются за два. Когда ракета попадает в магнит, застрявший в поверхности, она создаёт наносящий урон взрыв, но не уничтожает магнит.
+            </p>
+            <p>Магниты могут уничтожать ядра дробовика и ракеты, хотя создаваемый при этом взрыв имеет стандартный размер и урон.
+            </p>
+            <p>Магнит может находиться в воздухе лишь определённое время, прежде чем самоуничтожится (если любопытно, это можно проверить, выстрелив магнитом строго вниз в батут).
+            </p>
+          </div>
+
+        </div>
         <div class="img-content">
           <img src="./public/content/AttractorNailgunHUDNew.webp" alt="">
         </div>
       </div>
+
       <div class="block">
         <div class="text-content">
-          <h1 id="Overheat">Overheat Nailgun</h1>
+
+          <!-- ===== Overheat Nailgun ===== -->
+          <div class="en">
+            <h1 id="Overheat">Overheat Nailgun</h1>
             <p>The <a style="color: rgb(69,255,69);">Overheat Nailgun</a> is the green variant of the <a href="/wiki/Nailgun_(disambiguation)" class="mw-disambig" title="Nailgun (disambiguation)">Nailgun</a>, purchasable for 25,000<span style="color:darkorange"><b>P</b></span> after obtaining the <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a> in <b>[ <a href="/wiki/1-1:_HEART_OF_THE_SUNRISE" title="1-1: HEART OF THE SUNRISE">1-1: HEART OF THE SUNRISE</a> ]</b>. Holding primary fire will cause the Overheat Nailgun to start firing nails at a fast constant rate. Pressing alt fire when the overheat meter has charge will spit out fiery nails in a rapid-fire burst, using up one of the Overheat Nailgun's charges.
             </p>
-                <h2>Mechanics</h2>
+            <h2>Mechanics</h2>
             <p>The <b>Overheat Nailgun</b> fires a barrage of nails on primary fire, continuously spraying as the button is held down. Continuous fire will cause the nailgun to overheat, which will cause the rate of fire to slow as the meter approaches fullness. Thus, it is recommended to mostly use the Overheat Nailgun's primary fire to charge the overheat meter rather than use it as your sole source of DPS.
             </p>
             <p>Nails from the Overheat Nailgun deal 0.185 damage each, with a damage per second of 4.625 assuming the nailgun is firing at full speed and all nails hit. When the overheat meter is full, however, the rate of fire will decrease, lowering the DPS to just 2.3125. Additionally, when all heatsinks are depleted, the rate of fire will slow even more, rendering the nailgun essentially useless until a heatsink recharges. The Overheat Nailgun's nails deal 50% more damage against <a href="/wiki/Malicious_Face" title="Malicious Face">Malicious Faces</a> and deal 25% more damage against <a href="/wiki/Virtue" title="Virtue">Virtues</a> and <a href="/wiki/Gabriel" title="Gabriel">Gabriel</a>.
@@ -112,17 +165,45 @@
             <p>The overheat meter can be instantly charged by firing the Attractor Nailgun or plugged <a href="/wiki/JumpStart_Nailgun" title="JumpStart Nailgun">JumpStart Nailgun</a> for any amount of time. This means that firing the Attractor or JumpStart Nailgun and quickly switching to the Overheat Nailgun can be an effective way to get off an overheat barrage quickly. Firing an unplugged JumpStart nailgun can only charge Overheat Nailgun to less than a quarter heat.
             </p>
             <p>When swapping off Overheat Nailgun while using a heatsink, the barrage is stored and resumes when swapping back to it. By firing Attractor, you can regenerate some heat for the barrage and indefinitely fire out shorter barrages without running out of heatsinks. Note this is only properly possible when 2 heatsinks are available.
-            </p>        </div>
+            </p>
+          </div>
+
+          <div class="ru">
+            <h1>Overheat Nailgun</h1>
+            <p><a style="color: rgb(69,255,69);">Overheat Nailgun</a> (гвоздемёт-перегрев) — зелёный вариант <a href="/wiki/Nailgun_(disambiguation)" class="mw-disambig" title="Nailgun (disambiguation)">гвоздемёта</a>, покупаемый за 25 000<span style="color:darkorange"><b>P</b></span> после получения <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a> в <b>[ <a href="/wiki/1-1:_HEART_OF_THE_SUNRISE" title="1-1: HEART OF THE SUNRISE">1-1: HEART OF THE SUNRISE</a> ]</b>. Удержание основной кнопки огня заставляет Overheat Nailgun быстро и равномерно стрелять гвоздями. Нажатие альтернативного огня при заряженной шкале перегрева выплёвывает огненные гвозди быстрой очередью, расходуя один из зарядов Overheat Nailgun.
+            </p>
+            <h2>Механика</h2>
+            <p><b>Overheat Nailgun</b> выпускает шквал гвоздей при нажатии основной кнопки огня, непрерывно стреляя, пока кнопка удерживается. Непрерывная стрельба вызывает перегрев гвоздемёта, из-за чего скорость стрельбы падает по мере заполнения шкалы. Поэтому рекомендуется в основном использовать основную кнопку огня Overheat Nailgun для накопления шкалы перегрева, а не как единственный источник DPS.
+            </p>
+            <p>Гвозди из Overheat Nailgun наносят по 0,185 урона каждый, при уроне в секунду 4,625 при условии, что гвоздемёт стреляет на полной скорости и все гвозди попадают. Однако когда шкала перегрева заполнена, скорость стрельбы снижается, опуская DPS всего до 2,3125. Кроме того, когда все теплоотводы истощены, скорость стрельбы замедляется ещё сильнее, делая гвоздемёт практически бесполезным, пока теплоотвод не восстановится. Гвозди Overheat Nailgun наносят на 50% больше урона по <a href="/wiki/Malicious_Face" title="Malicious Face">Malicious Face</a> и на 25% больше урона по <a href="/wiki/Virtue" title="Virtue">Virtue</a> и <a href="/wiki/Gabriel" title="Gabriel">Gabriel</a>.
+            </p>
+            <p>Гвозди подвержены гравитации и притягиваются к гвоздевым магнитам от <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a>, вращаясь вокруг гвоздей, застрявших в поверхностях, и отклоняясь к врагам, в которых воткнут гвоздевой магнит. Рекомендуется сначала прикреплять к целям гвоздевые магниты, так как гвозди из Overheat Nailgun обычно менее точны. Гвозди внутри врага могут взорваться дополнительным уроном, если по врагу попадёт <a href="/wiki/Electric_Railcannon" title="Electric Railcannon">Electric Railcannon</a>, что даёт <b>[+CONDUCTOR]</b> (<a href="/wiki/Style_Index" title="Style Index">бонус стиля</a>) и наносит 0,0666 урона за каждый гвоздь. Это суммируется до максимума в 6 урона, для чего требуется 90 гвоздей суммарно.
+            </p>
+            <p>Нажатие альтернативного огня при заряженной шкале перегрева выпускает менее точный перегретый шквал гвоздей, длительность которого пропорциональна текущему заполнению шкалы перегрева. При полностью заполненной шкале перегрева шквал длится ровно 1 секунду, выпуская 56 гвоздей. Это расходует теплоотвод, который восстанавливается 8 секунд. Остерегайтесь расходовать все теплоотводы, так как это резко снизит скорость стрельбы основной кнопки огня и сделает невозможным накопление шкалы перегрева, пока теплоотвод не восстановится.
+            </p>
+            <p>Перегретые гвозди наносят столько же урона, сколько обычные, но поджигают врагов (<a href="/wiki/Fire" title="Fire">огонь</a>) на 4 секунды, если они горючи. Как очевидно, более высокая скорость стрельбы шквала перегрева приводит к большему урону, хотя из-за неточности шквала настоятельно рекомендуется использовать гвоздевой магнит.
+            </p>
+            <p>Шкалу перегрева можно мгновенно зарядить, стреляя из Attractor Nailgun или подключённого <a href="/wiki/JumpStart_Nailgun" title="JumpStart Nailgun">JumpStart Nailgun</a> в течение любого времени. Это значит, что выстрел из Attractor или JumpStart Nailgun и быстрый переход на Overheat Nailgun могут быть эффективным способом быстро выдать шквал перегрева. Выстрел из неподключённого JumpStart Nailgun может зарядить Overheat Nailgun менее чем на четверть.
+            </p>
+            <p>Если переключиться с Overheat Nailgun во время использования теплоотвода, шквал сохраняется и возобновляется при возврате к нему. Стреляя из Attractor, вы можете восстановить немного жара для шквала и бесконечно выпускать более короткие шквалы, не расходуя теплоотводы. Обратите внимание, что это нормально возможно только при наличии 2 теплоотводов.
+            </p>
+          </div>
+
+        </div>
         <div class="img-content">
           <img src="./public/content/OverheatNailgunHUDNew.webp" alt="">
         </div>
       </div>
+
       <div class="block">
         <div class="text-content">
-          <h1 id="Jumpstart">Jumpstart Nailgun</h1>
+
+          <!-- ===== Jumpstart Nailgun ===== -->
+          <div class="en">
+            <h1 id="Jumpstart">Jumpstart Nailgun</h1>
             <p>The <a style="color: rgb(255,61,61);">Jumpstart Nailgun</a> is the red variant of the <a href="/wiki/Nailgun_(disambiguation)" class="mw-disambig" title="Nailgun (disambiguation)">Nailgun</a>, purchasable for 35,000<span style="color:darkorange"><b>P</b></span> after obtaining the <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a> in <b>[ <a href="/wiki/1-1:_HEART_OF_THE_SUNRISE" title="1-1: HEART OF THE SUNRISE">1-1: HEART OF THE SUNRISE</a> ]</b>. It was released as a part of the <a href="/wiki/Update_History" title="Update History">Full Arsenal Update</a>.
             </p>
-                <h2>Mechanics</h2>
+            <h2>Mechanics</h2>
             <p>The <b>Jumpstart Nailgun</b> fires a barrage of nails on the primary fire, continuously spraying as the button is held down, much like the <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a>.
             </p>
             <p>The fire rate is normally pretty slow, about the same as the <a href="/wiki/Overheat_Nailgun" title="Overheat Nailgun">Overheat Nailgun's</a> when the heat sink is full; however, when a jumper cable is connected to an enemy, the attack speed increases greatly. When sustaining a cable connection, it can output more damage than a full heat sink barrage from the <a href="/wiki/Overheat_Nailgun" title="Overheat Nailgun">Overheat Variant</a>.
@@ -148,7 +229,43 @@
             <p>Each electric explosion caused by an enemy, also gives the <b>[+CONDUCTOR]</b> <a href="/wiki/Style_Index" title="Style Index">style bonus</a>.
             </p>
             <p>While in water, the weakened shock's minimum damage is 1 instead of 0.5, enemies take aftershock without nails, and V1 as well as all enemies in the same water source are shocked by the electric explosion from an enemy, regardless of distance. V1 takes 50 damage and 50 hard damage, but can only take electric damage every second.
-            </p>        </div>
+            </p>
+          </div>
+
+          <div class="ru">
+            <h1>Jumpstart Nailgun</h1>
+            <p><a style="color: rgb(255,61,61);">Jumpstart Nailgun</a> (гвоздемёт-прикуриватель) — красный вариант <a href="/wiki/Nailgun_(disambiguation)" class="mw-disambig" title="Nailgun (disambiguation)">гвоздемёта</a>, покупаемый за 35 000<span style="color:darkorange"><b>P</b></span> после получения <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a> в <b>[ <a href="/wiki/1-1:_HEART_OF_THE_SUNRISE" title="1-1: HEART OF THE SUNRISE">1-1: HEART OF THE SUNRISE</a> ]</b>. Был добавлен в рамках <a href="/wiki/Update_History" title="Update History">Full Arsenal Update</a>.
+            </p>
+            <h2>Механика</h2>
+            <p><b>Jumpstart Nailgun</b> выпускает шквал гвоздей при нажатии основной кнопки огня, непрерывно стреляя, пока кнопка удерживается, во многом как <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a>.
+            </p>
+            <p>Скорость стрельбы обычно довольно низкая, примерно такая же, как у <a href="/wiki/Overheat_Nailgun" title="Overheat Nailgun">Overheat Nailgun</a> при полном теплоотводе; однако когда к врагу подключён соединительный кабель, скорость атаки сильно возрастает. При поддержании соединения по кабелю он может выдавать больше урона, чем шквал при полном теплоотводе от <a href="/wiki/Overheat_Nailgun" title="Overheat Nailgun">Overheat-варианта</a>.
+            </p>
+            <p>Нажатие альтернативного огня <b>Jumpstart Nailgun</b> в радиусе выпускает кабель вперёд, прилипающий к врагам. Он не наносит прямого урона, но сильно повышает скорость стрельбы основной кнопки огня. Шкала заряда медленно растёт, и примерно через 5 секунд непрерывного соединения или сразу после смерти врага (либо когда <a href="/wiki/Swordsmachine" title="Swordsmachine">Swordsmachine</a> переходит во вторую фазу) конец кабеля взрывается, и цель получает удар электричеством, вызывая электрический взрыв. Если изначальная цель — наземный лёгкий или средний враг по <a href="/wiki/Weight" title="Weight">весу</a> с воткнутыми гвоздями, его подбрасывает в воздух, при условии, что он выживает после первого разряда.
+            </p>
+            <p>Если V1 слишком далеко от врага или окружение блокирует его в течение секунды во время зарядки кабеля, кабель отключается. Однако переключение оружия при выпущенном кабеле не отключает его. Расстояние, на котором кабель поддерживает соединение, примерно на треть больше расстояния, необходимого для подключения к врагу.
+            </p>
+            <p>Чтобы вызвать электрический взрыв, врага, в которого воткнуты гвозди или магниты, нужно ударить электричеством, что можно сделать с помощью (это срабатывает даже когда враг умирает):
+            </p>
+            <p>Этот электрический взрыв обычно не может навредить игроку.
+            </p>
+            <p>Урон электрического взрыва зависит от количества гвоздей (и магнитов), воткнутых во врага, нанося 0,0666 урона за каждый гвоздь и уничтожая все гвозди во враге. Этот урон после разряда суммируется до максимума в 6 урона, для чего требуется 90 гвоздей суммарно. Кроме того, каждый магнит в цели добавляет 1 дополнительный урон, который прибавляется сверх предела урона от гвоздей, что позволяет нанести до 3 дополнительного урона, или 9 урона суммарно (это не снижает прочность магнита, если цель была поражена электричеством от оружия) (на магнитах нет предела урона, обычно достижимо только 3).
+            </p>
+            <p>Когда врага с воткнутыми гвоздями/магнитами бьют электричеством, он испускает невидимый электрический взрыв примерно размером с ядерный взрыв ядра. Все наземные враги в радиусе получают удар электрического взрыва, получая тот же урон, что и изначальный враг, вызвавший электрический взрыв, но у него также есть минимальный порог урона (то есть он всегда наносит x урона):
+            </p>
+            <p>Электрический взрыв не имеет падения урона с расстоянием и обычно не может навредить игроку.
+            </p>
+            <p>Если врага с воткнутыми гвоздями/магнитами накрывает электрический взрыв, то этот враг сам создаёт электрический взрыв, даже если он умирает.
+            </p>
+            <p>Наземные <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">магниты</a>, <a href="/wiki/Coin#Ricoshots" title="Coin">монеты</a> и <a href="/wiki/Rocket_Launcher_(disambiguation)" class="mw-disambig" title="Rocket Launcher (disambiguation)">ракеты</a> вызывают электрический взрыв, когда их накрывает другой электрический взрыв:
+            </p>
+            <p>Каждый электрический взрыв, вызванный врагом, также даёт <b>[+CONDUCTOR]</b> (<a href="/wiki/Style_Index" title="Style Index">бонус стиля</a>).
+            </p>
+            <p>В воде минимальный урон ослабленного удара равен 1 вместо 0,5, враги получают урон после разряда без гвоздей, а V1 и все враги в том же источнике воды получают удар от электрического взрыва врага независимо от расстояния. V1 получает 50 урона и 50 твёрдого урона, но может получать электрический урон только раз в секунду.
+            </p>
+          </div>
+
+        </div>
         <div class="img-content">
           <img src="./public/content/Jumpstart_Nailgun_HUD.webp" alt="">
         </div>

@@ -6,9 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <link href="public/style.css" rel="stylesheet">
+  <style>
+    /* Переключение языка через класс на body:
+       body.lang-en -> показан .en, скрыт .ru
+       body.lang-ru -> показан .ru, скрыт .en
+       По умолчанию (без класса) — английский */
+    body.lang-ru .en { display: none; }
+    body.lang-en .ru { display: none; }
+    .ru { display: none; }            /* по умолчанию скрыт русский */
+    body.lang-ru .ru { display: revert; } /* но если включён ru — показываем */
+  </style>
 </head>
 
-<body>
+<body class="lang-en">
   <header id="head">
     <a class="head-content" href="#hero">
       <img src="public/content/V1Head.webp" alt="">ULTRAKILL
@@ -26,20 +36,31 @@
   </div>
 
   <div class="description-container">
-    <div class="description scroll-animate-up ">
+    <div class="description scroll-animate-up en">
       Mankind is dead.
     </div>
-    <div class="description scroll-animate-up ">
+    <div class="description scroll-animate-up ru">
+      Человечество мертво.
+    </div>
+
+    <div class="description scroll-animate-up en">
       Blood is fuel.
     </div>
-    <div class="description scroll-animate-up ">
+    <div class="description scroll-animate-up ru">
+      Кровь — это топливо.
+    </div>
+
+    <div class="description scroll-animate-up en">
       Hell is full.
     </div>
+    <div class="description scroll-animate-up ru">
+      Ад переполнен.
+    </div>
   </div>
+
   <div class="description-game-container">
 
-
-    <div class="text scroll-animate-up">
+    <div class="text scroll-animate-up en">
       <b>ULTRAKILL</b> is a fast-paced ultraviolent old school first-person shooter developed by <a>Arsi "Hakita"
         Patala</a> and published by <a>New Blood Interactive</a>. You play as V1, a combat machine fueled by blood
       who
@@ -47,7 +68,14 @@
       souls,
       sources of blood that you must rend apart in order to refuel yourself and survive.
     </div>
-    <div class="text scroll-animate-up">
+    <div class="text scroll-animate-up ru">
+      <b>ULTRAKILL</b> — это стремительный ультранасильственный шутер от первого лица в духе старой школы,
+      разработанный <a>Арси "Hakita" Паталой</a> и изданный <a>New Blood Interactive</a>. Вы играете за V1 — боевую
+      машину, работающую на крови, которая отправилась в глубины Ада после вымирания человечества. Ад кишит демонами
+      и истерзанными душами — источниками крови, которую вы должны разрывать на части, чтобы заправляться и выживать.
+    </div>
+
+    <div class="text scroll-animate-up en">
       <b>ULTRAKILL's </b>gameplay combines features from classic shooters like <i>Quake</i>, modern shooters like
       <i>Doom
         (2016)</i> and character action games like <i>Devil May Cry</i>. The game places emphasis on movement, dodging
@@ -57,7 +85,15 @@
       in
       close combat with their opponents.
     </div>
+    <div class="text scroll-animate-up ru">
+      Геймплей <b>ULTRAKILL</b> сочетает в себе черты классических шутеров вроде <i>Quake</i>, современных шутеров
+      вроде <i>Doom (2016)</i> и character-action игр вроде <i>Devil May Cry</i>. Игра делает упор на движение,
+      уклонение от атак и эффективную стрельбу на аренах. Кроме того, здоровье игрока восстанавливается только за счёт
+      купания в крови врагов, что вынуждает придерживаться агрессивного стиля игры и постоянно вступать в ближний бой
+      с противниками.
+    </div>
   </div>
+
   <div class="content">
 
     <div class="button-container" id="header-reveal">

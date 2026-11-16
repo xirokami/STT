@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,9 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ultrawiki</title>
   <link href="public/stylewiki.css" rel="stylesheet">
+  <style>
+    /* Переключение языка через класс на body:
+       body.lang-en -> показан .en, скрыт .ru
+       body.lang-ru -> показан .ru, скрыт .en
+       По умолчанию (без класса) — английский */
+    .ru { display: none; }
+    body.lang-en .ru { display: none; }
+    body.lang-ru .en { display: none; }
+    body.lang-ru .ru { display: revert; }
+  </style>
 </head>
 
-<body>
+<body class="lang-en">
   <div class="main-container">
     <div class="navigation">
       <a href="home.html">
@@ -59,10 +69,13 @@
       <div class="block" style="margin-top: 0;">
 
         <div class="text-content">
-          <h1 id="CoreEject">Core Eject Shotgun</h1>
+
+          <!-- ===== Core Eject Shotgun ===== -->
+          <div class="en">
+            <h1 id="CoreEject">Core Eject Shotgun</h1>
             <p>The <a style="color: rgb(64,232,255);">Core Eject Shotgun</a> is the blue variant of the <a href="/wiki/Shotgun_(disambiguation)" class="mw-disambig" title="Shotgun (disambiguation)">Shotgun</a>, and can be acquired by defeating <a href="/wiki/Swordsmachine" title="Swordsmachine">Swordsmachine</a>'s first phase for the first time in <b>[ <a href="/wiki/0-3:_DOUBLE_DOWN" title="0-3: DOUBLE DOWN">0-3: DOUBLE DOWN</a> ]</b>, though it can be obtained early via a secret encounter with Swordsmachine in <b>[ <a href="/wiki/0-2:_THE_MEATGRINDER" title="0-2: THE MEATGRINDER">0-2: THE MEATGRINDER</a> ]</b>.
             </p>
-                <h2>Mechanics</h2>
+            <h2>Mechanics</h2>
             <p>Pressing primary fire will cause the shotgun to fire a random spread of 12 pellets. Each pellet deals 0.25 damage for a maximum of 3 damage if all pellets hit. When more than enough pellets to kill an enemy hit it, the excess pellets will pierce through, making them good for crowd control. Shotgun pellets can also be <a href="/wiki/Parry" title="Parry">parried</a> immediately after firing to imbue one pellet with greater velocity and an explosive effect that deals 3.5 damage.
             </p>
             <p>After each shot, the shotgun briefly flips open to let the cores cool down before closing back up, ready to fire again. This cooldown period takes roughly 1.25 seconds, making it slower overall than the <a href="/wiki/Pump_Charge_Shotgun" title="Pump Charge Shotgun">Pump Charge Shotgun</a>, though the Core Eject deals slightly more damage.
@@ -80,17 +93,49 @@
             <p>Core ejects will also be targeted by ricoshots from <a href="/wiki/Coin" title="Coin">coins</a>, being prioritized over enemies. While initially tricky to pull off, this can be easier in the end if one has trouble shooting cores in mid-air. In addition, it increases the damage of the explosion.
             </p>
             <p>While the explosion does double damage to enemies, it still deals the normal 35 damage to <a href="/wiki/V1" title="V1">V1</a>, making it a cheaper damage boost than Overpump. In addition, the Malicious variant launches V1 at extreme speeds, dealing 35/50 damage depending on which explosion hits V1 first (See also: <a href="/wiki/Movement_Guide#ULTRABOOST" title="Movement Guide">Ultraboosting</a>).
-            </p>        </div>
+            </p>
+          </div>
+
+          <div class="ru">
+            <h1>Core Eject Shotgun</h1>
+            <p><a style="color: rgb(64,232,255);">Core Eject Shotgun</a> (дробовик с выбросом ядра) — синий вариант <a href="/wiki/Shotgun_(disambiguation)" class="mw-disambig" title="Shotgun (disambiguation)">дробовика</a>. Его можно получить, победив <a href="/wiki/Swordsmachine" title="Swordsmachine">Swordsmachine</a> в первой фазе впервые в <b>[ <a href="/wiki/0-3:_DOUBLE_DOWN" title="0-3: DOUBLE DOWN">0-3: DOUBLE DOWN</a> ]</b>, хотя его можно получить и раньше — через секретную встречу со Swordsmachine в <b>[ <a href="/wiki/0-2:_THE_MEATGRINDER" title="0-2: THE MEATGRINDER">0-2: THE MEATGRINDER</a> ]</b>.
+            </p>
+            <h2>Механика</h2>
+            <p>Нажатие основной кнопки огня заставляет дробовик выстрелить случайным разбросом из 12 дробин. Каждая дробина наносит 0,25 урона, максимум 3 урона, если попадут все. Если в врага попадает больше дробин, чем нужно для его убийства, излишки пробивают его насквозь, что делает дробовик хорош для контроля толпы. Дробины дробовика можно также <a href="/wiki/Parry" title="Parry">парировать</a> сразу после выстрела, чтобы наделить одну дробину большей скоростью и взрывным эффектом, наносящим 3,5 урона.
+            </p>
+            <p>После каждого выстрела дробовик ненадолго раскрывается, чтобы ядра остыли, а затем снова закрывается, готовый к стрельбе. Этот период перезарядки занимает примерно 1,25 секунды, что в целом делает его медленнее <a href="/wiki/Pump_Charge_Shotgun" title="Pump Charge Shotgun">Pump Charge Shotgun</a>, хотя Core Eject наносит чуть больше урона.
+            </p>
+            <p>Нажатие альтернативного огня и его отпускание выбрасывает ядро из дробовика, а удержание увеличивает дальность выброса. Выброшенные ядра взрываются при попадании, нанося 3,5 взрывного урона и создавая косметическую ударную волну и обломки. Этот взрыв неэффективен против <a href="/wiki/Malicious_Face" title="Malicious Face">Malicious Face</a>, так как они невосприимчивы к взрывам. Он также неэффективен против <a href="/wiki/Streetcleaner" title="Streetcleaner">Streetcleaner</a>: они не только получают вдвое меньше урона от взрывов, но и способны активно отбивать выброшенные ядра, что делает попадание по ним крайне сложным.
+            </p>
+            <p>Ядра детонируют при попадании в <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">магниты</a> как в полёте, так и закреплённые в ландшафте, хотя без каких-либо особых свойств.
+            </p>
+            <p>Летящие ядра отскакивают от других выброшенных ядер, а также от <a href="/wiki/Rocket_Launcher_(disambiguation)" class="mw-disambig" title="Rocket Launcher (disambiguation)">ракет</a>, не детонируя ни то, ни другое.
+            </p>
+            <p>Выброшенное ядро можно подстрелить мгновенным (hitscan) выстрелом, чтобы преждевременно его детонировать, удвоив урон и радиус. В упор оно нанесёт 7 урона, снижаясь до 4,6.
+            </p>
+            <p>Если выстрелить по нему из <a href="/wiki/Malicious_Railcannon" title="Malicious Railcannon">Malicious Railcannon</a> (или лучом <a href="/wiki/Malicious_Face" title="Malicious Face">Face</a>), взрыв вместо этого нанесёт удвоенный урон и будет иметь <i>вдвое больший радиус, чем у Malicious-взрыва</i>. В упор он наносит до 13,25 урона за счёт добавления Malicious-взрыва, снижаясь до 10,85, а затем до 4,6 за пределами радиуса Malicious-взрыва. Естественно, это также отражает снаряды в большом радиусе, потенциально нанося дружественный урон и очищая окрестности от снарядов, если использовать рядом с V1.
+            </p>
+            <p>По выброшенным ядрам также наводятся рикошетные выстрелы из <a href="/wiki/Coin" title="Coin">монет</a>, причём с приоритетом над врагами. Поначалу это сложно выполнить, но в итоге может оказаться проще, если возникают трудности со стрельбой по ядрам в воздухе. Кроме того, это увеличивает урон взрыва.
+            </p>
+            <p>Хотя взрыв наносит врагам двойной урон, по <a href="/wiki/V1" title="V1">V1</a> он всё равно наносит обычные 35 урона, что делает его более дешёвым усилением урона, чем Overpump. Кроме того, Malicious-вариант запускает V1 с экстремальной скоростью, нанося 35/50 урона в зависимости от того, какой взрыв попадёт в V1 первым (см. также: <a href="/wiki/Movement_Guide#ULTRABOOST" title="Movement Guide">Ultraboosting</a>).
+            </p>
+          </div>
+
+        </div>
         <div class="img-content">
           <img src="./public/content/Core_Eject.webp" alt="">
         </div>
       </div>
+
       <div class="block">
         <div class="text-content">
-          <h1 id="PumpCharge">Pump Charge Shotgun</h1>
+
+          <!-- ===== Pump Charge Shotgun ===== -->
+          <div class="en">
+            <h1 id="PumpCharge">Pump Charge Shotgun</h1>
             <p>The <a style="color: rgb(69,255,69);">Pump Charge Shotgun</a> is the green variant of the <a href="/wiki/Shotgun_(disambiguation)" class="mw-disambig" title="Shotgun (disambiguation)">Shotgun</a>. It can be purchased at the shop for 12,500<span style="color:darkorange"><b>P</b></span> after picking up the <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a> in <b>[ <a href="/wiki/0-3:_DOUBLE_DOWN" title="0-3: DOUBLE DOWN">0-3: DOUBLE DOWN</a> ]</b> or the secret encounter in <b>[ <a href="/wiki/0-2:_THE_MEATGRINDER" title="0-2: THE MEATGRINDER">0-2: THE MEATGRINDER</a> ]</b>.
             </p>
-                <h2>Mechanics</h2>
+            <h2>Mechanics</h2>
             <p>Pressing primary fire will cause the shotgun to fire a random spread of 10 pellets. Each pellet deals 0.25 damage for a maximum of 2.5 damage if all pellets hit. These pellets can pierce through enemies, making them good for crowd control, though pellets will disappear shortly after piercing. Shotgun pellets can also be <a href="/wiki/Parry" title="Parry">parried</a> immediately after firing to imbue one pellet with greater velocity and an explosive effect that deals 3.5 damage.
             </p>
             <p>After each shot, the shotgun must pump once before it is ready to fire again. This cooldown period takes roughly 0.92 seconds, making it faster than the <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a> with the tradeoff of less damage.
@@ -104,17 +149,45 @@
             <p>Additionally, one can purposely damage themselves with the overcharge explosion to take advantage of its considerable knockback. If aimed in a specific direction, the overcharge explosion will send the player flying back in the opposite direction, allowing for the knockback to be controlled. This can be used to gain insane speed very quickly, or to reach areas typically too high or too far for the player to reach normally. However, using a <a href="/wiki/Malicious_Railcannon" title="Malicious Railcannon">Malicious Railcannon</a> and shooting a <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core</a> will provide more, although it's possible to miss the core. This makes it really good in speedrunning.
             </p>
             <p>The explosion doesn't instakill V1 as it only deals 50 damage to it, so if you fail an Overpump Dash the first time, you'll be fine. Practice it to be able to perform it consistently (without taking damage and knockback) and become unstoppable with it's insane damage output.
-            </p>        </div>
+            </p>
+          </div>
+
+          <div class="ru">
+            <h1>Pump Charge Shotgun</h1>
+            <p><a style="color: rgb(69,255,69);">Pump Charge Shotgun</a> (дробовик с накачкой) — зелёный вариант <a href="/wiki/Shotgun_(disambiguation)" class="mw-disambig" title="Shotgun (disambiguation)">дробовика</a>. Его можно купить в магазине за 12 500<span style="color:darkorange"><b>P</b></span> после получения <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a> в <b>[ <a href="/wiki/0-3:_DOUBLE_DOWN" title="0-3: DOUBLE DOWN">0-3: DOUBLE DOWN</a> ]</b> или в секретной встрече в <b>[ <a href="/wiki/0-2:_THE_MEATGRINDER" title="0-2: THE MEATGRINDER">0-2: THE MEATGRINDER</a> ]</b>.
+            </p>
+            <h2>Механика</h2>
+            <p>Нажатие основной кнопки огня заставляет дробовик выстрелить случайным разбросом из 10 дробин. Каждая дробина наносит 0,25 урона, максимум 2,5 урона, если попадут все. Эти дробины могут пробивать врагов насквозь, что делает их хорошими для контроля толпы, хотя после пробития дробины вскоре исчезают. Дробины дробовика можно также <a href="/wiki/Parry" title="Parry">парировать</a> сразу после выстрела, чтобы наделить одну дробину большей скоростью и взрывным эффектом, наносящим 3,5 урона.
+            </p>
+            <p>После каждого выстрела дробовик нужно один раз передёрнуть, прежде чем он снова будет готов к стрельбе. Этот период перезарядки занимает примерно 0,92 секунды, что делает его быстрее <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a>, но ценой меньшего урона.
+            </p>
+            <p>Нажатие альтернативного огня один раз накачивает дробовик, изменяя следующий выстрел и увеличивая индикатор заряда на дисплее на единицу. Это можно сделать максимум 3 раза, после чего дисплей начинает мигать красным и пищать. Дальнейшая накачка ничего не даёт.
+            </p>
+            <p>Накачка дробовика увеличивает количество дробин в следующем выстреле, повышая урон, если попадут все. Однако это также снижает точность выстрела, из-за чего приходится подходить вплотную. Когда дробовик достигает максимального заряда в 3 накачки, следующий выстрел не выпускает дробины, а создаёт взрыв вокруг игрока, отбрасывающий его в противоположном направлении и наносящий 50 урона себе. Таблица ниже перечисляет характеристики зарядов.
+            </p>
+            <p>При 3+ накачках выстрел создаёт крупный взрыв общим уроном 10 перед тем, куда смотрит V1. В отличие от большинства взрывов, внешняя ударная волна, которая обычно лишь отбрасывает врагов, наносит 5 урона вдобавок к 5 урона внутренней части, из-за чего взрыв немного больше визуального.
+            </p>
+            <p>Кроме того, можно намеренно нанести себе урон взрывом перезаряда, чтобы воспользоваться его значительным отбрасыванием. Если прицелиться в определённом направлении, взрыв перезаряда отбросит игрока в противоположную сторону, что позволяет контролировать отбрасывание. Это можно использовать, чтобы очень быстро набрать безумную скорость или добраться до мест, обычно слишком высоких или далёких для игрока. Однако использование <a href="/wiki/Malicious_Railcannon" title="Malicious Railcannon">Malicious Railcannon</a> с выстрелом по <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">ядру</a> даёт больше, хотя можно и промахнуться по ядру. Это делает приём действительно хорошим в спидранах.
+            </p>
+            <p>Взрыв не убивает V1 мгновенно, так как наносит ему только 50 урона, поэтому если вы провалите Overpump Dash с первого раза — ничего страшного. Тренируйтесь, чтобы выполнять его стабильно (без получения урона и отбрасывания), и станьте неостановимым с его безумным уроном.
+            </p>
+          </div>
+
+        </div>
         <div class="img-content">
           <img src="./public/content/PumpChargeHUDNew.webp" alt="">
         </div>
       </div>
+
       <div class="block">
         <div class="text-content">
-          <h1 id="Sawed-on">Sawed-on Shotgun</h1>
+
+          <!-- ===== Sawed-on Shotgun ===== -->
+          <div class="en">
+            <h1 id="Sawed-on">Sawed-on Shotgun</h1>
             <p>The <a style="color: rgb(255,61,61);">Sawed-on Shotgun</a> s the red variant of the <a href="/wiki/Shotgun_(disambiguation)" class="mw-disambig" title="Shotgun (disambiguation)">Shotgun</a>. It can be purchased at the shop for 25,000<span style="color:darkorange"><b>P</b></span> after picking up the <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a> in <b>[ <a href="/wiki/0-3:_DOUBLE_DOWN" title="0-3: DOUBLE DOWN">0-3: DOUBLE DOWN</a> ]</b> or the secret encounter in <b>[ <a href="/wiki/0-2:_THE_MEATGRINDER" title="0-2: THE MEATGRINDER">0-2: THE MEATGRINDER</a> ]</b>.
             </p>
-                <h2>Mechanics</h2>
+            <h2>Mechanics</h2>
             <p>Pressing primary fire will cause the shotgun to fire a random spread of 12 pellets. Each pellet deals 0.25 damage for a maximum of 3 damage if all pellets hit. These pellets can pierce through enemies, making them good for crowd control, though pellets will disappear shortly after piercing. Shotgun pellets can also be <a href="/wiki/Parry" title="Parry">parried</a> immediately after firing to imbue one pellet with greater velocity and an explosive effect that deals 3.5 damage.
             </p>
             <p>Much like the <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a>, after each shot, the shotgun briefly flips open to let the cores cool down before closing back up, ready to fire again. This cooldown period takes roughly 1.25 seconds, making it slower overall than the <a href="/wiki/Pump_Charge_Shotgun" title="Pump Charge Shotgun">Pump Charge Shotgun</a>, though the Sawed-On deals slightly more damage.
@@ -126,7 +199,29 @@
             <p>Directly punching the chainsaw with the <a href="/wiki/Knuckleblaster" title="Knuckleblaster">Knuckleblaster</a> will detach it, causing it to fly, dealing 1.5 damage per hit, hitting each enemy four times before moving on to the next target. It will break in 6 hits while dealing the maximum 4 piercing hits to the last enemy, regardless how many piercing hits it had left before. It can bounces off the walls up to 25 times. The chainsaw is also detached when there is a major obstacle in the way that prevents the chainsaw from returning, though there is some leniency. Detached chainsaws can still be punched with a Feedbacker, doubling their damage output.
             </p>
             <p>The launched chainsaw is attracted to magnets from the <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a> and will orbit around them like a <a href="/wiki/Sawblade_Launcher" title="Sawblade Launcher">sawblade</a> trap. Compared to sawblades, chainsaws deal more damage, but are slower in circling around the magnet, have less health, and rotate around the magnet in a smaller radius, with the radius getting the longer it orbits around the magnet. Chainsaws are still attracted to magnets even when attached to the weapon, which can influence their trajectory and therefore timing to be punched again. A single magnet can hold up to 5 chainsaws.
-            </p>        </div>
+            </p>
+          </div>
+
+          <div class="ru">
+            <h1>Sawed-on Shotgun</h1>
+            <p><a style="color: rgb(255,61,61);">Sawed-on Shotgun</a> (дробовик с пилой) — красный вариант <a href="/wiki/Shotgun_(disambiguation)" class="mw-disambig" title="Shotgun (disambiguation)">дробовика</a>. Его можно купить в магазине за 25 000<span style="color:darkorange"><b>P</b></span> после получения <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a> в <b>[ <a href="/wiki/0-3:_DOUBLE_DOWN" title="0-3: DOUBLE DOWN">0-3: DOUBLE DOWN</a> ]</b> или в секретной встрече в <b>[ <a href="/wiki/0-2:_THE_MEATGRINDER" title="0-2: THE MEATGRINDER">0-2: THE MEATGRINDER</a> ]</b>.
+            </p>
+            <h2>Механика</h2>
+            <p>Нажатие основной кнопки огня заставляет дробовик выстрелить случайным разбросом из 12 дробин. Каждая дробина наносит 0,25 урона, максимум 3 урона, если попадут все. Эти дробины могут пробивать врагов насквозь, что делает их хорошими для контроля толпы, хотя после пробития дробины вскоре исчезают. Дробины дробовика можно также <a href="/wiki/Parry" title="Parry">парировать</a> сразу после выстрела, чтобы наделить одну дробину большей скоростью и взрывным эффектом, наносящим 3,5 урона.
+            </p>
+            <p>Подобно <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a>, после каждого выстрела дробовик ненадолго раскрывается, чтобы ядра остыли, а затем снова закрывается, готовый к стрельбе. Этот период перезарядки занимает примерно 1,25 секунды, что в целом делает его медленнее <a href="/wiki/Pump_Charge_Shotgun" title="Pump Charge Shotgun">Pump Charge Shotgun</a>, хотя Sawed-On наносит чуть больше урона.
+            </p>
+            <p>Удержание альтернативного огня раскручивает цепную пилу на дробовике, нанося урон врагам перед вами. Пока пила прикреплена, она наносит 0,25 урона за удар с частотой 18 ударов в секунду. Отпускание альтернативного огня или выстрел из дробовика при раскрученной пиле запускает пилу, которая может пробивать врагов насквозь, после чего через короткое расстояние её возвращает к дробовику трос. Чем дольше удерживается альтернативный огонь, тем дальше запускается пила. Запуск пилы заставляет её наносить 1,5 урона и многократно попадать по врагам 3 раза за контакт. Пока пила прикреплена к тросу, она обладает неограниченной пробивной способностью. На обратном пути пила может многократно попадать по одному и тому же врагу. Однако когда пила попадает по врагу на самом краю своей дальности, она наносит только три раза урона.
+            </p>
+            <p>Удар по пиле <a href="/wiki/Feedbacker" title="Feedbacker">Feedbacker</a>'ом перезапускает её и сокращает перезарядку удара, позволяя Feedbacker'у снова ударить пилу быстрее обычного. Пилы можно перезапускать бесконечное число раз, пока попадает удар Feedbacker'а. Этим способом можно одновременно держать в воздухе более одной пилы. Когда V1 смотрит в сторону от возвращающейся пилы, на экране появляется значок пилы, указывающий окно времени, когда пилу можно перезапустить.
+            </p>
+            <p>Прямой удар по пиле <a href="/wiki/Knuckleblaster" title="Knuckleblaster">Knuckleblaster</a>'ом отцепляет её, заставляя лететь, нанося 1,5 урона за удар и попадая по каждому врагу четыре раза, прежде чем перейти к следующей цели. Она ломается через 6 попаданий, нанося максимум 4 пробивных удара последнему врагу, независимо от того, сколько пробивных попаданий у неё оставалось. Она может отскакивать от стен до 25 раз. Пила также отцепляется, когда на пути есть крупное препятствие, мешающее ей вернуться, хотя есть некоторая поблажка. Отцепленные пилы всё ещё можно бить Feedbacker'ом, удваивая их урон.
+            </p>
+            <p>Запущенная пила притягивается к магнитам от <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a> и вращается вокруг них, как ловушка из <a href="/wiki/Sawblade_Launcher" title="Sawblade Launcher">пильных дисков</a>. По сравнению с пильными дисками пилы наносят больше урона, но медленнее вращаются вокруг магнита, имеют меньше здоровья и вращаются по меньшему радиусу, причём радиус растёт, чем дольше они вращаются вокруг магнита. Пилы всё ещё притягиваются к магнитам, даже будучи прикреплёнными к оружию, что может влиять на их траекторию и, следовательно, на тайминг для повторного удара. Один магнит может удерживать до 5 пил.
+            </p>
+          </div>
+
+        </div>
         <div class="img-content">
           <img src="./public/content/Sawed-On_Shotgun_HUD.webp" alt="">
         </div>

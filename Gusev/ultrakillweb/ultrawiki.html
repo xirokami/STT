@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ultrawiki</title>
   <link href="public/stylewiki.css" rel="stylesheet">
+  <style>
+    /* Временные стили — ваш скрипт должен переключать .en/.ru через класс на body, например */
+    /* body.lang-ru .en { display: none; } */
+    /* body.lang-en .ru { display: none; } */
+    .ru { display: none; } /* по умолчанию скрыт русский */
+  </style>
 </head>
 
 <body>
@@ -15,142 +21,373 @@
         <img src="public/content/768px-ULTRAWIKI.webp" alt="">
       </a>
       <div class="item">
-        <p>Revolver</p>
+        <p class="en">Revolver</p>
+        <p class="ru">Револьвер</p>
       </div>
       <ol class="sub-item item">
-        <li class = "blue"><a href="#Piercer"> - Piercer</a></li>
-        <li class = "green"><a href="#Marksman"> - Marksman</a></li>
-        <li class = "red"><a href="#Sharpshooter"> - Sharpshooter</a></li>
+        <li class="blue"><a href="#Piercer"> - <span class="en">Piercer</span><span class="ru">Прошиватель</span></a></li>
+        <li class="green"><a href="#Marksman"> - <span class="en">Marksman</span><span class="ru">Стрелок</span></a></li>
+        <li class="red"><a href="#Sharpshooter"> - <span class="en">Sharpshooter</span><span class="ru">Снайпер</span></a></li>
       </ol>
       <div class="item">
-        <a href="ultrawiki2.html"><p>Shotgun</p></a>
+        <a href="ultrawiki2.html">
+          <p class="en">Shotgun</p>
+          <p class="ru">Дробовик</p>
+        </a>
       </div>
       <ol class="sub-item item">
-        <li class = "blue"> - Core Eject</li>
-        <li class = "green"> - Pump Charge</li>
-        <li class = "red"> - Sawed-on</li>
+        <li class="blue"> - <span class="en">Core Eject</span><span class="ru">Выброс ядра</span></li>
+        <li class="green"> - <span class="en">Pump Charge</span><span class="ru">Накачка</span></li>
+        <li class="red"> - <span class="en">Sawed-on</span><span class="ru">Отпиленный</span></li>
       </ol>
       <div class="item">
-        <a href="ultrawiki3.html"><p>Nailgun</p></a>
+        <a href="ultrawiki3.html">
+          <p class="en">Nailgun</p>
+          <p class="ru">Гвоздемёт</p>
+        </a>
       </div>
       <ol class="sub-item item">
-        <li class = "blue"> - Attractor</li>
-        <li class = "green"> - Overheat</li>
-        <li class = "red"> - Jumpstart</li>
+        <li class="blue"> - <span class="en">Attractor</span><span class="ru">Притягиватель</span></li>
+        <li class="green"> - <span class="en">Overheat</span><span class="ru">Перегрев</span></li>
+        <li class="red"> - <span class="en">Jumpstart</span><span class="ru">Разгон</span></li>
       </ol>
       <div class="item">
-        <a href="ultrawiki4.html"><p>Railcannon</p></a>
+        <a href="ultrawiki4.html">
+          <p class="en">Railcannon</p>
+          <p class="ru">Рельсотрон</p>
+        </a>
       </div>
       <ol class="sub-item item">
-        <li class = "blue"> - Electric</li>
-        <li class = "green"> - Screwdriver</li>
-        <li class = "red"> - Malicious</li>
+        <li class="blue"> - <span class="en">Electric</span><span class="ru">Электрический</span></li>
+        <li class="green"> - <span class="en">Screwdriver</span><span class="ru">Отвёртка</span></li>
+        <li class="red"> - <span class="en">Malicious</span><span class="ru">Злонамеренный</span></li>
       </ol>
       <div class="item">
-        <a href="ultrawiki5.html"><p>Rocket Launcher</p></a>
+        <a href="ultrawiki5.html">
+          <p class="en">Rocket Launcher</p>
+          <p class="ru">Ракетомёт</p>
+        </a>
       </div>
       <ol class="sub-item item">
-        <li class = "blue"> - Freezeframe</li>
-        <li class = "green"> - S.R.S. Cannon</li>
-        <li class = "red"> - Firestarter</li>
+        <li class="blue"> - <span class="en">Freezeframe</span><span class="ru">Стоп-кадр</span></li>
+        <li class="green"> - <span class="en">S.R.S. Cannon</span><span class="ru">Пушка S.R.S.</span></li>
+        <li class="red"> - <span class="en">Firestarter</span><span class="ru">Поджигатель</span></li>
       </ol>
     </div>
-    <div class="content">
-      <div class="block" style="margin-top: 0;">
 
+    <div class="content">
+
+      <!-- ================= PIERCER ================= -->
+      <div class="block" style="margin-top: 0;">
         <div class="text-content">
-          <h1 id="Piercer">Piercer Revolver</h1>
-          <p>
+          <h1 id="Piercer">
+            <span class="en">Piercer Revolver</span>
+            <span class="ru">Револьвер «Прошиватель»</span>
+          </h1>
+
+          <p class="en">
             The <a style="color: rgb(64,232,255);">Piercer Revolver</a> is the first gun found in ULTRAKILL and is the blue variant
-            of
-            the <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig"
-              title="Revolver (disambiguation)">Revolver</a>,
+            of the <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig" title="Revolver (disambiguation)">Revolver</a>,
             obtained in <b>[ <a href="" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>. It
             can deal moderate amounts of damage with its primary fire and can pierce through multiple weak targets or
-            inflict
-            concentrated damage on single targets with its secondary fire.
+            inflict concentrated damage on single targets with its secondary fire.
           </p>
-            <h2>Mechanics</h2>
-          <p>
-            The primary fire shoots a standard hitscan shot at a reasonably high rate of fire, dealing 1 damage. Holding
-            down primary fire will cause the gun to fire automatically. Hitscan shots have infinite distance and no
-            damage
-            falloff. All stock revolver attacks benefit from locational damage multipliers, dealing 1.5x damage on
-            limbshots and 2x damage on headshots.
+          <p class="ru">
+            <a style="color: rgb(64,232,255);">Револьвер «Прошиватель»</a> — первое оружие, находимое в ULTRAKILL, и синий вариант
+            <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig" title="Revolver (disambiguation)">Револьвера</a>,
+            получаемый в <b>[ <a href="" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>. Он
+            наносит умеренный урон основным огнём и может прошивать несколько слабых целей или
+            наносить концентрированный урон одиночным целям вторичным огнём.
           </p>
-          <p>
-            Upon holding down, the alternate fire will begin charging. It takes approximately half a second for it to
-            fully charge, and after firing it takes around 2.5 seconds to recharge. Upon releasing, the Revolver will
-            fire
-            a powerful 3-hit hitscan, dealing 1 damage per hit. This means it can either pierce through and kill 3 weak
-            enemies or hit a single enemy for 3 damage, or 5,25/7,5 damage on a limbshot/headshot.
-          </p>
-          <p>
-            A charged shot can be ricocheted off of a <a>coin</a>, allowing it to gain
-            additional damage. However, instead of a straight +1 damage bonus for each coin, the charge shot will gain
-            +0.5 damage to each of its three hitscans for the first coin, and +0.25 damage for each coin after, for
-            +1.5/2.25/3 total base/limbshot/headshot damage for the first coin and +0.75/1.125/1.5 damage for subsequent
-            coins.
-          </p>
-          <p>
-            The Piercer Revolver's primary fire can still be used during the charged shot's cooldown.
-          </p>
+
+          <details class="mechanics">
+            <summary>
+              <h2>
+                <span class="en">Mechanics</span>
+                <span class="ru">Механики</span>
+              </h2>
+            </summary>
+
+            <p class="en">
+              The primary fire shoots a standard hitscan shot at a reasonably high rate of fire, dealing 1 damage. Holding
+              down primary fire will cause the gun to fire automatically. Hitscan shots have infinite distance and no
+              damage falloff. All stock revolver attacks benefit from locational damage multipliers, dealing 1.5x damage on
+              limbshots and 2x damage on headshots.
+            </p>
+            <p class="ru">
+              Основной огонь стреляет стандартным хитскан-выстрелом с довольно высокой скоростью, нанося 1 урон. Удержание
+              основного огня включает автоматическую стрельбу. Хитскан-выстрелы имеют бесконечную дальность и не имеют
+              падения урона. Все атаки стандартного револьвера получают бонус от локальных множителей урона: 1.5x по
+              конечностям и 2x в голову.
+            </p>
+
+            <p class="en">
+              Upon holding down, the alternate fire will begin charging. It takes approximately half a second for it to
+              fully charge, and after firing it takes around 2.5 seconds to recharge. Upon releasing, the Revolver will
+              fire a powerful 3-hit hitscan, dealing 1 damage per hit. This means it can either pierce through and kill 3 weak
+              enemies or hit a single enemy for 3 damage, or 5,25/7,5 damage on a limbshot/headshot.
+            </p>
+            <p class="ru">
+              При удержании вторичный огонь начинает заряжаться. Полная зарядка занимает примерно полсекунды, а после
+              выстрела перезарядка — около 2.5 секунд. При отпускании револьвер производит мощный 3-хит хитскан, нанося
+              1 урон за попадание. Это позволяет либо прошить и убить 3 слабых врагов, либо нанести одному врагу 3 урона,
+              или 5,25/7,5 урона по конечностям/в голову.
+            </p>
+
+            <p class="en">
+              A charged shot can be ricocheted off of a <a>coin</a>, allowing it to gain
+              additional damage. However, instead of a straight +1 damage bonus for each coin, the charge shot will gain
+              +0.5 damage to each of its three hitscans for the first coin, and +0.25 damage for each coin after, for
+              +1.5/2.25/3 total base/limbshot/headshot damage for the first coin and +0.75/1.125/1.5 damage for subsequent
+              coins.
+            </p>
+            <p class="ru">
+              Заряженный выстрел можно срикошетить от <a>монеты</a>, что даёт дополнительный урон. Однако вместо прямого
+              +1 урона за каждую монету, заряженный выстрел получает +0.5 урона к каждому из трёх хитсканов за первую монету
+              и +0.25 урона за каждую следующую, что даёт +1.5/2.25/3 суммарного базового/по конечностям/в голову урона за
+              первую монету и +0.75/1.125/1.5 урона за последующие монеты.
+            </p>
+
+            <p class="en">
+              The Piercer Revolver's primary fire can still be used during the charged shot's cooldown.
+            </p>
+            <p class="ru">
+              Основной огонь «Прошивателя» можно использовать во время перезарядки заряженного выстрела.
+            </p>
           </details>
         </div>
         <div class="img-content">
           <img src="./public/content/Piercer.webp" alt="">
         </div>
       </div>
+
+      <!-- ================= MARKSMAN ================= -->
       <div class="block">
         <div class="text-content">
-          <h1 id="Marksman">Marksman Revolver</h1>
-          <p>The <a style="color: rgb(69,255,69);">Marksman Revolver</a> is the green variant of the <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig" title="Revolver (disambiguation)">Revolver</a>, and gives V1 the ability to toss <a href="/wiki/Coin" title="Coin">coins</a> into the air. It can be bought at the <a href="/wiki/Terminal" title="Terminal">Terminal</a> for 7,500<span style="color:darkorange"><b>P</b></span> after obtaining the <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">Piercer Revolver</a> in <b>[ <a href="/wiki/0-1:_INTO_THE_FIRE" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>.
+          <h1 id="Marksman">
+            <span class="en">Marksman Revolver</span>
+            <span class="ru">Револьвер «Стрелок»</span>
+          </h1>
+
+          <p class="en">
+            The <a style="color: rgb(69,255,69);">Marksman Revolver</a> is the green variant of the
+            <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig" title="Revolver (disambiguation)">Revolver</a>, and gives V1 the ability to toss
+            <a href="/wiki/Coin" title="Coin">coins</a> into the air. It can be bought at the
+            <a href="/wiki/Terminal" title="Terminal">Terminal</a> for 7,500<span style="color:darkorange"><b>P</b></span> after obtaining the
+            <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">Piercer Revolver</a> in
+            <b>[ <a href="/wiki/0-1:_INTO_THE_FIRE" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>.
           </p>
-            <h2>Mechanics</h2>
-          <p>The primary fire shoots a standard hitscan projectile at a reasonably high rate of fire, dealing 1 damage. Holding down primary fire will cause the gun to fire automatically. All stock revolver attacks benefit from locational damage multipliers, dealing 1.5x damage on limbshots and 2x damage on headshots.
+          <p class="ru">
+            <a style="color: rgb(69,255,69);">Револьвер «Стрелок»</a> — зелёный вариант
+            <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig" title="Revolver (disambiguation)">Револьвера</a>, дающий V1 способность подбрасывать
+            <a href="/wiki/Coin" title="Coin">монеты</a> в воздух. Его можно купить в
+            <a href="/wiki/Terminal" title="Terminal">Терминале</a> за 7,500<span style="color:darkorange"><b>P</b></span> после получения
+            <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">«Прошивателя»</a> в
+            <b>[ <a href="/wiki/0-1:_INTO_THE_FIRE" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>.
           </p>
-          <p>It fires at the same rate as the <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">Piercer</a> and <a href="/wiki/Sharpshooter_Revolver" title="Sharpshooter Revolver">Sharpshooter</a> variants.
-          </p>
-          <p>For a more extensive outline of coins, see (<a href="/wiki/Coin" title="Coin">Coin</a>).
-          </p>
-          <p>The alternate fire tosses a <a href="/wiki/Coin" title="Coin">coin</a>, with multiple coins able to be thrown in quick succession. A maximum of 4 coins can be held in reserve, with each coin taking 4 seconds to recharge when expended. These coins can multiply, empower, and aim hitscan attacks upon being hit, allowing for a truly impressive amount of strategies to be employed. They can also be punched into enemies with the <a href="/wiki/Feedbacker" title="Feedbacker">Feedbacker</a> to deal 2 damage.
-          </p>
-          <p>It is worth noting that the trajectory of tossed coins will vary based on V1's movement. If V1 is moving forward, the coin will arc outward away from the player. If V1 is moving backward, the coin will arc upward into the air, remaining on a relatively straight path to the ground. If V1 moves left or right, the coin will move left or right with them. Finally, if V1 is falling, the coin will angle downward, and if V1 jumps, the coin will sail high into the air. The latter can be especially useful if one is trying to get multiple coins into a splitshot state.
-          </p>        </div>
+
+          <details class="mechanics">
+            <summary>
+              <h2>
+                <span class="en">Mechanics</span>
+                <span class="ru">Механики</span>
+              </h2>
+            </summary>
+
+            <p class="en">
+              The primary fire shoots a standard hitscan projectile at a reasonably high rate of fire, dealing 1 damage. Holding down primary fire will cause the gun to fire automatically. All stock revolver attacks benefit from locational damage multipliers, dealing 1.5x damage on limbshots and 2x damage on headshots.
+            </p>
+            <p class="ru">
+              Основной огонь стреляет стандартным хитскан-снарядом с довольно высокой скоростью, нанося 1 урон. Удержание
+              основного огня включает автоматическую стрельбу. Все атаки стандартного револьвера получают бонус от
+              локальных множителей урона: 1.5x по конечностям и 2x в голову.
+            </p>
+
+            <p class="en">
+              It fires at the same rate as the <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">Piercer</a> and
+              <a href="/wiki/Sharpshooter_Revolver" title="Sharpshooter Revolver">Sharpshooter</a> variants.
+            </p>
+            <p class="ru">
+              Скорострельность такая же, как у вариантов <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">«Прошиватель»</a> и
+              <a href="/wiki/Sharpshooter_Revolver" title="Sharpshooter Revolver">«Снайпер»</a>.
+            </p>
+
+            <p class="en">
+              For a more extensive outline of coins, see (<a href="/wiki/Coin" title="Coin">Coin</a>).
+            </p>
+            <p class="ru">
+              Более подробное описание монет см. (<a href="/wiki/Coin" title="Coin">Монета</a>).
+            </p>
+
+            <p class="en">
+              The alternate fire tosses a <a href="/wiki/Coin" title="Coin">coin</a>, with multiple coins able to be thrown in quick succession. A maximum of 4 coins can be held in reserve, with each coin taking 4 seconds to recharge when expended. These coins can multiply, empower, and aim hitscan attacks upon being hit, allowing for a truly impressive amount of strategies to be employed. They can also be punched into enemies with the <a href="/wiki/Feedbacker" title="Feedbacker">Feedbacker</a> to deal 2 damage.
+            </p>
+            <p class="ru">
+              Вторичный огонь подбрасывает <a href="/wiki/Coin" title="Coin">монету</a>, причём несколько монет можно бросить
+              быстро друг за другом. В запасе может быть максимум 4 монеты, каждая восстанавливается за 4 секунды после
+              использования. Эти монеты могут умножать, усиливать и наводить хитскан-атаки при попадании, что открывает
+              впечатляющее количество стратегий. Их также можно вбивать в врагов с помощью
+              <a href="/wiki/Feedbacker" title="Feedbacker">Фидбекера</a>, нанося 2 урона.
+            </p>
+
+            <p class="en">
+              It is worth noting that the trajectory of tossed coins will vary based on V1's movement. If V1 is moving forward, the coin will arc outward away from the player. If V1 is moving backward, the coin will arc upward into the air, remaining on a relatively straight path to the ground. If V1 moves left or right, the coin will move left or right with them. Finally, if V1 is falling, the coin will angle downward, and if V1 jumps, the coin will sail high into the air. The latter can be especially useful if one is trying to get multiple coins into a splitshot state.
+            </p>
+            <p class="ru">
+              Стоит отметить, что траектория брошенных монет зависит от движения V1. Если V1 движется вперёд, монета
+              отклоняется наружу от игрока. Если V1 движется назад, монета уходит вверх, оставаясь на относительно прямой
+              траектории к земле. Если V1 движется влево или вправо, монета летит вместе с ним. Наконец, если V1 падает,
+              монета наклоняется вниз, а если V1 прыгает, монета взлетает высоко в воздух. Последнее особенно полезно,
+              если нужно перевести несколько монет в состояние сплитшота.
+            </p>
+          </details>
+        </div>
         <div class="img-content">
           <img src="./public/content/MarksmanHUDNew.webp" alt="">
         </div>
       </div>
+
+      <!-- ================= SHARPSHOOTER ================= -->
       <div class="block">
         <div class="text-content">
-          <h1 id="Sharpshooter">Sharpshooter Revolver</h1>
-          <p>The <a style="color: rgb(255,61,61);">Marksman Revolver</a> is the red variant of the <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig" title="Revolver (disambiguation)">Revolver</a> which can be bought at the <a href="/wiki/Terminal" title="Terminal">Terminal</a> for 25,000<span style="color:darkorange;"><b>P</b></span> after obtaining the Piercer Revolver in <b>[ <a href="/wiki/0-1:_INTO_THE_FIRE" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>. Its alt fire shoots red energy beams that can ricochet off surfaces, pierce enemies and destroy projectiles. The number of ricochets increases with the speed at which the revolver is spun.
+          <h1 id="Sharpshooter">
+            <span class="en">Sharpshooter Revolver</span>
+            <span class="ru">Револьвер «Снайпер»</span>
+          </h1>
+
+          <p class="en">
+            The <a style="color: rgb(255,61,61);">Marksman Revolver</a> is the red variant of the
+            <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig" title="Revolver (disambiguation)">Revolver</a> which can be bought at the
+            <a href="/wiki/Terminal" title="Terminal">Terminal</a> for 25,000<span style="color:darkorange;"><b>P</b></span> after obtaining the Piercer Revolver in
+            <b>[ <a href="/wiki/0-1:_INTO_THE_FIRE" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>. Its alt fire shoots red energy beams that can ricochet off surfaces, pierce enemies and destroy projectiles. The number of ricochets increases with the speed at which the revolver is spun.
           </p>
-            <h2>Mechanics</h2>
-          <p>The primary fire shoots a standard hitscan projectile at a reasonably high rate of fire, dealing 1 damage. Holding down primary fire will cause the gun to fire automatically. All stock revolver attacks benefit from locational damage multipliers, dealing 1.5x damage on limbshots and 2x damage on headshots.
+          <p class="ru">
+            <a style="color: rgb(255,61,61);">Револьвер «Снайпер»</a> — красный вариант
+            <a href="/wiki/Revolver_(disambiguation)" class="mw-disambig" title="Revolver (disambiguation)">Револьвера</a>, который можно купить в
+            <a href="/wiki/Terminal" title="Terminal">Терминале</a> за 25,000<span style="color:darkorange;"><b>P</b></span> после получения «Прошивателя» в
+            <b>[ <a href="/wiki/0-1:_INTO_THE_FIRE" title="0-1: INTO THE FIRE">0-1: INTO THE FIRE</a> ]</b>. Вторичный огонь стреляет красными
+            энергетическими лучами, которые рикошетят от поверхностей, прошивают врагов и уничтожают снаряды. Количество
+            рикошетов растёт со скоростью раскрутки револьвера.
           </p>
-          <p>It fires at the same rate as the <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">Piercer</a> and <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">Marksman</a> variants.
-          </p>
-          <p>Holding down alt-fire will spin the revolver at increasing speeds. After spinning for roughly 0.3 seconds, releasing alt-fire will fire a piercing projectile with red aura that deals 1 damage with each hit (with locational damage bonuses). The projectile pierces through infinite enemies, destroys projectiles, and ricochets off of surfaces. The number of ricochets starts at 1 and increases depending on how fast the revolver is spinning. Maximum speed is reached after about 2.5 full seconds of spinning, which allows the beam to ricochet up to 4 times. (Note: Time values are estimates and need verification)
-          </p>
-          <p>The alt-fire has 3 charges total and each shot will always consume one charge regardless of how fast the revolver was spun. Each charge regenerates at a rate of 6.40 seconds per charge. Primary fire still works even when the weapon has no charges left.
-          </p>
-          <p>If the projectile hits another, it will destroy the projectile and cause a red explosion. This explosion deals 23 or 35 self damage (depending on distance from the explosion) if the player is too close to the blast. The blast from taking self damage in this way blasts the player back similar to the <a href="/wiki/Pump_Charge_Shotgun" title="Pump Charge Shotgun">Overcharged Pump Shotgun</a>, although to a significantly lesser degree. The sole exception to this self-damage velocity is if the player is extremely close to the projectile when it is destroyed, which will send the player high into the air. Multiple projectiles can be destroyed with a single projectile, but only the first projectile destroyed will explode. Projectiles that can be destroyed vary, from normal Hell Energy projectiles to Cerberus orbs, shotgun pellets, and even V2's charged Piercer shots. The enemies killed with the explosions will grant the +FRIENDLY FIRE style bonus. +INTERRUPTION style bonuses performed with the Sharpshooter's alternate fire cause red explosions as well. However, weapons thrown by enemies (such as the ones by <a href="/wiki/Swordsmachine" title="Swordsmachine">Swordsmachine</a>) cannot be destroyed by the Sharpshooter's ricochet shots.
-          </p>
-          <p>Each time the shot ricochets off of a surface, it gains an extra hitscan that applies to all future targets it hits, up to a maximum of three hits on a single target per ricochet; for instance, an enemy hit by a beam that has ricocheted twice or more will be hit 3 times by the beam, equating to a total of 3 damage, or 6 damage on headshot). Ricoshots off of <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">coins</a> will increase the number of hits on a single target by the coin's power as though it had ricocheted off a surface, rather than scaling damage like with other hitscan attacks. As coins start with a power of 2, only a single coin is needed to max out each subsequent ricochet's single-target damage.
-          </p>
-          <p>Whenever the projectile ricochets, if the bounce angle ends up being close enough to a target then the beam will auto-aim towards it, making ricochet trickshots easier to hit.
-          </p>
-          <p>The Slab Sharpshooter Revolver, like all other Slab variants, deals increased base damage with no locational bonuses, has a roughly halved fire rate, and takes longer to ready before firing. Unlike the normal Sharpshooter Revolver, the Slab Sharpshooter has only one charge indicated by a red crosshair symbol. The recovery time for this charge is roughly 8.5 seconds. The alternate fire spins up to full power almost instantly, deals more damage, starting at 2 hits of 1.25 damage per target and increasing to a maximum of 4 hits with coin and environment ricochets.
-          </p>
-          <p>Charging the alternate fire while <a href="/wiki/Dual_Wield" title="Dual Wield">dual wielding</a> this revolver variant causes it to propel V1 upward like a helicopter, and the effect scales exponentially with more Dual Wield powerups. Four dual-wield powerups (5 revolvers) are needed to achieve true flight - otherwise, V1 will just jump higher and fall slower. The angle of propulsion depends on the view angle: looking straight ahead will maximize vertical speed, while looking at downward and upward angles will convert a portion of lift into forward and backward momentum, respectively. A small amount of upward force is always applied regardless of view angle, which also scales with the number of Dual Wield powerups.
-          </p>        </div>
+
+          <details class="mechanics">
+            <summary>
+              <h2>
+                <span class="en">Mechanics</span>
+                <span class="ru">Механики</span>
+              </h2>
+            </summary>
+
+            <p class="en">
+              The primary fire shoots a standard hitscan projectile at a reasonably high rate of fire, dealing 1 damage. Holding down primary fire will cause the gun to fire automatically. All stock revolver attacks benefit from locational damage multipliers, dealing 1.5x damage on limbshots and 2x damage on headshots.
+            </p>
+            <p class="ru">
+              Основной огонь стреляет стандартным хитскан-снарядом с довольно высокой скоростью, нанося 1 урон. Удержание
+              основного огня включает автоматическую стрельбу. Все атаки стандартного револьвера получают бонус от
+              локальных множителей урона: 1.5x по конечностям и 2x в голову.
+            </p>
+
+            <p class="en">
+              It fires at the same rate as the <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">Piercer</a> and
+              <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">Marksman</a> variants.
+            </p>
+            <p class="ru">
+              Скорострельность такая же, как у вариантов <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">«Прошиватель»</a> и
+              <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">«Стрелок»</a>.
+            </p>
+
+            <p class="en">
+              Holding down alt-fire will spin the revolver at increasing speeds. After spinning for roughly 0.3 seconds, releasing alt-fire will fire a piercing projectile with red aura that deals 1 damage with each hit (with locational damage bonuses). The projectile pierces through infinite enemies, destroys projectiles, and ricochets off of surfaces. The number of ricochets starts at 1 and increases depending on how fast the revolver is spinning. Maximum speed is reached after about 2.5 full seconds of spinning, which allows the beam to ricochet up to 4 times. (Note: Time values are estimates and need verification)
+            </p>
+            <p class="ru">
+              Удержание вторичного огня раскручивает револьвер с возрастающей скоростью. После примерно 0.3 секунд раскрутки
+              отпускание вторичного огня выпускает прошивающий снаряд с красной аурой, наносящий 1 урон за попадание (с
+              локальными бонусами). Снаряд прошивает бесконечное число врагов, уничтожает снаряды и рикошетит от
+              поверхностей. Число рикошетов начинается с 1 и растёт в зависимости от скорости раскрутки. Максимальная
+              скорость достигается примерно за 2.5 полных секунды, что позволяет лучу рикошетить до 4 раз. (Примечание:
+              значения времени приблизительны и требуют проверки)
+            </p>
+
+            <p class="en">
+              The alt-fire has 3 charges total and each shot will always consume one charge regardless of how fast the revolver was spun. Each charge regenerates at a rate of 6.40 seconds per charge. Primary fire still works even when the weapon has no charges left.
+            </p>
+            <p class="ru">
+              Вторичный огонь имеет всего 3 заряда, и каждый выстрел всегда расходует один заряд независимо от скорости
+              раскрутки. Каждый заряд восстанавливается со скоростью 6.40 секунды на заряд. Основной огонь работает даже
+              при отсутствии зарядов.
+            </p>
+
+            <p class="en">
+              If the projectile hits another, it will destroy the projectile and cause a red explosion. This explosion deals 23 or 35 self damage (depending on distance from the explosion) if the player is too close to the blast. The blast from taking self damage in this way blasts the player back similar to the <a href="/wiki/Pump_Charge_Shotgun" title="Pump Charge Shotgun">Overcharged Pump Shotgun</a>, although to a significantly lesser degree. The sole exception to this self-damage velocity is if the player is extremely close to the projectile when it is destroyed, which will send the player high into the air. Multiple projectiles can be destroyed with a single projectile, but only the first projectile destroyed will explode. Projectiles that can be destroyed vary, from normal Hell Energy projectiles to Cerberus orbs, shotgun pellets, and even V2's charged Piercer shots. The enemies killed with the explosions will grant the +FRIENDLY FIRE style bonus. +INTERRUPTION style bonuses performed with the Sharpshooter's alternate fire cause red explosions as well. However, weapons thrown by enemies (such as the ones by <a href="/wiki/Swordsmachine" title="Swordsmachine">Swordsmachine</a>) cannot be destroyed by the Sharpshooter's ricochet shots.
+            </p>
+            <p class="ru">
+              Если снаряд попадает в другой снаряд, он уничтожает его и вызывает красный взрыв. Этот взрыв наносит 23 или 35
+              урона себе (в зависимости от расстояния до взрыва), если игрок слишком близко. Отбрасывание от такого
+              самоурона похоже на <a href="/wiki/Pump_Charge_Shotgun" title="Pump Charge Shotgun">перезаряженный дробовик «Накачка»</a>,
+              хотя и значительно слабее. Единственное исключение — если игрок находится крайне близко к снаряду в момент
+              уничтожения, его подбрасывает высоко в воздух. Несколько снарядов можно уничтожить одним снарядом, но
+              взорвётся только первый уничтоженный. Уничтожаемые снаряды различаются: от обычных снарядов адской энергии до
+              сфер Цербера, дроби дробовика и даже заряженных выстрелов «Прошивателя» V2. Враги, убитые взрывами, дают
+              бонус стиля +FRIENDLY FIRE. Бонусы стиля +INTERRUPTION, выполненные вторичным огнём «Снайпера», также
+              вызывают красные взрывы. Однако оружие, брошенное врагами (например, <a href="/wiki/Swordsmachine" title="Swordsmachine">Мечником</a>),
+              не может быть уничтожено рикошетными выстрелами «Снайпера».
+            </p>
+
+            <p class="en">
+              Each time the shot ricochets off of a surface, it gains an extra hitscan that applies to all future targets it hits, up to a maximum of three hits on a single target per ricochet; for instance, an enemy hit by a beam that has ricocheted twice or more will be hit 3 times by the beam, equating to a total of 3 damage, or 6 damage on headshot). Ricoshots off of <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">coins</a> will increase the number of hits on a single target by the coin's power as though it had ricocheted off a surface, rather than scaling damage like with other hitscan attacks. As coins start with a power of 2, only a single coin is needed to max out each subsequent ricochet's single-target damage.
+            </p>
+            <p class="ru">
+              Каждый раз, когда выстрел рикошетит от поверхности, он получает дополнительный хитскан, применяемый ко всем
+              будущим целям, вплоть до максимума в три попадания по одной цели за рикошет; например, враг, поражённый
+              лучом, срикошетившим дважды или более, получит 3 попадания, что в сумме даёт 3 урона, или 6 урона в голову.
+              Рикошеты от <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">монет</a> увеличивают число попаданий
+              по одной цели на силу монеты так, как если бы луч срикошетил от поверхности, вместо масштабирования урона, как
+              у других хитскан-атак. Поскольку монеты начинаются с силы 2, достаточно одной монеты, чтобы максимизировать
+              урон по одной цели каждого последующего рикошета.
+            </p>
+
+            <p class="en">
+              Whenever the projectile ricochets, if the bounce angle ends up being close enough to a target then the beam will auto-aim towards it, making ricochet trickshots easier to hit.
+            </p>
+            <p class="ru">
+              Всякий раз, когда снаряд рикошетит, если угол отскока оказывается достаточно близким к цели, луч
+              автоматически наводится на неё, что облегчает попадание трюковых рикошетов.
+            </p>
+
+            <p class="en">
+              The Slab Sharpshooter Revolver, like all other Slab variants, deals increased base damage with no locational bonuses, has a roughly halved fire rate, and takes longer to ready before firing. Unlike the normal Sharpshooter Revolver, the Slab Sharpshooter has only one charge indicated by a red crosshair symbol. The recovery time for this charge is roughly 8.5 seconds. The alternate fire spins up to full power almost instantly, deals more damage, starting at 2 hits of 1.25 damage per target and increasing to a maximum of 4 hits with coin and environment ricochets.
+            </p>
+            <p class="ru">
+              «Снайпер»-плита, как и все варианты-плиты, наносит повышенный базовый урон без локальных бонусов, имеет
+              примерно вдвое меньшую скорострельность и дольше готовится к выстрелу. В отличие от обычного «Снайпера»,
+              «Снайпер»-плита имеет только один заряд, обозначаемый символом красного прицела. Время восстановления этого
+              заряда — примерно 8.5 секунд. Вторичный огонь раскручивается до полной мощности почти мгновенно, наносит
+              больше урона, начиная с 2 попаданий по 1.25 урона на цель и увеличиваясь до максимума в 4 попадания при
+              рикошетах от монет и окружения.
+            </p>
+
+            <p class="en">
+              Charging the alternate fire while <a href="/wiki/Dual_Wield" title="Dual Wield">dual wielding</a> this revolver variant causes it to propel V1 upward like a helicopter, and the effect scales exponentially with more Dual Wield powerups. Four dual-wield powerups (5 revolvers) are needed to achieve true flight - otherwise, V1 will just jump higher and fall slower. The angle of propulsion depends on the view angle: looking straight ahead will maximize vertical speed, while looking at downward and upward angles will convert a portion of lift into forward and backward momentum, respectively. A small amount of upward force is always applied regardless of view angle, which also scales with the number of Dual Wield powerups.
+            </p>
+            <p class="ru">
+              Зарядка вторичного огня при <a href="/wiki/Dual_Wield" title="Dual Wield">двойном владении</a> этим вариантом
+              револьвера подбрасывает V1 вверх, как вертолёт, и эффект экспоненциально растёт с числом усилений Dual Wield.
+              Для настоящего полёта нужно четыре усиления двойного владения (5 револьверов) — иначе V1 просто прыгает выше
+              и падает медленнее. Угол тяги зависит от угла обзора: взгляд прямо вперёд максимизирует вертикальную
+              скорость, а взгляд вниз и вверх преобразует часть подъёмной силы в импульс вперёд и назад соответственно.
+              Небольшая подъёмная сила всегда применяется независимо от угла обзора, что также масштабируется от числа
+              усилений Dual Wield.
+            </p>
+          </details>
+        </div>
         <div class="img-content">
           <img src="./public/content/SharpshooterRevolverHUD.webp" alt="">
         </div>
       </div>
+
     </div>
     <script href="public/ultra1.js"></script>
+  </div>
 </body>
 
 </html>

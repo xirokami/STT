@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,9 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ultrawiki</title>
   <link href="public/stylewiki.css" rel="stylesheet">
+  <style>
+    /* Переключение языка через класс на body:
+       body.lang-en -> показан .en, скрыт .ru
+       body.lang-ru -> показан .ru, скрыт .en
+       По умолчанию (без класса) — английский */
+    .ru { display: none; }
+    body.lang-en .ru { display: none; }
+    body.lang-ru .en { display: none; }
+    body.lang-ru .ru { display: revert; }
+  </style>
 </head>
 
-<body>
+<body class="lang-en">
   <div class="main-container">
     <div class="navigation">
       <a href="home.html">
@@ -52,17 +62,20 @@
       <ol class="sub-item item">
         <li class = "blue"><a href="#Freezeframe"> - Freezeframe</a></li>
         <li class = "green"><a href="#S.R.S.Cannon"> - S.R.S. Cannon</a></li>
-        <li class = "red"><a href="#Firestarter"> - Firestarter</li>
+        <li class = "red"><a href="#Firestarter"> - Firestarter</a></li>
       </ol>
     </div>
     <div class="content">
       <div class="block" style="margin-top: 0;">
 
         <div class="text-content">
-          <h1 id="Freezeframe">Freezeframe Rocket Launcher</h1>
+
+          <!-- ===== Freezeframe Rocket Launcher ===== -->
+          <div class="en">
+            <h1 id="Freezeframe">Freezeframe Rocket Launcher</h1>
             <p>The <a style="color: rgb(64,232,255);">Freezeframe Rocket Launcher</a> is the blue variant of the <a href="/wiki/Rocket_Launcher_(disambiguation)" class="mw-disambig" title="Rocket Launcher (disambiguation)">Rocket Launcher</a>, unlocked in the level <b>[ <a href="/wiki/5-3:_SHIP_OF_FOOLS" title="5-3: SHIP OF FOOLS">5-3: SHIP OF FOOLS</a> ]</b>.
             </p>
-                <h2>Mechanics</h2>
+            <h2>Mechanics</h2>
             <p>Pressing primary fire will fire a rocket from the barrel with about a second between each shot. They deal 3.5 damage, have a lifetime of 30 seconds, are attracted to <a href="/wiki/Attractor_Nailgun#Secondary_Fire" title="Attractor Nailgun">Magnets</a> embedded in enemies, and can also be grappled &amp; ridden. Rocket explosions can also set enemies on fire.
             </p>
             <p>If the rocket doesn't hit an enemy directly, it will create a large, non-damaging shockwave that will push enemies away. Directly hitting an enemy will make it create a damaging explosion. If a rocket contacts a <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Magnet</a> or thrown <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">Coin</a>, it will also create a damaging explosion.
@@ -104,17 +117,73 @@
             <p>Shooting multiple frozen rockets upwards and then jumping onto the highest one is a way to gain vertical lift from the ground level. When the rocket V1 is on starts running out of fuel, it is still pushed by the rockets below.
             </p>
             <p>Perform a slam while high up, shoot two rockets beneath you and quickly use the <a href="/wiki/Whiplash" title="Whiplash">Whiplash</a>, if done correctly you will achieve the miracle of flight. The rocket you are riding on will be pushed upwards by the one you grabbed, allowing you to gain height until the rockets despawn or blow up. Try to keep the mounted rocket at a 90° angle, as this will grant you height quicker. The contraption can be safely dismounted by punching; do not retract the whiplash as it will blow up the rockets. Much like chain surfing this can be repeated numerous times, but the rockets will not lose any momentum, essentially allowing for infinite height. Since this does not require the rockets to be frozen it can also be done with the <a href="/wiki/S.R.S._Cannon_Rocket_Launcher" title="S.R.S. Cannon Rocket Launcher">S.R.S. Cannon Rocket Launcher</a> variant. An example of this trick being performed can be found <a target="_blank" rel="nofollow noreferrer noopener" class="external text">
-            </p>        </div>
+            </p>
+          </div>
+
+          <div class="ru">
+            <h1>Freezeframe Rocket Launcher</h1>
+            <p><a style="color: rgb(64,232,255);">Freezeframe Rocket Launcher</a> (ракетомёт-стоп-кадр) — синий вариант <a href="/wiki/Rocket_Launcher_(disambiguation)" class="mw-disambig" title="Rocket Launcher (disambiguation)">ракетомёта</a>, открываемый на уровне <b>[ <a href="/wiki/5-3:_SHIP_OF_FOOLS" title="5-3: SHIP OF FOOLS">5-3: SHIP OF FOOLS</a> ]</b>.
+            </p>
+            <h2>Механика</h2>
+            <p>Нажатие основной кнопки огня выпускает ракету из ствола с интервалом примерно в секунду между выстрелами. Они наносят 3,5 урона, живут 30 секунд, притягиваются к <a href="/wiki/Attractor_Nailgun#Secondary_Fire" title="Attractor Nailgun">магнитам</a>, воткнутым во врагов, а также за них можно зацепиться и оседлать их. Взрывы ракет также могут поджигать врагов.
+            </p>
+            <p>Если ракета не попадает во врага напрямую, она создаёт крупную не наносящую урон ударную волну, которая отталкивает врагов. Прямое попадание во врага заставляет её создать наносящий урон взрыв. Если ракета касается <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">магнита</a> или брошенной <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">монеты</a>, она также создаёт наносящий урон взрыв.
+            </p>
+            <p>Если ракета попадает в находящегося в воздухе врага, который обычно не летает, она вызывает красный взрыв, наносящий двойной урон с двойным радиусом и игнорирующий блокировку взрывов у <a href="/wiki/Soldier" title="Soldier">Soldier</a>. Это также относится к <a href="/wiki/Mannequin" title="Mannequin">Mannequin</a>, цепляющимся за стены и потолки. Лёгкие враги, которых притягивает <a href="/wiki/Whiplash" title="Whiplash">Whiplash</a>, считаются находящимися в воздухе.
+            </p>
+            <p>Ракеты можно подстрелить в воздухе мгновенным (hitscan) оружием, что увеличивает размер взрыва, но не вызывает более крупный красный взрыв, как у подстреленных <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">ядер</a> или воздушных выстрелов по ракетам. <a href="/wiki/Coin" title="Coin">Рикошетные выстрелы</a> также наводятся на ракеты с приоритетом выше, чем у врагов.
+            </p>
+            <p>Выстрел по ракете лучом Malicious Railcannon создаёт крупный взрыв.
+            </p>
+            <p>Нажатие альтернативного огня замораживает все ракеты на месте, включая ракеты, выпущенные после, ракеты других вариантов ракетомёта и ракеты, выпущенные врагами; он непрерывно расходует заряд со скоростью 1,25 секунды на четверть (максимум 5 секунд); перезарядка занимает 2,5 секунды на четверть (10 секунд на полную). У ракет на 50% больше радиус взрыва, если их подорвать в замороженном состоянии. Это также относится к красным взрывам. Заморозка также действует на ракеты, выпущенные врагами.
+            </p>
+            <p>Использование альтернативного огня для заморозки ракет хотя бы на секунду (время заморозки не обязательно должно быть непрерывным) усиливает (freezecharge) их, что обозначается синей пульсацией, а красные полосы ракеты становятся синими. Когда усиленные заморозкой ракеты попадают в любого врага, они вместо обычного жёлтого взрыва детонируют гораздо более крупным и damaging красным взрывом, как если бы они попали в находящегося в воздухе врага. Этот бафф также складывается с увеличенным радиусом взрыва, который замороженные ракеты имеют изначально, но не складывается с баффом от попадания в находящегося в воздухе врага. Усиленные заморозкой ракеты НЕ детонируют красным взрывом, если по ним выстрелить из <a href="/wiki/Piercer_Revolver" title="Piercer Revolver">револьверов</a>, <a href="/wiki/Electric_Railcannon" title="Electric Railcannon">Railcannon</a>, <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">магнитов</a> или <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">монет</a>.
+            </p>
+            <p>Заморозка ракеты не влияет на то, сколько времени требуется для её исчезновения.
+            </p>
+            <p>Магниты от <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a>, если они воткнуты во врага, также притягивают ближайшие ракеты, что облегчает прямые попадания. Магниты, встроенные во врага, уничтожаются после трёх прямых попаданий ракет, причём красные взрывы в воздухе считаются за два попадания. Замороженные ракеты в радиусе магнита переориентируются к магниту, оставаясь замороженными, что позволяет им идти более прямыми путями к цели и потенциально избегать преждевременной детонации о рельеф.
+            </p>
+            <p>При падении касание замороженной ракеты (или движущейся ракеты, которую ранее заморозили или притянули <a href="/wiki/Whiplash" title="Whiplash">Whiplash</a>'ом) заставляет V1 оседлать её. Оседланная ракета движется со скоростью 65% и управляется кнопками движения: вперёд опускает тангаж ракеты, назад поднимает его, а влево и вправо соответственно регулируют рыскание. Ракету можно поворачивать, даже когда она заморожена. Можно прыгнуть или ударить о землю, чтобы спешиться раньше, после чего ракета продолжит движение с обычной скоростью. Рывок не спешивает V1 и никак не влияет на траекторию ракеты, но по-прежнему даёт неуязвимость, если вы решите въехать на ракете во врага.
+            </p>
+            <p>После полёта на ракете около 2 секунд (или всего 1 секунды при движении строго вверх, в зависимости от угла) она начнёт падать из-за веса V1. Ракета теряет тягу и падает тем быстрее, чем дольше вы на ней остаётесь, но при спешивании возвращается к обычной скорости (если оседлать ту же ракету снова, она всё равно будет падать с прежней скоростью). Оседланные ракеты не падают и не теряют тягу, пока заморожены или находятся под водой, поэтому V1 может оставаться на них бесконечно — то есть пока они не исчезнут.
+            </p>
+            <p>Более подробно: у оседланных ракет есть период полной тяги, когда ракета полностью управляема, за которым следует период затухания, когда количество управляемого импульса линейно уменьшается и заменяется направленным вниз импульсом. Когда ракета направлена вперёд или вниз, период полной тяги длится 1,5 секунды, а период затухания — 5 секунд. Как только период затухания заканчивается, ракета при езде падает строго вниз, в какую бы сторону она ни была направлена.
+            </p>
+            <p>Вместо того чтобы приземляться на ракету, чтобы оседлать её, можно подтянуть ракету снизу с помощью <a href="/wiki/Whiplash" title="Whiplash">Whiplash</a>, чтобы оседлать её. Если подтянуть ракету сверху, она вместо этого взорвётся у вас перед лицом.
+            </p>
+            <p>Чтобы быстро и надёжно начать полёт на ракете в воздухе, начните с активации способности заморозки и прицеливания под небольшим углом вниз, затем сделайте рывок и сразу выстрелите ракетой. Разморозьте ракету ближе к концу рывка, и вы начнёте лететь на ней, когда она вас подхватит. При правильном тайминге этот метод можно использовать, чтобы начать полёт на ракете в любой момент в воздухе, и даже чтобы связывать несколько полётов подряд — это называется Chain Surfing.
+            </p>
+            <p>Во время сёрфинга на ракете ракету можно заморозить, когда она начинает терять воздух; затем можно выпустить новую ракету, запрыгнуть на неё и разморозить, чтобы продолжить сёрфинг. Первые три ракеты имеют полное время в воздухе; начиная с четвёртой ракеты время в воздухе постепенно уменьшается: у четвёртой ракеты при езде только половина периода полной тяги, а пятая сразу начинает с периода затухания. Седьмая и последующие ракеты начинают падать сразу после запрыгивания на них, а девятая начинает падать на полной скорости. Время в воздухе обновляется при приземлении или <a href="/wiki/Movement_Guide#Enemy_Step" title="Movement Guide">Enemy Step</a> (прыжке с врага).
+            </p>
+            <p><a href="/wiki/Whiplash" title="Whiplash">Whiplash</a> можно использовать, чтобы захватывать ракеты (включая замороженные), которые прикрепляются к его крюку. К крюку Whiplash одновременно можно прикрепить до пяти ракет.
+            </p>
+            <p>Если удерживать клавишу Whiplash, ракета(ы) будут толкаться вперёд примерно вдвое быстрее, чем движутся обычно. Однако воздушные выстрелы не вызывают красных взрывов при толкании ракеты Whiplash'ом (несмотря на то, что дают бонус стиля <b><span style="color:aqua;">[+FIREWORKS]</span></b>). Кроме того, Whiplash захватит врага, с которым соединится, если последовавший взрыв его не убьёт, что может быть нежелательно. Оба этих недостатка можно обойти, отменив Whiplash ударом прямо перед тем, как его крюк коснётся врага, что позволит ракете(ам) самим сократить дистанцию.
+            </p>
+            <p>Как только вы отпустите клавишу Whiplash, все прикреплённые ракеты потянутся обратно к вам. Если Whiplash попадёт во врага на обратном пути, ракета(ы) взорвутся и <i>могут</i> вызвать красный взрыв, если вам каким-то образом удастся попасть в воздушную цель. Иначе вы получите взрыв прямо перед лицом, который всегда наносит 35 урона и даёт усиление урона, сравнимое с <a href="/wiki/Pump_Charge_Shotgun" title="Pump Charge Shotgun">взрывом перезаряда</a>. Вам придётся сделать рывок, чтобы избежать урона, или два рывка, если вы в воздухе, чтобы избежать красного взрыва. Вы также можете отменить Whiplash до того, как ракета(ы) долетят до вас, что отправит их снова вперёд. Учтите, что если подтянуть ракету снизу, вы оседлаете её, а не получите взрыв.
+            </p>
+            <p>Ударную волну от ракеты можно использовать для приличного ускорения, но нужно сделать лучше, чем просто прицелиться ракетой себе в ноги. Выстрелив ракетой под себя с правильным таймингом после прыжка со скольжением, можно получить сильное бесплатное горизонтальное ускорение. Это также можно сделать, шагая назад и стреляя чуть перед собой во время прыжка. Вы получаете более сильное ускорение, если ракета заморожена при попадании в поверхность. Другой способ получить горизонтальное ускорение вперёд — сделать рывок, прыгнуть и сразу выстрелить ракетой себе в ноги, что отправит вас примерно на расстояние 5 рывков или больше.
+            </p>
+            <p>Выстрелить несколькими замороженными ракетами вверх и затем запрыгнуть на самую верхнюю — способ получить вертикальный подъём с уровня земли. Когда у ракеты, на которой находится V1, начинает заканчиваться топливо, её всё равно толкают ракеты снизу.
+            </p>
+            <p>Сделайте удар о землю (slam) высоко в воздухе, выстрелите двумя ракетами под себя и быстро используйте <a href="/wiki/Whiplash" title="Whiplash">Whiplash</a> — при правильном выполнении вы достигнете чуда полёта. Ракету, на которой вы летите, будет толкать вверх та, которую вы захватили, позволяя набирать высоту, пока ракеты не исчезнут или не взорвутся. Старайтесь держать оседланную ракету под углом 90°, так как это даст высоту быстрее. С конструкции можно безопасно спешиться ударом; не втягивайте Whiplash, иначе он взорвёт ракеты. Как и при Chain Surfing, это можно повторять множество раз, но ракеты не теряют никакого импульса, что по сути позволяет набирать бесконечную высоту. Поскольку для этого не требуется замораживать ракеты, это также можно делать с вариантом <a href="/wiki/S.R.S._Cannon_Rocket_Launcher" title="S.R.S. Cannon Rocket Launcher">S.R.S. Cannon Rocket Launcher</a>. Пример выполнения этого трюка можно найти <a target="_blank" rel="nofollow noreferrer noopener" class="external text">
+            </p>
+          </div>
+
+        </div>
         <div class="img-content">
           <img src="./public/content/FreezeframeHUDNew.webp" alt="">
         </div>
       </div>
+
       <div class="block">
         <div class="text-content">
-          <h1 id="S.R.S.Cannon">S.R.S. Cannon Rocket Launcher</h1>
+
+          <!-- ===== S.R.S. Cannon Rocket Launcher ===== -->
+          <div class="en">
+            <h1 id="S.R.S.Cannon">S.R.S. Cannon Rocket Launcher</h1>
             <p> The <a style="color: rgb(69,255,69);">S.R.S. Cannon Rocket Launcher</a> is the green variant of the <a class="mw-disambig" title="Rocket Launcher (disambiguation)">Rocket Launcher</a>, purchasable for 75,000<span style="color:darkorange"><b>P</b></span> after obtaining the Freezeframe Rocket Launcher in <b>[ <a href="/wiki/5-3:_SHIP_OF_FOOLS" title="5-3: SHIP OF FOOLS">5-3: SHIP OF FOOLS</a> ]</b>.
             </p>
-                <h2>Mechanics</h2>
+            <h2>Mechanics</h2>
             <p>The primary fire shoots a rocket identical to the Freezeframe, requiring direct hits to inflict damage. Rockets from either variation have no interaction with the Cannonball projectile, simply passing through it. If the Freezeframe's Alternate Fire is activated, rockets fired from the C.B.T. Cannon variant will also be frozen.
             </p>
             <p>Pressing alternate fire and releasing will fire a cannonball from the Rocket Launcher, while holding it down increases firing distance in a similar way to <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a>'s alt fire. Damage increases with charge, starting from 2 damage at minimum charge to 5 damage at 25% charge or higher. The cannonball will give the <b>[+CANNONBALLED]</b> <a href="/wiki/Style_Index" title="Style Index">style bonus</a> and bounce upward upon hitting an enemy. When it hits the ground, the cannonball will create a shockwave, launching nearby enemies into the air. The cannonball can also be punched with the <a href="/wiki/Feedbacker" title="Feedbacker">Feedbacker</a> after rebounding or immediately after firing similarly to <a href="/wiki/Core_Eject_Shotgun#Projectile_Boosting" title="Core Eject Shotgun">projectile boosting</a>, turning it into a high-speed piercing projectile that is unaffected by gravity, albeit with a pierce cap if it was not bounced off an enemy first. This will also increase it to max damage if it had been fired at minimum charge. Killing an enemy with this technique gives  <b>[+CANNONBOOST]</b> style bonus. Punching the cannonball after it bounces off of an enemy makes it deal 7 damage instead of 5 and killing an enemy with that method gives  <b>[+CRUSHED]</b> style bonus. Hitting the cannonball with a hitscan weapon will create a big explosion, though unlike with <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">ejected cores</a>, explosive hitscans such as from the <a href="/wiki/Malicious_Railcannon" title="Malicious Railcannon">Malicious Railcannon</a> will not change the cannonball explosion's properties. The two resultant explosion hitboxes, however, will overlap for additional damage, similar to the inner radius of a <a href="/wiki/Malicious_Railcannon#Core_Nuke" title="Malicious Railcannon">Core Nuke</a> explosion.
@@ -142,17 +211,59 @@
             <p>Due to the fact that cannonballs persist through lives if midair, right after a checkpoint is activated, a cannonball can be shot before the same checkpoint is immediately loaded, allowing the cannonball to hit an enemy as soon as they spawn in. This can be further comboed to reuse (through <a href="/wiki/Whiplash" title="Whiplash">Whiplashing</a>) or detonate the cannonball for extra potency.
             </p>
             <p>However, due to the complex circumstances and precision required this technique is almost completely useless in normal gameplay.
-            </p>        </div>
+            </p>
+          </div>
+
+          <div class="ru">
+            <h1>S.R.S. Cannon Rocket Launcher</h1>
+            <p><a style="color: rgb(69,255,69);">S.R.S. Cannon Rocket Launcher</a> (ракетомёт-пушка S.R.S.) — зелёный вариант <a class="mw-disambig" title="Rocket Launcher (disambiguation)">ракетомёта</a>, покупаемый за 75 000<span style="color:darkorange"><b>P</b></span> после получения Freezeframe Rocket Launcher в <b>[ <a href="/wiki/5-3:_SHIP_OF_FOOLS" title="5-3: SHIP OF FOOLS">5-3: SHIP OF FOOLS</a> ]</b>.
+            </p>
+            <h2>Механика</h2>
+            <p>Основная кнопка огня выпускает ракету, идентичную Freezeframe, требующую прямых попаданий для нанесения урона. Ракеты обоих вариантов не взаимодействуют со снарядом-пушечным ядром, просто пролетая сквозь него. Если активирован альтернативный огонь Freezeframe, ракеты, выпущенные из варианта C.B.T. Cannon, также будут заморожены.
+            </p>
+            <p>Нажатие альтернативного огня и его отпускание выпускает пушечное ядро из ракетомёта, а удержание увеличивает дальность выстрела аналогично альтернативному огню <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">Core Eject Shotgun</a>. Урон растёт с зарядом: от 2 урона при минимальном заряде до 5 урона при заряде 25% и выше. Пушечное ядро даёт <b>[+CANNONBALLED]</b> (<a href="/wiki/Style_Index" title="Style Index">бонус стиля</a>) и отскакивает вверх при попадании во врага. При попадании в землю пушечное ядро создаёт ударную волну, подбрасывающую ближайших врагов в воздух. Пушечное ядро также можно ударить <a href="/wiki/Feedbacker" title="Feedbacker">Feedbacker</a>'ом после отскока или сразу после выстрела, аналогично <a href="/wiki/Core_Eject_Shotgun#Projectile_Boosting" title="Core Eject Shotgun">усилению снаряда</a>, превращая его в высокоскоростной пробивающий снаряд, не подверженный гравитации, хотя и с ограничением пробития, если он сначала не отскочил от врага. Это также повышает его до максимального урона, если он был выпущен при минимальном заряде. Убийство врага этим приёмом даёт бонус стиля <b>[+CANNONBOOST]</b>. Удар по пушечному ядру после его отскока от врага заставляет его наносить 7 урона вместо 5, а убийство врага этим способом даёт бонус стиля <b>[+CRUSHED]</b>. Попадание по пушечному ядру мгновенным (hitscan) оружием создаёт крупный взрыв, хотя, в отличие от <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">выброшенных ядер</a>, взрывные hitscan-попадания, например, от <a href="/wiki/Malicious_Railcannon" title="Malicious Railcannon">Malicious Railcannon</a>, не меняют свойства взрыва пушечного ядра. Однако две получившиеся хитбокса взрыва перекрываются для дополнительного урона, подобно внутреннему радиусу взрыва <a href="/wiki/Malicious_Railcannon#Core_Nuke" title="Malicious Railcannon">Core Nuke</a>.
+            </p>
+            <p>Пушечное ядро перезаряжается 8 секунд независимо от уровня заряда.
+            </p>
+            <p>Пушечные ядра способны опрокидывать наземных <a href="/wiki/Sisyphean_Insurrectionist" title="Sisyphean Insurrectionist">Sisyphean Insurrectionist</a>, что прерывает любые выполняемые ими атаки и оглушает их на несколько секунд, пока они поднимаются.
+            </p>
+            <p>Одно пушечное ядро может убить <a href="/wiki/Providence" title="Providence">Providence</a> с одного выстрела.
+            </p>
+            <p>Магниты от <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a>, если они воткнуты во врага, также притягивают ракеты S.R.S. Они очень эффективны для прямых попаданий. Магниты уничтожаются 3-м попаданием по врагу, хотя красные взрывы считаются за два попадания.
+            </p>
+            <p>Используя <a href="/wiki/Whiplash" title="Whiplash">Whiplash</a>, чтобы подтянуть пушечное ядро обратно к V1 после его отскока от врага, а затем парировав его обратно во врага, можно нанести огромный урон, чему дополнительно способствует то, что парирование отскочившего пушечного ядра наносит повышенный урон. Это называется Whiplash Parry и мгновенно убивает Cerberi из-за их 200%-ной уязвимости к пушечному ядру SRS.
+            </p>
+            <p>Удерживая кнопку <a href="/wiki/Whiplash" title="Whiplash">Whiplash</a>, чтобы захватить пушечное ядро, отпуская его до того, как оно достигнет любого другого объекта, и снова удерживая до того, как оно долетит до вас, можно держать пушечное ядро подвешенным в воздухе неопределённо долго. Это называется Cannonball Dribbling.
+            </p>
+            <p>С помощью <a href="/wiki/Whiplash" title="Whiplash">Whiplash</a> можно сложить до 5 пушечных ядер друг на друга, жонглируя ими в воздухе с помощью Cannonball Dribbling. Парирование пушечных ядер приведёт к парированию только одного, хотя Whiplash можно использовать, чтобы запустить все 5 во врага.
+            </p>
+            <p><a href="/wiki/Electric_Railcannon" title="Electric Railcannon">Electric Railcannon</a> может пробить пушечное ядро, одновременно детонируя его, позволяя и взрыву пушечного ядра, и Railcannon попасть во врага, нанося много урона. Использование этого против <a href="/wiki/Hideous_Mass" title="Hideous Mass">Hideous Mass</a> — отличный способ нанести им серьёзный урон.
+            </p>
+            <p>Это можно комбинировать с <a href="/wiki/Coin#Railcoining" title="Coin">Railcoining</a>, создавая Railcoinball. Для этого выстрелите в цель пушечным ядром, бросьте монету за целью и одну перед целью, а затем выстрелите в монету за целью из <a href="/wiki/Electric_Railcannon" title="Electric Railcannon">Electric Railcannon</a>. При правильном выполнении большинство не-боссовых врагов мгновенно погибнут.
+            </p>
+            <p>Притянув пушечное ядро Whiplash'ом, выстрелив из дробовика и затем ударив пушечное ядро и дробину дробовика одним и тем же ударом, можно сложить парирование пушечного ядра и <a href="/wiki/Core_Eject_Shotgun#Projectile_Boosting" title="Core Eject Shotgun">усиление снаряда</a>, нанося огромный урон.
+            </p>
+            <p>Поскольку пушечные ядра сохраняются между жизнями, если находятся в воздухе, сразу после активации контрольной точки можно выстрелить пушечным ядром до того, как та же контрольная точка немедленно загрузится, что позволяет пушечному ядру попасть во врага, как только он появится. Это можно дополнительно скомбинировать, чтобы повторно использовать (через <a href="/wiki/Whiplash" title="Whiplash">Whiplash</a>) или детонировать пушечное ядро для дополнительной эффективности.
+            </p>
+            <p>Однако из-за сложных обстоятельств и требуемой точности этот приём почти полностью бесполезен в обычном игровом процессе.
+            </p>
+          </div>
+
+        </div>
         <div class="img-content">
           <img src="./public/content/SRSCannonHUDNew.webp" alt="">
         </div>
       </div>
+
       <div class="block">
         <div class="text-content">
-          <h1 id="Firestarter">Firestarter Rocket Launcher</h1>
+
+          <!-- ===== Firestarter Rocket Launcher ===== -->
+          <div class="en">
+            <h1 id="Firestarter">Firestarter Rocket Launcher</h1>
             <p>The <a style="color: rgb(255,61,61);">Firestarter Rocket Launcher</a> is the red variant of the <a href="/wiki/Rocket_Launcher_(disambiguation)" class="mw-disambig" title="Rocket Launcher (disambiguation)">Rocket Launcher</a>, purchasable for 75,000<span style="color:darkorange;"><b>P</b></span> after obtaining the Freezeframe Rocket Launcher in <b>[ <a href="/wiki/5-3:_SHIP_OF_FOOLS" title="5-3: SHIP OF FOOLS">5-3: SHIP OF FOOLS</a> ]</b>.
             </p>
-                <h2>Mechanics</h2>
+            <h2>Mechanics</h2>
             <p>Pressing primary fire will fire a rocket from the barrel with about a second between each shot. They deal 3.5 damage, have a lifetime of 30 seconds, are attracted to <a href="/wiki/Attractor_Nailgun#Secondary_Fire" title="Attractor Nailgun">Magnets</a> embedded in enemies, and can also be grappled &amp; ridden.
             </p>
             <p>If the rocket doesn't hit an enemy directly, it will create a large, non-damaging shockwave that will push enemies away. Directly hitting an enemy will make it create a damaging explosion. If a rocket contacts a <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Magnet</a> or a thrown <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">Coin</a>, it will also create a damaging explosion.
@@ -174,7 +285,39 @@
             <p>Gasoline puddles sprayed under water will explode upon contact with another explosion.
             </p>
             <p>The magnets from the <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a>, if stuck on an enemy, will also attract nearby rockets, allowing for easier direct hits. Magnets embedded in an enemy are destroyed upon three direct rocket hits, though red airshot explosions count as two hits. Frozen rockets in range of the magnet will reorient themselves towards the magnet while still frozen, allowing them to take more direct paths toward their target and potentially avoid detonating prematurely on terrain.
-            </p>        </div>
+            </p>
+          </div>
+
+          <div class="ru">
+            <h1>Firestarter Rocket Launcher</h1>
+            <p><a style="color: rgb(255,61,61);">Firestarter Rocket Launcher</a> (ракетомёт-поджигатель) — красный вариант <a href="/wiki/Rocket_Launcher_(disambiguation)" class="mw-disambig" title="Rocket Launcher (disambiguation)">ракетомёта</a>, покупаемый за 75 000<span style="color:darkorange;"><b>P</b></span> после получения Freezeframe Rocket Launcher в <b>[ <a href="/wiki/5-3:_SHIP_OF_FOOLS" title="5-3: SHIP OF FOOLS">5-3: SHIP OF FOOLS</a> ]</b>.
+            </p>
+            <h2>Механика</h2>
+            <p>Нажатие основной кнопки огня выпускает ракету из ствола с интервалом примерно в секунду между выстрелами. Они наносят 3,5 урона, живут 30 секунд, притягиваются к <a href="/wiki/Attractor_Nailgun#Secondary_Fire" title="Attractor Nailgun">магнитам</a>, воткнутым во врагов, а также за них можно зацепиться и оседлать их.
+            </p>
+            <p>Если ракета не попадает во врага напрямую, она создаёт крупную не наносящую урон ударную волну, которая отталкивает врагов. Прямое попадание во врага заставляет её создать наносящий урон взрыв. Если ракета касается <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">магнита</a> или брошенной <a href="/wiki/Marksman_Revolver" title="Marksman Revolver">монеты</a>, она также создаёт наносящий урон взрыв.
+            </p>
+            <p>Если ракета попадает в находящегося в воздухе врага, который обычно не летает, она вызывает красный взрыв, наносящий двойной урон с двойным радиусом и игнорирующий блокировку взрывов у <a href="/wiki/Soldier" title="Soldier">Soldier</a>. Это также относится к <a href="/wiki/Mannequin" title="Mannequin">Mannequin</a>, цепляющимся за стены и потолки.
+            </p>
+            <p>Ракеты можно подстрелить в воздухе мгновенным (hitscan) оружием, что увеличивает размер взрыва, но не вызывает более крупный красный взрыв, как у подстреленных <a href="/wiki/Core_Eject_Shotgun" title="Core Eject Shotgun">ядер</a> или воздушных выстрелов по ракетам. <a href="/wiki/Coin" title="Coin">Рикошетные выстрелы</a> также наводятся на ракеты с приоритетом выше, чем у врагов.
+            </p>
+            <p>Выстрел по ракете лучом Malicious Railcannon создаёт крупный взрыв.
+            </p>
+            <p>Удержание альтернативного огня создаёт поток масла, который медленно покрывает врагов тёмным гладким налётом, напоминающим <a href="/wiki/Radiance" title="Radiance">Radiance</a>. Масло может покрывать стены и образовывать лужи на земле. При поджигании масло наносит 1 урона за тик покрытым врагам или всему, что проходит по лужам, включая V1, который вместо этого получает 10 урона. Пока горят, враги-хаски получают на 50% больше урона из всех источников, кроме самого тикового урона от огня. Крупным врагам нужно больше масла, чтобы полностью покрыться, но горят они столько же. Когда враги перестают получать урон от огня, есть период отсрочки, когда их можно снова поджечь, просто побрызгав на них ещё бензина.
+            </p>
+            <p>Покрытые бензином <a href="/wiki/Malicious_Face" title="Malicious Face">Malicious Face</a> не отражают летящие в них взрывчатку. Покрытые бензином <a href="/wiki/Soldier" title="Soldier">Soldier</a> также теряют свою устойчивость/иммунитет к взрывам.
+            </p>
+            <p>V1 может скользить по лужам масла, не теряя импульса, как при ходьбе по льду. Скольжение по маслу немного ускоряет движение.
+            </p>
+            <p>Удержание альтернативного огня в течение 1,5 секунды истощает запас масла. После истощения V1 должен дождаться, пока он не достигнет 25%, прежде чем снова сможет распылять.
+            </p>
+            <p>Лужи бензина, распылённые под водой, взрываются при контакте с другим взрывом.
+            </p>
+            <p>Магниты от <a href="/wiki/Attractor_Nailgun" title="Attractor Nailgun">Attractor Nailgun</a>, если они воткнуты во врага, также притягивают ближайшие ракеты, что облегчает прямые попадания. Магниты, встроенные во врага, уничтожаются после трёх прямых попаданий ракет, причём красные взрывы в воздухе считаются за два попадания. Замороженные ракеты в радиусе магнита переориентируются к магниту, оставаясь замороженными, что позволяет им идти более прямыми путями к цели и потенциально избегать преждевременной детонации о рельеф.
+            </p>
+          </div>
+
+        </div>
         <div class="img-content">
           <img src="./public/content/Firestarter_Rocket_Launcher_HUD.webp" alt="">
         </div>

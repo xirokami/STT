@@ -1,0 +1,20 @@
+:root{
+  --background: rgb(30,40,40);
+  --background-grad: linear-gradient( rgb(30,40,40), rgb(40, 30, 30));
+  --main: rgb(35,50,50);
+  --grad: linear-gradient( rgb(35,50,50), rgb(40, 60, 60));
+  --font-color: rgb(170,220,170)
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: var(--font-color);
+}
+
+body {
+    background-color: var(--main);
+    height: 100vh;
+}
