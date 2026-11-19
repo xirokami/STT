@@ -12,7 +12,6 @@ from pydantic import BaseModel
 
 DB_PATH = "app.db"
 
-# УЧЁТКА АДМИНИСТРАТОРА (создаётся автоматически при запуске)
 ADMIN_LOGIN = "admin"
 ADMIN_PASSWORD = "admin123"
 app = FastAPI()
@@ -20,7 +19,6 @@ app = FastAPI()
 app.mount("/public", StaticFiles(directory="public"), name="public")
 
 
-# ---------------- БАЗА ДАННЫХ ----------------
 def db():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -58,13 +56,13 @@ def init_db():
         review_date TEXT
     );
     """)
-    # Создаём администратора, если его ещё нет
+
     if not conn.execute("SELECT id FROM users WHERE login = ?", (ADMIN_LOGIN,)).fetchone():
         conn.execute(
             "INSERT INTO users (login, password_hash, fullname, phone, email, is_admin, created_at)"
             " VALUES (?, ?, ?, ?, ?, 1, ?)",
             (ADMIN_LOGIN, hash_password(ADMIN_PASSWORD), "Администратор",
-             "80000000000", "admin@local", now()))
+             "89125658495", "admin@local", now()))
         print(f"Создан администратор: логин '{ADMIN_LOGIN}'")
     conn.commit()
     conn.close()
@@ -77,7 +75,6 @@ def now():
     return datetime.now().strftime("%d.%m.%Y %H:%M")
 
 
-# ---------------- ПАРОЛИ И СЕССИИ ----------------
 def hash_password(pw: str) -> str:
     salt = secrets.token_hex(16)
     h = hashlib.pbkdf2_hmac("sha256", pw.encode(), salt.encode(), 100_000).hex()
@@ -123,14 +120,12 @@ def current_user(request: Request):
     return get_user_by_token(token)
 
 
-# ---------------- ВАЛИДАЦИЯ ----------------
 RE_LOGIN = re.compile(r"^[a-zA-Z0-9]{6,}$")
 RE_NAME = re.compile(r"^[А-Яа-яЁё\s]+$")
 RE_PHONE = re.compile(r"^8\d{10}$")
 RE_EMAIL = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
 
 
-# ---------------- МОДЕЛИ ----------------
 class RegisterData(BaseModel):
     login: str
     password: str
@@ -159,7 +154,6 @@ class StatusData(BaseModel):
     status: str
 
 
-# ---------------- СТРАНИЦЫ (с защитой) ----------------
 @app.get("/")
 def root():
     return FileResponse("index.html")
@@ -194,7 +188,6 @@ def ada_page(request: Request):
     return FileResponse("ada.html")
 
 
-# ---------------- API: АВТОРИЗАЦИЯ ----------------
 @app.post("/api/register")
 def register(data: RegisterData, response: Response):
     if not RE_LOGIN.match(data.login):
@@ -213,7 +206,6 @@ def register(data: RegisterData, response: Response):
         conn.close()
         raise HTTPException(400, "Такой логин уже занят")
 
-    # регистрация через форму всегда создаёт ОБЫЧНОГО пользователя
     cur = conn.execute(
         "INSERT INTO users (login, password_hash, fullname, phone, email, is_admin, created_at)"
         " VALUES (?, ?, ?, ?, ?, 0, ?)",
@@ -259,7 +251,6 @@ def me(request: Request):
             "is_admin": bool(user["is_admin"])}
 
 
-# ---------------- API: ЗАЯВКИ ПОЛЬЗОВАТЕЛЯ ----------------
 @app.post("/api/requests")
 def create_request(data: RequestData, request: Request):
     user = current_user(request)
@@ -321,8 +312,6 @@ def add_review(req_id: int, data: ReviewData, request: Request):
     conn.close()
     return {"ok": True}
 
-
-# ---------------- API: АДМИНКА ----------------
 def require_admin(request: Request):
     user = current_user(request)
     if not user:

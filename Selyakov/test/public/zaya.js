@@ -1,5 +1,3 @@
-// ============ Мои заявки (личный кабинет пользователя) ============
-
 const PAYMENT_NAMES = { cash: 'Наличными', transfer: 'Перевод по номеру телефона' };
 
 async function logout() {
@@ -86,7 +84,6 @@ function renderRequests(requests) {
     });
 }
 
-// выбор звёзд + отправка отзыва (делегирование)
 document.getElementById('requestsList').addEventListener('click', async (e) => {
     const star = e.target.closest('.star');
     if (star) {

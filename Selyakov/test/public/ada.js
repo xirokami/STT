@@ -1,5 +1,3 @@
-// ============ Панель администратора ============
-
 const PAYMENT_NAMES = { cash: 'Наличными', transfer: 'Перевод по телефону' };
 
 async function logout() {

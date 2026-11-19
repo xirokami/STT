@@ -1,5 +1,3 @@
-// ============ Формирование заявки ============
-
 const form = document.getElementById('requestForm');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();

@@ -1,5 +1,3 @@
-// ============ Валидация и авторизация (регистрация + логин) ============
-
 const RE_LOGIN = /^[a-zA-Z0-9]{6,}$/;
 const RE_NAME = /^[А-Яа-яЁё\s]+$/;
 const RE_PHONE = /^8\d{10}$/;
@@ -36,7 +34,6 @@ async function apiPost(url, body) {
     return data;
 }
 
-// ---------------- РЕГИСТРАЦИЯ ----------------
 const registerForm = document.getElementById('registerForm');
 if (registerForm) {
     const v = (id) => document.getElementById(id).value.trim();
@@ -94,7 +91,6 @@ if (registerForm) {
     });
 }
 
-// ---------------- ЛОГИН ----------------
 const loginForm = document.getElementById('loginForm');
 if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {

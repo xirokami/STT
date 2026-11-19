@@ -14,7 +14,6 @@
     </div>
     <div class="card-body">
         <form id="registerForm" novalidate>
-            <!-- ЛОГИН (латиница + цифры, минимум 6 символов) -->
             <div class="form-group">
                 <label>Логин <span class="required">*</span></label>
                 <input type="text" id="login" placeholder="например: john1984" autocomplete="off">
@@ -23,7 +22,6 @@
                 <div id="loginValid" class="valid-feedback" style="display: none;">Логин корректный</div>
             </div>
 
-            <!-- ПАРОЛЬ (минимум 8 символов) -->
             <div class="form-group">
                 <label>Пароль <span class="required">*</span></label>
                 <input type="password" id="password" placeholder="минимум 8 символов">
@@ -32,7 +30,6 @@
                 <div id="passwordValid" class="valid-feedback" style="display: none;">Надёжный пароль</div>
             </div>
 
-            <!-- ФИО (кириллица + пробелы) -->
             <div class="form-group">
                 <label>ФИО <span class="required">*</span></label>
                 <input type="text" id="fullname" placeholder="Иванов Иван Иванович">
@@ -41,7 +38,6 @@
                 <div id="fullnameValid" class="valid-feedback" style="display: none;">ФИО корректно</div>
             </div>
 
-            <!-- ТЕЛЕФОН: 8(XXX)XXX-XX-XX -->
             <div class="form-group">
                 <label>Телефон <span class="required">*</span></label>
                 <input type="tel" id="phone" placeholder="89123456789" maxlength="16">
@@ -50,7 +46,6 @@
                 <div id="phoneValid" class="valid-feedback" style="display: none;">Номер корректный</div>
             </div>
 
-            <!-- EMAIL (стандартный формат) -->
             <div class="form-group">
                 <label>Электронная почта <span class="required">*</span></label>
                 <input type="email" id="email" placeholder="ivan@example.com">

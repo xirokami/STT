@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>КосмоПельмень — пельмени из будущего</title>
+<style>
+* { box-sizing: content-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  background-size: 600% 600%;
+  animation: фон 2s linear infinite;
+  cursor: wait;
+  min-width: 1400px;
+}
+
+@keyframes фон {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+h1 {
+  font-size: 64px;
+  color: #ff0 !important;
+  text-shadow: 3px 3px 0 #f00, -3px -3px 0 #00f;
+  animation: дрожь 0.1s infinite;
+  will-change: transform;
+}
+
+@keyframes дрожь {
+  0% { transform: translate(0,0); }
+  25% { transform: translate(-2px,1px); }
+  50% { transform: translate(2px,-1px); }
+  75% { transform: translate(-1px,-2px); }
+  100% { transform: translate(1px,2px); }
+}
+
+div, p, span, li, a, td {
+  will-change: transform, opacity, filter;
+  filter: drop-shadow(0 0 5px rgba(255,0,255,.8));
+}
+
+.secret-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 99999;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.header {
+  background: radial-gradient(circle, red, blue);
+  padding: 40px;
+  margin: -50px;
+  position: relative;
+  z-index: 2;
+}
+
+.header h1 { margin-left: 500px; }
+
+.hero {
+  text-align: center;
+  transform: rotate(-1.5deg);
+  padding: 60px;
+}
+
+.price {
+  font-size: 120px;
+  color: lime;
+  text-shadow: 0 0 30px lime;
+  animation: пульсация 0.3s infinite;
+}
+
+@keyframes пульсация {
+  50% { transform: scale(1.3); }
+}
+
+.buy-btn {
+  font-size: 40px;
+  padding: 20px 60px;
+  background: linear-gradient(to bottom, red, darkred);
+  border: 5px dashed yellow;
+  border-radius: 50%;
+  animation: крутиться 1s linear infinite;
+}
+
+@keyframes крутиться {
+  to { transform: rotate(360deg) scale(1.1); }
+}
+
+.buy-btn:active { transform: scale(0.5) rotate(45deg); }
+
+.content-table { border-spacing: 20px; margin: 0 auto; }
+.content-table td { background: rgba(255,255,255,.85); padding: 30px; width: 400px; vertical-align: top; }
+
+.footer {
+  margin-top: 200px;
+  padding: 50px;
+  background: repeating-linear-gradient(90deg, #000 0 20px, #fff 20px 40px);
+  color: red;
+  font-size: 12px;
+}
+
+.marquee-bar {
+  background: black;
+  color: yellow;
+  font-size: 28px;
+  padding: 10px;
+}
+
+.cookie-popup {
+  position: fixed;
+  bottom: 10px; right: 10px;
+  z-index: 9999;
+  background: white;
+  border: 3px solid red;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 50px 20px red;
+}
+
+/* счётчик посетителей */
+.visitor-count {
+  position: fixed;
+  top: 0; right: 0;
+  background: black;
+  color: green;
+  font-family: "Courier New", monospace;
+  padding: 10px;
+  z-index: 999999;
+  font-size: 22px;
+}
+
+.modal {
+  position: fixed;
+  top: 30%; left: 35%;
+  z-index: 99998;
+  background: darkred;
+  border: 10px ridge palegreen;
+  padding: 40px;
+  display: none;
+  width: 500px;
+}
+
+input, textarea, select {
+  font-size: 20px;
+  padding: 5px;
+  border: 4px double orange;
+  background: wheat;
+}
+
+.blink {
+  animation: мигать 0.5s steps(1) infinite;
+}
+@keyframes мигать {
+  50% { visibility: hidden; }
+}
+</style>
+</head>
+<body>
+
+<marquee class="marquee-bar">Робуксы бесплатно, я не вру, честно без пиз... бородой клянусь</marquee>
+
+<div class="header">
+  <h1>РоблоксКарзина</h1>
+  <p style="font-size:24px">Робуксы в любую часть света</p>
+  <p style="font-size:10px">Возвраты не принимаем</p>
+</div>
+
+<div class="secret-overlay"></div>
+
+<div class="hero">
+  <p class="blink" style="font-size:36px">Предупреждаю, сайт луйший в мире</p>
+  <div class="price" id="price">999 ₽</div>
+  <p>Банк растёт с каждой секунды(НЕТ) :)</p>
+  <button class="buy-btn" onclick="buyNow()">Покупай... Покупай...</button>
+  <p id="cart">В корзине: 0 робуксов</p>
+</div>
+
+<table class="content-table">
+<tr>
+  <td>
+    <h3>Почему Я?</h3>
+    <ul>
+      <li>Робуксы ростим прямо на ферме</li>
+      <li>Доставляем в течении года</li>
+      <li>Поддержка не отвечает</li>
+      <li><img src="https://i.pravatar.cc/150?img=666" width="150"> (фото нашего директора, но ссылка битая)</li>
+    </ul>
+  </td>
+  <td>
+    <h3>Отзывы</h3>
+    <p>"1 млн. робуксов нема..." — Pro100tit</p>
+    <p>"Сайт имба я такой делал" — Xirokami</p>
+    <p>"лжывлаждвылаыв" — IvanZolo2004</p>
+  </td>
+  <td>
+    <h3>Оставить заявку</h3>
+    <form id="orderForm">
+      <input type="text" id="name" placeholder="Ваше имя"><br><br>
+      <input type="text" id="phone" placeholder="Телефон"><br><br>
+      <input type="submit" value="Отправить">
+    </form>
+  </td>
+</tr>
+</table>
+
+<center style="margin-top:60px">
+  <h2>Наши достижения</h2>
+  <p id="countdown">До конца распродажи осталось: Что-то</p>
+</center>
+
+<div class="visitor-count" id="visitors">Онлайн: 1</div>
+
+<div class="cookie-popup" id="cookiePopup">
+  <b>🍪 Мы используем пряники!</b>
+  <p>И печеньки, добавки, консерванты и тд тп</p>
+  <button onclick="acceptCookies()">Принять</button>
+  <button onclick="declineCookies()">Отклонить</button>
+</div>
+
+<div class="modal" id="modal">
+  <h2>🎉 ПОЗДРАВЛЯЕМ!</h2>
+  <p>Вас нае... !</p>
+  <p id="modal-price">Цена: ого</p>
+  <button onclick="closeModal()">Ок</button>
+</div>
+
+<div class="footer">
+  <p>© 2015–2030 Робуксы все права недействительны, я не малдован, я русский, я иду до конца</p>
+  <p>Телефон: 88005553535</p>
+</div>
+
+<script>
+var totalPrice = 0;
+var count = 0;
+var price = "999";
+
+setInterval(function () {
+  console.log("ROSSIA, PUTIN, POBEDA");
+  console.log("ZOV ZOV ZOV");
+  console.log("ZOLO ZOLO ZOLO");
+}, 1000);
+
+window.onresize = function () {
+  setInterval(function () {
+    document.body.style.width = (window.innerWidth - 1) + "px";
+  }, 100);
+};
+
+setInterval(function () {
+  try {
+    localStorage.setItem("tick", Date.now());
+  } catch (e) {
+
+  }
+}, 50);
+
+function decreasePrice() {
+  var p = parseFloat(price);
+  p = p - 0.01;
+  price = p.toString();
+  document.getElementById("price").innerHTML = price + " ₽";
+  setTimeout(decreasePrice, 2000);
+}
+decreasePrice();
+
+setInterval(function () {
+  var n = Math.floor(Math.random() * 100000);
+  document.getElementById("visitors").innerText = "Онлайн: " + n;
+}, 3000);
+
+var secondsLeft = 100;
+setInterval(function () {
+  secondsLeft++;
+  document.getElementById("countdown").innerText =
+    "До конца распродажи осталось: " + secondsLeft + " сек (почти)";
+}, 1000);
+
+function buyNow() {
+  var x = 0;
+  var start = Date.now();
+  while (Date.now() - start < 3000) {
+    x = x + 1;
+  }
+
+  count = count + 1;
+  totalPrice = totalPrice + parseFloat(price);
+  document.getElementById("cart").innerText =
+    "В корзине: " + count + " шт. на " + totalPrice + " ₽";
+
+  document.getElementById("modal-price").innerText = "Цена: " + totalPrice;
+  document.getElementById("modal").style.display = "block";
+
+  var all = document.getElementsByTagName("*");
+  for (var i = 0; i < all.length; i++) {
+    all[i].style.transform = "rotate(" + Math.random() * 10 + "deg)";
+  }
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+function acceptCookies() {
+  document.getElementById("cookiePopup").style.display = "none";
+}
+function declineCookies() {
+  document.getElementById("cookiePopup").style.display = "none";
+  setTimeout(function () {
+    document.getElementById("cookiePopup").style.display = "block";
+  }, 5000);
+}
+
+setInterval(function () {
+  if (window.scrollY > 300) {
+    window.scrollTo(0, 0);
+  }
+}, 2000);
+
+document.getElementById("orderForm").onsubmit = function () {
+  alert("Заявка отправлена! (нет)");
+};
+
+if (performance && performance.navigation && performance.navigation.type === 1) {
+  alert("Добро пожаловать обратно! Ваши данные потеряны. Нам жаль. Немного.");
+}
+
+console.trace("почему вы смотрите в консоль? всё работает.");
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+  }, 3000);
+});
+
+setInterval(function () {
+  if (Math.random() < 0.07) {
+    document.body.style.transform = "rotate(180deg)";
+    setTimeout(function () {
+      document.body.style.transform = "none";
+    }, 1500);
+  }
+}, 30000);
+</script>
+
+</body>
+</html>
